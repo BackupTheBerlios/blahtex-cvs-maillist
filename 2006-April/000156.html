@@ -1,0 +1,732 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/includes DefaultSettings.php,1.18,1.19 Linker.php,1.3,1.4 OutputPage.php,1.12,1.13 Parser.php,1.4,1.5 Sanitizer.php,1.8,1.9 SkinTemplate.php,1.13,1.14
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20DefaultSettings.php%2C1.18%2C1.19%20Linker.php%2C1.3%2C1.4%20OutputPage.php%2C1.12%2C1.13%20Parser.php%2C1.4%2C1.5%20Sanitizer.php%2C1.8%2C1.9%20SkinTemplate.php%2C1.13%2C1.14&In-Reply-To=%3C200604101230.k3ACU9t27000%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000184.html">
+   <LINK REL="Next"  HREF="000157.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.18,1.19 Linker.php,1.3,1.4 OutputPage.php,1.12,1.13 Parser.php,1.4,1.5 Sanitizer.php,1.8,1.9 SkinTemplate.php,1.13,1.14</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20DefaultSettings.php%2C1.18%2C1.19%20Linker.php%2C1.3%2C1.4%20OutputPage.php%2C1.12%2C1.13%20Parser.php%2C1.4%2C1.5%20Sanitizer.php%2C1.8%2C1.9%20SkinTemplate.php%2C1.13%2C1.14&In-Reply-To=%3C200604101230.k3ACU9t27000%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.18,1.19 Linker.php,1.3,1.4 OutputPage.php,1.12,1.13 Parser.php,1.4,1.5 Sanitizer.php,1.8,1.9 SkinTemplate.php,1.13,1.14">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Mon Apr 10 14:30:09 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000184.html">[Blahtex-cvs] blahtex/skins/common/images/icons/.svn/text-base COPYING.svn-base,1.1.1.1,NONE fileicon-c.png.svn-base,1.1.1.1,NONE fileicon-cpp.png.svn-base,1.1.1.1,NONE fileicon-deb.png.svn-base,1.1.1.1,NONE fileicon-dvi.png.svn-base,1.1.1.1,NONE fileicon-exe.png.svn-base,1.1.1.1,NONE fileicon-h.png.svn-base,1.1.1.1,NONE fileicon-html.png.svn-base,1.1.1.1,NONE fileicon-iso.png.svn-base,1.1.1.1,NONE fileicon-java.png.svn-base,1.1.1.1,NONE fileicon-mid.png.svn-base,1.1.1.1,NONE fileicon-mov.png.svn-base,1.1.1.1,NONE fileicon-o.png.svn-base,1.1.1.1,NONE fileicon-ogg.png.svn-base,1.1.1.1,NONE fileicon-ogg.xcf.svn-base,1.1.1.1,NONE fileicon-pdf.png.svn-base,1.1.1.1,NONE fileicon-ps.png.svn-base,1.1.1.1,NONE fileicon-rm.png.svn-base,1.1.1.1,NONE fileicon-rpm.png.svn-base,1.1.1.1,NONE fileicon-svg.png.svn-base,1.1.1.1,NONE fileicon-tar.png.svn-base,1.1.1.1,NONE fileicon-tex.png.svn-base,1.1.1.1,NONE fileicon-ttf.png.svn-base,1.1.1.1,NONE fileicon-txt.png.svn-base,1.1.1.1,NONE fileicon.png.svn-base,1.1.1.1,NONE
+</A></li>
+        <LI>Next message: <A HREF="000157.html">[Blahtex-cvs] blahtex/maintenance/mysql5 tables.sql,1.2,1.3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/includes
+In directory sheep:/tmp/cvs-serv19821/includes
+
+Modified Files:
+	DefaultSettings.php Linker.php OutputPage.php Parser.php 
+	Sanitizer.php SkinTemplate.php 
+Log Message:
+* Merge in changes from MediaWiki upgrade
+* Remove accidentally imported subversion files
+
+
+Index: DefaultSettings.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/DefaultSettings.php,v
+retrieving revision 1.18
+retrieving revision 1.19
+diff -C2 -d -r1.18 -r1.19
+*** DefaultSettings.php	3 Apr 2006 09:03:16 -0000	1.18
+--- DefaultSettings.php	10 Apr 2006 12:27:32 -0000	1.19
+***************
+*** 33,37 ****
+  
+  /** MediaWiki version number */
+! $wgVersion			= '1.6alpha + blahtex 0.4.4';
+  
+  /** Name of the site. It must be changed in LocalSettings.php */
+--- 33,37 ----
+  
+  /** MediaWiki version number */
+! $wgVersion			= '1.7alpha';
+  
+  /** Name of the site. It must be changed in LocalSettings.php */
+***************
+*** 729,732 ****
+--- 729,739 ----
+  
+  /**
++  * If true, some error messages will be colorized when running scripts on the
++  * command line; this can aid picking important things out when debugging.
++  * Ignored when running on Windows or when output is redirected to a file.
++  */
++ $wgColorErrors          = true;
++ 
++ /**
+   * disable experimental dmoz-like category browsing. Output things like:
+   * Encyclopedia &gt; Music &gt; Style of Music &gt; Jazz
+***************
+*** 1395,1398 ****
+--- 1402,1406 ----
+   */
+  $wgExportAllowHistory = true;
++ $wgExportAllowListContributors = false ;
+  
+  
+***************
+*** 1452,1456 ****
+   */
+  $wgDefaultUserOptions = array();
+- $wgDefaultUserOptions['watchcreations'] = 1;
+  
+  /** Whether or not to allow and use real name fields. Defaults to true. */
+--- 1460,1463 ----
+***************
+*** 1826,1829 ****
+--- 1833,1842 ----
+   * The place to put new revisions, false to put them in the local text table.
+   * Part of a URL, e.g. <A HREF="DB://cluster1">DB://cluster1</A>
++  *
++  * Can be an array instead of a single string, to enable data distribution. Keys 
++  * must be consecutive integers, starting at zero. Example:
++  *
++  * $wgDefaultExternalStore = array( '<A HREF="DB://cluster1">DB://cluster1</A>', '<A HREF="DB://cluster2">DB://cluster2</A>' );
++  *
+   */
+  $wgDefaultExternalStore = false;
+***************
+*** 1901,1904 ****
+--- 1914,1927 ----
+   */
+  $wgJobLogFile = false;
++ 
++ /**
++  * Enable use of AJAX features, currently auto suggestion for the search bar
++  */
++ $wgUseAjax = false;
++ 
++ /**
++  * List of Ajax-callable functions
++  */
++ $wgAjaxExportList = array( 'wfSajaxSearch' );
+  
+  
+
+Index: Linker.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/Linker.php,v
+retrieving revision 1.3
+retrieving revision 1.4
+diff -C2 -d -r1.3 -r1.4
+*** Linker.php	23 Mar 2006 10:40:58 -0000	1.3
+--- Linker.php	10 Apr 2006 12:27:32 -0000	1.4
+***************
+*** 573,580 ****
+  		}
+  		if ( 0 == $width || 0 == $height ) {
+! 			$width = $height = 200;
+  		}
+  		if ( $boxwidth == 0 ) {
+! 			$boxwidth = 200;
+  		}
+  		if ( $framed ) {
+--- 573,580 ----
+  		}
+  		if ( 0 == $width || 0 == $height ) {
+! 			$width = $height = 180;
+  		}
+  		if ( $boxwidth == 0 ) {
+! 			$boxwidth = 180;
+  		}
+  		if ( $framed ) {
+***************
+*** 1014,1018 ****
+  		 . '&lt;div id=&quot;toctitle&quot;&gt;&lt;h2&gt;' . $title . &quot;&lt;/h2&gt;&lt;/div&gt;\n&quot;
+  		 . $toc
+! 		 . &quot;&lt;/ul&gt;\n&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&quot;
+  		 . '&lt;script type=&quot;' . $wgJsMimeType . '&quot;&gt;'
+  		 . ' if (window.showTocToggle) {'
+--- 1014,1020 ----
+  		 . '&lt;div id=&quot;toctitle&quot;&gt;&lt;h2&gt;' . $title . &quot;&lt;/h2&gt;&lt;/div&gt;\n&quot;
+  		 . $toc
+! 		 # no trailing newline, script should not be wrapped in a
+! 		 # paragraph
+! 		 . &quot;&lt;/ul&gt;\n&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&quot;
+  		 . '&lt;script type=&quot;' . $wgJsMimeType . '&quot;&gt;'
+  		 . ' if (window.showTocToggle) {'
+
+Index: OutputPage.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/OutputPage.php,v
+retrieving revision 1.12
+retrieving revision 1.13
+diff -C2 -d -r1.12 -r1.13
+*** OutputPage.php	3 Apr 2006 09:13:31 -0000	1.12
+--- OutputPage.php	10 Apr 2006 12:27:32 -0000	1.13
+***************
+*** 218,221 ****
+--- 218,224 ----
+  		global $wgUser, $wgContLang;
+  
++ 		if ( !is_array( $categories ) ) {
++ 			return;
++ 		}
+  		# Add the links to the link cache in a batch
+  		$arr = array( NS_CATEGORY =&gt; $categories );
+***************
+*** 460,464 ****
+  	function output() {
+  		global $wgUser, $wgOutputEncoding;
+! 		global $wgContLanguageCode, $wgDebugRedirects, $wgMimeType, $wgProfiler;
+  
+  		if( $this-&gt;mDoNothing ){
+--- 463,468 ----
+  	function output() {
+  		global $wgUser, $wgOutputEncoding;
+! 		global $wgContLanguageCode, $wgDebugRedirects, $wgMimeType;
+! 		global $wgJsMimeType, $wgStylePath, $wgUseAjax, $wgScriptPath, $wgServer;
+  
+  		if( $this-&gt;mDoNothing ){
+***************
+*** 469,472 ****
+--- 473,484 ----
+  		$sk = $wgUser-&gt;getSkin();
+  
++ 		if ( $wgUseAjax ) {
++ 			$this-&gt;addScript( &quot;&lt;script type=\&quot;{$wgJsMimeType}\&quot;&gt;
++ 				var wgScriptPath=\&quot;{$wgScriptPath}\&quot;;
++ 				var wgServer=\&quot;{$wgServer}\&quot;;
++ 			&lt;/script&gt;&quot; );
++ 			$this-&gt;addScript( &quot;&lt;script type=\&quot;{$wgJsMimeType}\&quot; src=\&quot;{$wgStylePath}/common/ajax.js\&quot;&gt;&lt;/script&gt;\n&quot; );
++ 		}
++ 
+  		if ( '' != $this-&gt;mRedirect ) {
+  			if( substr( $this-&gt;mRedirect, 0, 4 ) != 'http' ) {
+***************
+*** 492,496 ****
+  				header( 'Location: '.$this-&gt;mRedirect );
+  			}
+- 			if ( isset( $wgProfiler ) ) { wfDebug( $wgProfiler-&gt;getOutput() ); }
+  			wfProfileOut( $fname );
+  			return;
+--- 504,507 ----
+***************
+*** 801,805 ****
+  
+  	function readOnlyPage( $source = null, $protected = false ) {
+! 		global $wgUser, $wgReadOnlyFile, $wgReadOnly;
+  
+  		$this-&gt;setRobotpolicy( 'noindex,nofollow' );
+--- 812,816 ----
+  
+  	function readOnlyPage( $source = null, $protected = false ) {
+! 		global $wgUser, $wgReadOnlyFile, $wgReadOnly, $wgTitle;
+  
+  		$this-&gt;setRobotpolicy( 'noindex,nofollow' );
+***************
+*** 807,811 ****
+--- 818,824 ----
+  
+  		if( $protected ) {
++ 			$skin = $wgUser-&gt;getSkin();
+  			$this-&gt;setPageTitle( wfMsg( 'viewsource' ) );
++ 			$this-&gt;setSubtitle( wfMsg( 'viewsourcefor', $skin-&gt;makeKnownLinkObj( $wgTitle ) ) );
+  			$this-&gt;addWikiText( wfMsg( 'protectedtext' ) );
+  		} else {
+***************
+*** 906,909 ****
+--- 919,925 ----
+  		$count = 1;
+  		$links2d =&amp; $parserOutput-&gt;getLinks();
++ 		if ( !is_array( $links2d ) ) {
++ 			return;
++ 		}
+  		foreach ( $links2d as $ns =&gt; $dbkeys ) {
+  			foreach( $dbkeys as $dbkey =&gt; $id ) {
+
+Index: Parser.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/Parser.php,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** Parser.php	24 Mar 2006 15:05:35 -0000	1.4
+--- Parser.php	10 Apr 2006 12:27:32 -0000	1.5
+***************
+*** 94,98 ****
+  	 */
+  	# Persistent:
+! 	var $mTagHooks;
+  
+  	# Cleared with clearState():
+--- 94,98 ----
+  	 */
+  	# Persistent:
+! 	var $mTagHooks, $mFunctionHooks;
+  
+  	# Cleared with clearState():
+***************
+*** 121,124 ****
+--- 121,125 ----
+  	function Parser() {
+  		$this-&gt;mTagHooks = array();
++ 		$this-&gt;mFunctionHooks = array();
+  		$this-&gt;clearState();
+  	}
+***************
+*** 201,206 ****
+  		$this-&gt;mOutputType = OT_HTML;
+  
+- 		$this-&gt;mStripState = NULL;
+- 
+  		//$text = $this-&gt;strip( $text, $this-&gt;mStripState );
+  		// VOODOO MAGIC FIX! Sometimes the above segfaults in PHP5.
+--- 202,205 ----
+***************
+*** 251,254 ****
+--- 250,279 ----
+  		if (($wgUseTidy and $this-&gt;mOptions-&gt;mTidy) or $wgAlwaysUseTidy) {
+  			$text = Parser::tidy($text);
++ 		} else {
++ 			# attempt to sanitize at least some nesting problems
++ 			# (bug #2702 and quite a few others)
++ 			$tidyregs = array(	
++ 				# ''Something [<A HREF="http://www.cool.com">http://www.cool.com</A> cool''] --&gt; 
++ 				# &lt;i&gt;Something&lt;/i&gt;&lt;a href=&quot;<A HREF="http://www.cool.com">http://www.cool.com</A>&quot;..&gt;&lt;i&gt;cool&gt;&lt;/i&gt;&lt;/a&gt;
++ 				'/(&lt;([bi])&gt;)(&lt;([bi])&gt;)?([^&lt;]*)(&lt;\/?a[^&lt;]*&gt;)([^&lt;]*)(&lt;\/\\4&gt;)?(&lt;\/\\2&gt;)/' =&gt;
++ 				'\\1\\3\\5\\8\\9\\6\\1\\3\\7\\8\\9',
++ 				# fix up an anchor inside another anchor, only
++ 				# at least for a single single nested link (bug 3695)
++ 				'/(&lt;a[^&gt;]+&gt;)([^&lt;]*)(&lt;a[^&gt;]+&gt;[^&lt;]*)&lt;\/a&gt;(.*)&lt;\/a&gt;/' =&gt;
++ 				'\\1\\2&lt;/a&gt;\\3&lt;/a&gt;\\1\\4&lt;/a&gt;',
++ 				# fix div inside inline elements- doBlockLevels won't wrap a line which
++ 				# contains a div, so fix it up here; replace
++ 				# div with escaped text
++ 				'/(&lt;([aib]) [^&gt;]+&gt;)([^&lt;]*)(&lt;div([^&gt;]*)&gt;)(.*)(&lt;\/div&gt;)([^&lt;]*)(&lt;\/\\2&gt;)/' =&gt;
++ 				'\\1\\3&lt;div\\5&gt;\\6&lt;/div&gt;\\8\\9',
++ 				# remove empty italic or bold tag pairs, some
++ 				# introduced by rules above
++ 				'/&lt;([bi])&gt;&lt;\/\\1&gt;/' =&gt; '' 
++ 			);
++ 
++ 			$text = preg_replace( 
++ 				array_keys( $tidyregs ),
++ 				array_values( $tidyregs ),
++ 				$text );
+  		}
+  
+***************
+*** 321,329 ****
+  
+  			// If $attributes ends with '/', we have an empty element tag, &lt;tag /&gt;
+! 			if ( $tag != STRIP_COMMENTS &amp;&amp; substr( $attributes, -1 ) == '/' ) {
+  				$attributes = substr( $attributes, 0, -1);
+  				$empty = '/';
+! 			}
+! 			else {
+  				$empty = '';
+  			}
+--- 346,353 ----
+  
+  			// If $attributes ends with '/', we have an empty element tag, &lt;tag /&gt;
+! 			if( $tag != STRIP_COMMENTS &amp;&amp; substr( $attributes, -1 ) == '/' ) {
+  				$attributes = substr( $attributes, 0, -1);
+  				$empty = '/';
+! 			} else {
+  				$empty = '';
+  			}
+***************
+*** 455,463 ****
+  
+  		# Comments
+! 		if($stripcomments) {
+! 			$text = Parser::extractTags(STRIP_COMMENTS, $text, $comment_content, $uniq_prefix);
+! 			foreach( $comment_content as $marker =&gt; $content ){
+! 				$comment_content[$marker] = '&lt;!--'.$content.'--&gt;';
+! 			}
+  		}
+  
+--- 479,485 ----
+  
+  		# Comments
+! 		$text = Parser::extractTags(STRIP_COMMENTS, $text, $comment_content, $uniq_prefix);
+! 		foreach( $comment_content as $marker =&gt; $content ){
+! 			$comment_content[$marker] = '&lt;!--'.$content.'--&gt;';
+  		}
+  
+***************
+*** 483,486 ****
+--- 505,518 ----
+  		}
+  
++ 		# Unstrip comments unless explicitly told otherwise.
++ 		# (The comments are always stripped prior to this point, so as to
++ 		# not invoke any extension tags / parser hooks contained within
++ 		# a comment.)
++ 		if ( !$stripcomments ) {
++ 			$tempstate = array( 'comment' =&gt; $comment_content );
++ 			$text = $this-&gt;unstrip( $text, $tempstate );
++ 			$comment_content = array();
++ 		}
++ 
+  		# Merge state with the pre-existing state, if there is one
+  		if ( $state ) {
+***************
+*** 768,772 ****
+  				$after = substr ( $x , 1 ) ;
+  				if ( $fc == '!' ) $after = str_replace ( '!!' , '||' , $after ) ;
+! 				$after = explode ( '||' , $after ) ;
+  				$t[$k] = '' ;
+  
+--- 800,810 ----
+  				$after = substr ( $x , 1 ) ;
+  				if ( $fc == '!' ) $after = str_replace ( '!!' , '||' , $after ) ;
+! 				
+! 				// Split up multiple cells on the same line.
+! 				// FIXME: This can result in improper nesting of tags processed
+! 				// by earlier parser steps, but should avoid splitting up eg
+! 				// attribute values containing literal &quot;||&quot;.
+! 				$after = wfExplodeMarkup( '||', $after );
+! 				
+  				$t[$k] = '' ;
+  
+***************
+*** 823,826 ****
+--- 861,867 ----
+  
+  		$t = implode ( &quot;\n&quot; , $t ) ;
++ 		# special case: don't return empty table
++ 		if($t == &quot;&lt;table&gt;\n&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;&quot;)
++ 			$t = '';
+  		wfProfileOut( $fname );
+  		return $t ;
+***************
+*** 1197,1200 ****
+--- 1238,1254 ----
+  				$trail = $m[2];
+  
++ 				# special case: handle urls as url args:
++ 				# <A HREF="http://www.example.com/foo?=http://www.example.com/bar">http://www.example.com/foo?=http://www.example.com/bar</A>
++ 				if(strlen($trail) == 0 &amp;&amp; 
++ 					isset($bits[$i]) &amp;&amp;
++ 					preg_match('/^'. wfUrlProtocols() . '$/S', $bits[$i]) &amp;&amp;
++ 					preg_match( '/^('.EXT_LINK_URL_CLASS.'+)(.*)$/s', $bits[$i + 1], $m )) 
++ 				{
++ 					# add protocol, arg
++ 					$url .= $bits[$i] . $bits[$i + 1]; # protocol, url as arg to previous link
++ 					$i += 2;
++ 					$trail = $m[2];
++ 				}
++ 
+  				# The characters '&lt;' and '&gt;' (which were escaped by
+  				# removeHTMLtags()) should not be included in
+***************
+*** 1384,1393 ****
+  				# and no image is in sight. See bug 2095.
+  				#
+! 				if( $text !== '' &amp;&amp; preg_match( &quot;/^\](.*)/s&quot;, $m[3], $n ) ) {
+  					$text .= ']'; # so that replaceExternalLinks($text) works later
+  					$m[3] = $n[1];
+  				}
+  				# fix up urlencoded title texts
+! 				if(preg_match('/%/', $m[1] )) $m[1] = urldecode($m[1]);
+  				$trail = $m[3];
+  			} elseif( preg_match($e1_img, $line, $m) ) { # Invalid, but might be an image with a link in its caption
+--- 1438,1453 ----
+  				# and no image is in sight. See bug 2095.
+  				#
+! 				if( $text !== '' &amp;&amp; 
+! 					preg_match( &quot;/^\](.*)/s&quot;, $m[3], $n ) &amp;&amp; 
+! 					strpos($text, '[') !== false 
+! 				) 
+! 				{
+  					$text .= ']'; # so that replaceExternalLinks($text) works later
+  					$m[3] = $n[1];
+  				}
+  				# fix up urlencoded title texts
+! 				if(preg_match('/%/', $m[1] )) 
+! 					# Should anchors '#' also be rejected?
+! 					$m[1] = str_replace( array('&lt;', '&gt;'), array('&lt;', '&gt;'), urldecode($m[1]) );
+  				$trail = $m[3];
+  			} elseif( preg_match($e1_img, $line, $m) ) { # Invalid, but might be an image with a link in its caption
+***************
+*** 2046,2049 ****
+--- 2106,2111 ----
+  			case MAG_SUBPAGENAME:
+  				return $this-&gt;mTitle-&gt;getSubpageText();
++ 			case MAG_SUBPAGENAMEE:
++ 				return $this-&gt;mTitle-&gt;getSubpageUrlForm();
+  			case MAG_REVISIONID:
+  				return $this-&gt;mRevisionId;
+***************
+*** 2561,2564 ****
+--- 2623,2649 ----
+  		}
+  
++ 		# Extensions
++ 		if ( !$found ) {
++ 			$colonPos = strpos( $part1, ':' );
++ 			if ( $colonPos !== false ) {
++ 				$function = strtolower( substr( $part1, 0, $colonPos ) );
++ 				if ( isset( $this-&gt;mFunctionHooks[$function] ) ) {
++ 					$funcArgs = array_merge( array( &amp;$this, substr( $part1, $colonPos + 1 ) ), $args );
++ 					$result = call_user_func_array( $this-&gt;mFunctionHooks[$function], $funcArgs );
++ 					$found = true;
++ 					if ( is_array( $result ) ) {
++ 						$text = $linestart . $result[0];
++ 						unset( $result[0] );
++ 
++ 						// Extract flags into the local scope
++ 						// This allows callers to set flags such as nowiki, noparse, found, etc.
++ 						extract( $result );
++ 					} else {
++ 						$text = $linestart . $result;
++ 					}
++ 				}
++ 			}
++ 		}
++ 
+  		# Template table test
+  
+***************
+*** 2587,2591 ****
+  		if ( !$found ) {
+  			$ns = NS_TEMPLATE;
+! 			$part1 = $this-&gt;maybeDoSubpageLink( $part1, $subpage='' );
+  			if ($subpage !== '') {
+  				$ns = $this-&gt;mTitle-&gt;getNamespace();
+--- 2672,2680 ----
+  		if ( !$found ) {
+  			$ns = NS_TEMPLATE;
+! 			# declaring $subpage directly in the function call
+! 			# does not work correctly with references and breaks
+! 			# {{/subpage}}-style inclusions
+! 			$subpage = '';
+! 			$part1 = $this-&gt;maybeDoSubpageLink( $part1, $subpage );
+  			if ($subpage !== '') {
+  				$ns = $this-&gt;mTitle-&gt;getNamespace();
+***************
+*** 3140,3143 ****
+--- 3229,3239 ----
+  
+  		foreach ( $a as $x ) {
++ 			# hack: don't replace inside thumbnail title/alt
++ 			# attributes
++ 			if(preg_match('/&lt;[^&gt;]+(alt|title)=&quot;[^&quot;&gt;]*$/', $text)) {
++ 				$text .= &quot;ISBN $x&quot;;
++ 				continue;
++ 			}
++ 
+  			$isbn = $blank = '' ;
+  			while ( ' ' == $x{0} ) {
+***************
+*** 3162,3166 ****
+  				$titleObj = Title::makeTitle( NS_SPECIAL, 'Booksources' );
+  				$text .= '&lt;a href=&quot;' .
+! 				$titleObj-&gt;escapeLocalUrl( 'isbn='.$num ) .
+  					&quot;\&quot; class=\&quot;internal\&quot;&gt;ISBN $isbn&lt;/a&gt;&quot;;
+  				$text .= $x;
+--- 3258,3262 ----
+  				$titleObj = Title::makeTitle( NS_SPECIAL, 'Booksources' );
+  				$text .= '&lt;a href=&quot;' .
+! 					$titleObj-&gt;escapeLocalUrl( 'isbn='.$num ) .
+  					&quot;\&quot; class=\&quot;internal\&quot;&gt;ISBN $isbn&lt;/a&gt;&quot;;
+  				$text .= $x;
+***************
+*** 3206,3209 ****
+--- 3302,3312 ----
+  				}
+  
++ 			# hack: don't replace inside thumbnail title/alt
++ 			# attributes
++ 			if(preg_match('/&lt;[^&gt;]+(alt|title)=&quot;[^&quot;&gt;]*$/', $text)) {
++ 				$text .= $keyword . $x;
++ 				continue;
++ 			}
++ 			
+  			$id = $blank = '' ;
+  
+***************
+*** 3476,3479 ****
+--- 3579,3611 ----
+  
+  	/**
++ 	 * Create a function, e.g. {{sum:1|2|3}}
++ 	 * The callback function should have the form:
++ 	 *    function myParserFunction( &amp;$parser, $arg1, $arg2, $arg3 ) { ... }
++ 	 *
++ 	 * The callback may either return the text result of the function, or an array with the text 
++ 	 * in element 0, and a number of flags in the other elements. The names of the flags are 
++ 	 * specified in the keys. Valid flags are:
++ 	 *   found                     The text returned is valid, stop processing the template. This 
++ 	 *                             is on by default.
++ 	 *   nowiki                    Wiki markup in the return value should be escaped
++ 	 *   noparse                   Unsafe HTML tags should not be stripped, etc.
++ 	 *   noargs                    Don't replace triple-brace arguments in the return value
++ 	 *   isHTML                    The returned text is HTML, armour it against wikitext transformation
++ 	 *
++ 	 * @access public
++ 	 *
++ 	 * @param string $name The function name. Function names are case-insensitive.
++ 	 * @param mixed $callback The callback function (and object) to use
++ 	 *
++ 	 * @return The old callback function for this name, if any
++ 	 */
++ 	function setFunctionHook( $name, $callback ) {
++ 		$name = strtolower( $name );
++ 		$oldVal = @$this-&gt;mFunctionHooks[$name];
++ 		$this-&gt;mFunctionHooks[$name] = $callback;
++ 		return $oldVal;
++ 	}
++ 
++ 	/**
+  	 * Replace &lt;!--LINK--&gt; link placeholders with actual links, in the buffer
+  	 * Placeholders created in Skin::makeLinkObj()
+***************
+*** 3791,3794 ****
+--- 3923,3931 ----
+  		# Strip bad stuff out of the alt text
+  		$alt = $this-&gt;replaceLinkHoldersText( $caption );
++ 
++ 		# make sure there are no placeholders in thumbnail attributes
++ 		# that are later expanded to html- so expand them now and
++ 		# remove the tags
++ 		$alt = $this-&gt;unstrip($alt, $this-&gt;mStripState); 
+  		$alt = Sanitizer::stripAllTags( $alt );
+  
+***************
+*** 4059,4070 ****
+   */
+  function wfNumberOfFiles() {
+! 	$fname = 'Parser::wfNumberOfFiles';
+  
+  	wfProfileIn( $fname );
+  	$dbr =&amp; wfGetDB( DB_SLAVE );
+! 	$res = $dbr-&gt;selectField('image', 'COUNT(*)', array(), $fname );
+  	wfProfileOut( $fname );
+  
+! 	return $res;
+  }
+  
+--- 4196,4207 ----
+   */
+  function wfNumberOfFiles() {
+! 	$fname = 'wfNumberOfFiles';
+  
+  	wfProfileIn( $fname );
+  	$dbr =&amp; wfGetDB( DB_SLAVE );
+! 	$numImages = $dbr-&gt;selectField('site_stats', 'ss_images', array(), $fname );
+  	wfProfileOut( $fname );
+  
+! 	return $numImages;
+  }
+  
+
+Index: Sanitizer.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/Sanitizer.php,v
+retrieving revision 1.8
+retrieving revision 1.9
+diff -C2 -d -r1.8 -r1.9
+*** Sanitizer.php	3 Apr 2006 09:14:44 -0000	1.8
+--- Sanitizer.php	10 Apr 2006 12:27:32 -0000	1.9
+***************
+*** 18,22 ****
+   * You should have received a copy of the GNU General Public License along
+   * with this program; if not, write to the Free Software Foundation, Inc.,
+!  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+   * <A HREF="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</A>
+   *
+--- 18,22 ----
+   * You should have received a copy of the GNU General Public License along
+   * with this program; if not, write to the Free Software Foundation, Inc.,
+!  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+   * <A HREF="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</A>
+   *
+***************
+*** 664,667 ****
+--- 664,670 ----
+  			# creating invalid or dangerous output. Suppress this.
+  			$value = strtr( $value, array(
++ 				'&lt;'    =&gt; '&lt;',   // This should never happen,
++ 				'&gt;'    =&gt; '&gt;',   // we've received invalid input
++ 				'&quot;'    =&gt; '&quot;', // which should have been escaped.
+  				'{'    =&gt; '&#123;',
+  				'['    =&gt; '&#91;',
+
+Index: SkinTemplate.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/SkinTemplate.php,v
+retrieving revision 1.13
+retrieving revision 1.14
+diff -C2 -d -r1.13 -r1.14
+*** SkinTemplate.php	3 Apr 2006 09:06:19 -0000	1.13
+--- SkinTemplate.php	10 Apr 2006 12:27:32 -0000	1.14
+***************
+*** 15,19 ****
+  # You should have received a copy of the GNU General Public License along
+  # with this program; if not, write to the Free Software Foundation, Inc.,
+! # 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  # <A HREF="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</A>
+  
+--- 15,19 ----
+  # You should have received a copy of the GNU General Public License along
+  # with this program; if not, write to the Free Software Foundation, Inc.,
+! # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+  # <A HREF="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</A>
+  
+***************
+*** 561,565 ****
+  		$text = wfMsg( $message );
+  		if ( $text == &quot;&lt;$message&gt;&quot; ) {
+! 			$text = html_entity_decode($text);
+  		}
+  
+--- 561,566 ----
+  		$text = wfMsg( $message );
+  		if ( $text == &quot;&lt;$message&gt;&quot; ) {
+! 			global $wgContLang;
+! 			$text = $wgContLang-&gt;getNsText( Namespace::getSubject( $title-&gt;getNamespace() ) );
+  		}
+  
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000184.html">[Blahtex-cvs] blahtex/skins/common/images/icons/.svn/text-base COPYING.svn-base,1.1.1.1,NONE fileicon-c.png.svn-base,1.1.1.1,NONE fileicon-cpp.png.svn-base,1.1.1.1,NONE fileicon-deb.png.svn-base,1.1.1.1,NONE fileicon-dvi.png.svn-base,1.1.1.1,NONE fileicon-exe.png.svn-base,1.1.1.1,NONE fileicon-h.png.svn-base,1.1.1.1,NONE fileicon-html.png.svn-base,1.1.1.1,NONE fileicon-iso.png.svn-base,1.1.1.1,NONE fileicon-java.png.svn-base,1.1.1.1,NONE fileicon-mid.png.svn-base,1.1.1.1,NONE fileicon-mov.png.svn-base,1.1.1.1,NONE fileicon-o.png.svn-base,1.1.1.1,NONE fileicon-ogg.png.svn-base,1.1.1.1,NONE fileicon-ogg.xcf.svn-base,1.1.1.1,NONE fileicon-pdf.png.svn-base,1.1.1.1,NONE fileicon-ps.png.svn-base,1.1.1.1,NONE fileicon-rm.png.svn-base,1.1.1.1,NONE fileicon-rpm.png.svn-base,1.1.1.1,NONE fileicon-svg.png.svn-base,1.1.1.1,NONE fileicon-tar.png.svn-base,1.1.1.1,NONE fileicon-tex.png.svn-base,1.1.1.1,NONE fileicon-ttf.png.svn-base,1.1.1.1,NONE fileicon-txt.png.svn-base,1.1.1.1,NONE fileicon.png.svn-base,1.1.1.1,NONE
+</A></li>
+	<LI>Next message: <A HREF="000157.html">[Blahtex-cvs] blahtex/maintenance/mysql5 tables.sql,1.2,1.3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

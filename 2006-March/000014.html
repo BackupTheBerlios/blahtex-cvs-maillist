@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/skins MonoBook.php,1.3,1.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/skins%20MonoBook.php%2C1.3%2C1.4&In-Reply-To=%3C200603231040.k2NAeZt01178%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000013.html">
+   <LINK REL="Next"  HREF="000009.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/skins MonoBook.php,1.3,1.4</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/skins%20MonoBook.php%2C1.3%2C1.4&In-Reply-To=%3C200603231040.k2NAeZt01178%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/skins MonoBook.php,1.3,1.4">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Thu Mar 23 11:40:35 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000013.html">[Blahtex-cvs] blahtex/maintenance/mysql5 tables.sql,1.1.1.1,NONE
+</A></li>
+        <LI>Next message: <A HREF="000009.html">[Blahtex-cvs] blahtex/skins/common/images redirect.png,1.1.1.1,NONE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14">[ date ]</a>
+              <a href="thread.html#14">[ thread ]</a>
+              <a href="subject.html#14">[ subject ]</a>
+              <a href="author.html#14">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/skins
+In directory sheep:/tmp/cvs-serv25749/skins
+
+Modified Files:
+	MonoBook.php 
+Log Message:
+Import of MediaWiki CVS from vendor branch
+
+Index: MonoBook.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/skins/MonoBook.php,v
+retrieving revision 1.3
+retrieving revision 1.4
+diff -C2 -d -r1.3 -r1.4
+*** MonoBook.php	4 Dec 2005 17:16:32 -0000	1.3
+--- MonoBook.php	23 Mar 2006 10:40:59 -0000	1.4
+***************
+*** 12,16 ****
+  
+  if( !defined( 'MEDIAWIKI' ) )
+! 	die();
+  
+  /** */
+--- 12,16 ----
+  
+  if( !defined( 'MEDIAWIKI' ) )
+! 	die( -1 );
+  
+  /** */
+***************
+*** 55,227 ****
+             &quot;&lt;?php $this-&gt;text('dtd'); ?&gt;&quot;&gt;
+  &lt;html xmlns=&quot;<A HREF="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</A>&quot; xml:lang=&quot;&lt;?php $this-&gt;text('lang') ?&gt;&quot; lang=&quot;&lt;?php $this-&gt;text('lang') ?&gt;&quot; dir=&quot;&lt;?php $this-&gt;text('dir') ?&gt;&quot;&gt;
+!   &lt;head&gt;
+!     &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;&lt;?php $this-&gt;text('mimetype') ?&gt;; charset=&lt;?php $this-&gt;text('charset') ?&gt;&quot; /&gt;
+!     &lt;?php $this-&gt;html('headlinks') ?&gt;
+!     &lt;title&gt;&lt;?php $this-&gt;text('pagetitle') ?&gt;&lt;/title&gt;
+!     &lt;style type=&quot;text/css&quot; media=&quot;screen,projection&quot;&gt;/*&lt;![CDATA[*/ @import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/main.css&quot;; /*]]&gt;*/&lt;/style&gt;
+!     &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; &lt;?php if(empty($this-&gt;data['printable']) ) { ?&gt;media=&quot;print&quot;&lt;?php } ?&gt; href=&quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/common/commonPrint.css&quot; /&gt;
+!     &lt;!--[if lt IE 5.5000]&gt;&lt;style type=&quot;text/css&quot;&gt;@import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/IE50Fixes.css&quot;;&lt;/style&gt;&lt;![endif]--&gt;
+!     &lt;!--[if IE 5.5000]&gt;&lt;style type=&quot;text/css&quot;&gt;@import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/IE55Fixes.css&quot;;&lt;/style&gt;&lt;![endif]--&gt;
+!     &lt;!--[if gte IE 6]&gt;&lt;style type=&quot;text/css&quot;&gt;@import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/IE60Fixes.css&quot;;&lt;/style&gt;&lt;![endif]--&gt;
+!     &lt;!--[if IE]&gt;&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/common/IEFixes.js&quot;&gt;&lt;/script&gt;
+!     &lt;meta http-equiv=&quot;imagetoolbar&quot; content=&quot;no&quot; /&gt;&lt;![endif]--&gt;
+!     &lt;?php if($this-&gt;data['jsvarurl'  ]) { ?&gt;&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php $this-&gt;text('jsvarurl'  ) ?&gt;&quot;&gt;&lt;/script&gt;&lt;?php } ?&gt;
+!     &lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php                                   $this-&gt;text('stylepath' ) ?&gt;/common/wikibits.js&quot;&gt;&lt;/script&gt;
+!     &lt;?php if($this-&gt;data['usercss'   ]) { ?&gt;&lt;style type=&quot;text/css&quot;&gt;&lt;?php              $this-&gt;html('usercss'   ) ?&gt;&lt;/style&gt;&lt;?php    } ?&gt;
+!     &lt;?php if($this-&gt;data['userjs'    ]) { ?&gt;&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php $this-&gt;text('userjs'    ) ?&gt;&quot;&gt;&lt;/script&gt;&lt;?php } ?&gt;
+!     &lt;?php if($this-&gt;data['userjsprev']) { ?&gt;&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot;&gt;&lt;?php      $this-&gt;html('userjsprev') ?&gt;&lt;/script&gt;&lt;?php   } ?&gt;
+!     &lt;?php if($this-&gt;data['trackbackhtml']) print $this-&gt;data['trackbackhtml']; ?&gt;
+!   &lt;/head&gt;
+!   &lt;body &lt;?php if($this-&gt;data['body_ondblclick']) { ?&gt;ondblclick=&quot;&lt;?php $this-&gt;text('body_ondblclick') ?&gt;&quot;&lt;?php } ?&gt;
+!         &lt;?php if($this-&gt;data['body_onload'    ]) { ?&gt;onload=&quot;&lt;?php     $this-&gt;text('body_onload')     ?&gt;&quot;&lt;?php } ?&gt;
+!         &lt;?php if($this-&gt;data['nsclass'        ]) { ?&gt;class=&quot;&lt;?php      $this-&gt;text('nsclass')         ?&gt;&quot;&lt;?php } ?&gt;&gt;
+!     &lt;div id=&quot;globalWrapper&quot;&gt;
+!       &lt;div id=&quot;column-content&quot;&gt;
+  	&lt;div id=&quot;content&quot;&gt;
+! 	  &lt;a name=&quot;top&quot; id=&quot;top&quot;&gt;&lt;/a&gt;
+! 	  &lt;?php if($this-&gt;data['sitenotice']) { ?&gt;&lt;div id=&quot;siteNotice&quot;&gt;&lt;?php $this-&gt;html('sitenotice') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 	  &lt;h1 class=&quot;firstHeading&quot;&gt;&lt;?php $this-&gt;text('title') ?&gt;&lt;/h1&gt;
+! 	  &lt;div id=&quot;bodyContent&quot;&gt;
+! 	    &lt;h3 id=&quot;siteSub&quot;&gt;&lt;?php $this-&gt;msg('tagline') ?&gt;&lt;/h3&gt;
+! 	    &lt;div id=&quot;contentSub&quot;&gt;&lt;?php $this-&gt;html('subtitle') ?&gt;&lt;/div&gt;
+! 	    &lt;?php if($this-&gt;data['undelete']) { ?&gt;&lt;div id=&quot;contentSub&quot;&gt;&lt;?php     $this-&gt;html('undelete') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 	    &lt;?php if($this-&gt;data['newtalk'] ) { ?&gt;&lt;div class=&quot;usermessage&quot;&gt;&lt;?php $this-&gt;html('newtalk')  ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 	    &lt;!-- start content --&gt;
+! 	    &lt;?php $this-&gt;html('bodytext') ?&gt;
+! 	    &lt;?php if($this-&gt;data['catlinks']) { ?&gt;&lt;div id=&quot;catlinks&quot;&gt;&lt;?php       $this-&gt;html('catlinks') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 	    &lt;!-- end content --&gt;
+! 	    &lt;div class=&quot;visualClear&quot;&gt;&lt;/div&gt;
+! 	  &lt;/div&gt;
+  	&lt;/div&gt;
+!       &lt;/div&gt;
+!       &lt;div id=&quot;column-one&quot;&gt;
+  	&lt;div id=&quot;p-cactions&quot; class=&quot;portlet&quot;&gt;
+! 	  &lt;h5&gt;&lt;?php $this-&gt;msg('views') ?&gt;&lt;/h5&gt;
+! 	  &lt;ul&gt;
+! 	    &lt;?php foreach($this-&gt;data['content_actions'] as $key =&gt; $action) {
+! 	       ?&gt;&lt;li id=&quot;ca-&lt;?php echo htmlspecialchars($key) ?&gt;&quot;
+! 	       &lt;?php if($action['class']) { ?&gt;class=&quot;&lt;?php echo htmlspecialchars($action['class']) ?&gt;&quot;&lt;?php } ?&gt;
+! 	       &gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($action['href']) ?&gt;&quot;&gt;&lt;?php
+! 	       echo htmlspecialchars($action['text']) ?&gt;&lt;/a&gt;&lt;/li&gt;&lt;?php
+! 	     } ?&gt;
+! 	  &lt;/ul&gt;
+  	&lt;/div&gt;
+  	&lt;div class=&quot;portlet&quot; id=&quot;p-personal&quot;&gt;
+! 	  &lt;h5&gt;&lt;?php $this-&gt;msg('personaltools') ?&gt;&lt;/h5&gt;
+! 	  &lt;div class=&quot;pBody&quot;&gt;
+! 	    &lt;ul&gt;
+! 	    &lt;?php foreach($this-&gt;data['personal_urls'] as $key =&gt; $item) {
+! 	       ?&gt;&lt;li id=&quot;pt-&lt;?php echo htmlspecialchars($key) ?&gt;&quot;&gt;&lt;a href=&quot;&lt;?php
+! 	       echo htmlspecialchars($item['href']) ?&gt;&quot;&lt;?php
+! 	       if(!empty($item['class'])) { ?&gt; class=&quot;&lt;?php
+! 	       echo htmlspecialchars($item['class']) ?&gt;&quot;&lt;?php } ?&gt;&gt;&lt;?php
+! 	       echo htmlspecialchars($item['text']) ?&gt;&lt;/a&gt;&lt;/li&gt;&lt;?php
+! 	    } ?&gt;
+! 	    &lt;/ul&gt;
+! 	  &lt;/div&gt;
+  	&lt;/div&gt;
+  	&lt;div class=&quot;portlet&quot; id=&quot;p-logo&quot;&gt;
+! 	  &lt;a style=&quot;background-image: url(&lt;?php $this-&gt;text('logopath') ?&gt;);&quot;
+! 	    href=&quot;&lt;?php echo htmlspecialchars($this-&gt;data['nav_urls']['mainpage']['href'])?&gt;&quot;
+! 	    title=&quot;&lt;?php $this-&gt;msg('mainpage') ?&gt;&quot;&gt;&lt;/a&gt;
+  	&lt;/div&gt;
+  	&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot;&gt; if (window.isMSIE55) fixalpha(); &lt;/script&gt;
+  	&lt;?php foreach ($this-&gt;data['sidebar'] as $bar =&gt; $cont) { ?&gt;
+  	&lt;div class='portlet' id='p-&lt;?php echo htmlspecialchars($bar) ?&gt;'&gt;
+! 	  &lt;h5&gt;&lt;?php $out = wfMsg( $bar ); if (wfNoMsg($bar, $out)) echo $bar; else echo $out; ?&gt;&lt;/h5&gt;
+! 	  &lt;div class='pBody'&gt;
+! 	    &lt;ul&gt;
+! 	    &lt;?php foreach($cont as $key =&gt; $val) { ?&gt;
+! 	      &lt;li id=&quot;&lt;?php echo htmlspecialchars($val['id']) ?&gt;&quot;&gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($val['href']) ?&gt;&quot;&gt;&lt;?php echo htmlspecialchars($val['text'])?&gt;&lt;/a&gt;&lt;/li&gt;
+! 	     &lt;?php } ?&gt;
+! 	    &lt;/ul&gt;
+! 	  &lt;/div&gt;
+  	&lt;/div&gt;
+  	&lt;?php } ?&gt;
+  	&lt;div id=&quot;p-search&quot; class=&quot;portlet&quot;&gt;
+! 	  &lt;h5&gt;&lt;label for=&quot;searchInput&quot;&gt;&lt;?php $this-&gt;msg('search') ?&gt;&lt;/label&gt;&lt;/h5&gt;
+! 	  &lt;div class=&quot;pBody&quot;&gt;
+! 	    &lt;form name=&quot;searchform&quot; action=&quot;&lt;?php $this-&gt;text('searchaction') ?&gt;&quot; id=&quot;searchform&quot;&gt;
+! 	      &lt;input id=&quot;searchInput&quot; name=&quot;search&quot; type=&quot;text&quot;
+! 	        &lt;?php if($this-&gt;haveMsg('accesskey-search')) {
+! 	          ?&gt;accesskey=&quot;&lt;?php $this-&gt;msg('accesskey-search') ?&gt;&quot;&lt;?php }
+! 	        if( isset( $this-&gt;data['search'] ) ) {
+! 	          ?&gt; value=&quot;&lt;?php $this-&gt;text('search') ?&gt;&quot;&lt;?php } ?&gt; /&gt;
+! 	      &lt;input type='submit' name=&quot;go&quot; class=&quot;searchButton&quot; id=&quot;searchGoButton&quot;
+! 	        value=&quot;&lt;?php $this-&gt;msg('go') ?&gt;&quot;
+! 	        /&gt;&nbsp;&lt;input type='submit' name=&quot;fulltext&quot;
+! 	        class=&quot;searchButton&quot;
+! 	        value=&quot;&lt;?php $this-&gt;msg('search') ?&gt;&quot; /&gt;
+! 	    &lt;/form&gt;
+! 	  &lt;/div&gt;
+  	&lt;/div&gt;
+  	&lt;div class=&quot;portlet&quot; id=&quot;p-tb&quot;&gt;
+! 	  &lt;h5&gt;&lt;?php $this-&gt;msg('toolbox') ?&gt;&lt;/h5&gt;
+! 	  &lt;div class=&quot;pBody&quot;&gt;
+! 	    &lt;ul&gt;
+! 		  &lt;?php if($this-&gt;data['notspecialpage']) { foreach( array( 'whatlinkshere', 'recentchangeslinked' ) as $special ) { ?&gt;
+! 		  &lt;li id=&quot;t-&lt;?php echo $special?&gt;&quot;&gt;&lt;a href=&quot;&lt;?php
+! 		    echo htmlspecialchars($this-&gt;data['nav_urls'][$special]['href'])
+! 		    ?&gt;&quot;&gt;&lt;?php echo $this-&gt;msg($special) ?&gt;&lt;/a&gt;&lt;/li&gt;
+! 		  &lt;?php } } ?&gt;
+!               &lt;?php if(isset($this-&gt;data['nav_urls']['trackbacklink'])) { ?&gt;
+! 		  &lt;li id=&quot;t-trackbacklink&quot;&gt;&lt;a href=&quot;&lt;?php
+! 		    echo htmlspecialchars($this-&gt;data['nav_urls']['trackbacklink']['href'])
+! 		    ?&gt;&quot;&gt;&lt;?php echo $this-&gt;msg('trackbacklink') ?&gt;&lt;/a&gt;&lt;/li&gt;
+! 	      &lt;?php } ?&gt;
+! 	      &lt;?php if($this-&gt;data['feeds']) { ?&gt;&lt;li id=&quot;feedlinks&quot;&gt;&lt;?php foreach($this-&gt;data['feeds'] as $key =&gt; $feed) {
+! 	        ?&gt;&lt;span id=&quot;feed-&lt;?php echo htmlspecialchars($key) ?&gt;&quot;&gt;&lt;a href=&quot;&lt;?php
+! 	        echo htmlspecialchars($feed['href']) ?&gt;&quot;&gt;&lt;?php echo htmlspecialchars($feed['text'])?&gt;&lt;/a&gt;&nbsp;&lt;/span&gt;
+! 	        &lt;?php } ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	      &lt;?php foreach( array('contributions', 'emailuser', 'upload', 'specialpages') as $special ) { ?&gt;
+! 	      &lt;?php if($this-&gt;data['nav_urls'][$special]) {?&gt;&lt;li id=&quot;t-&lt;?php echo $special ?&gt;&quot;&gt;&lt;a href=&quot;&lt;?php
+! 	        echo htmlspecialchars($this-&gt;data['nav_urls'][$special]['href'])
+! 	        ?&gt;&quot;&gt;&lt;?php $this-&gt;msg($special) ?&gt;&lt;/a&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	      &lt;?php } ?&gt;
+! 	      &lt;?php if(!empty($this-&gt;data['nav_urls']['print']['href'])) { ?&gt;
+! 	      &lt;li id=&quot;t-print&quot;&gt;&lt;a href=&quot;&lt;?php
+! 		    echo htmlspecialchars($this-&gt;data['nav_urls']['print']['href'])
+! 		    ?&gt;&quot;&gt;&lt;?php echo $this-&gt;msg('printableversion') ?&gt;&lt;/a&gt;&lt;/li&gt;
+! 	      &lt;?php } ?&gt;
+! 	    &lt;/ul&gt;
+! 	  &lt;/div&gt;
+  	&lt;/div&gt;
+! 	&lt;?php if( $this-&gt;data['language_urls'] ) { ?&gt;&lt;div id=&quot;p-lang&quot; class=&quot;portlet&quot;&gt;
+! 	  &lt;h5&gt;&lt;?php $this-&gt;msg('otherlanguages') ?&gt;&lt;/h5&gt;
+! 	  &lt;div class=&quot;pBody&quot;&gt;
+! 	    &lt;ul&gt;
+! 	      &lt;?php foreach($this-&gt;data['language_urls'] as $langlink) { ?&gt;
+! 	      &lt;li class=&quot;&lt;?php echo htmlspecialchars($langlink['class'])?&gt;&quot;&gt;
+! 	      &lt;a href=&quot;&lt;?php echo htmlspecialchars($langlink['href'])
+! 	        ?&gt;&quot;&gt;&lt;?php echo $langlink['text'] ?&gt;&lt;/a&gt;
+! 	      &lt;/li&gt;
+! 	      &lt;?php } ?&gt;
+! 	    &lt;/ul&gt;
+! 	  &lt;/div&gt;
+  	&lt;/div&gt;
+! 	&lt;?php } ?&gt;
+!       &lt;/div&gt;&lt;!-- end of the left (by default at least) column --&gt;
+!       &lt;div class=&quot;visualClear&quot;&gt;&lt;/div&gt;
+!       &lt;div id=&quot;footer&quot;&gt;
+!     &lt;?php if($this-&gt;data['poweredbyico']) { ?&gt;&lt;div id=&quot;f-poweredbyico&quot;&gt;&lt;?php $this-&gt;html('poweredbyico') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 	&lt;?php if($this-&gt;data['copyrightico']) { ?&gt;&lt;div id=&quot;f-copyrightico&quot;&gt;&lt;?php $this-&gt;html('copyrightico') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 	&lt;ul id=&quot;f-list&quot;&gt;
+! 	  &lt;?php if($this-&gt;data['lastmod'   ]) { ?&gt;&lt;li id=&quot;f-lastmod&quot;&gt;&lt;?php    $this-&gt;html('lastmod')    ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	  &lt;?php if($this-&gt;data['viewcount' ]) { ?&gt;&lt;li id=&quot;f-viewcount&quot;&gt;&lt;?php  $this-&gt;html('viewcount')  ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	  &lt;?php if($this-&gt;data['numberofwatchingusers' ]) { ?&gt;&lt;li id=&quot;f-numberofwatchingusers&quot;&gt;&lt;?php  $this-&gt;html('numberofwatchingusers') ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	  &lt;?php if($this-&gt;data['credits'   ]) { ?&gt;&lt;li id=&quot;f-credits&quot;&gt;&lt;?php    $this-&gt;html('credits')    ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	  &lt;?php if($this-&gt;data['copyright' ]) { ?&gt;&lt;li id=&quot;f-copyright&quot;&gt;&lt;?php  $this-&gt;html('copyright')  ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	  &lt;?php if($this-&gt;data['about'     ]) { ?&gt;&lt;li id=&quot;f-about&quot;&gt;&lt;?php      $this-&gt;html('about')      ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	  &lt;?php if($this-&gt;data['disclaimer']) { ?&gt;&lt;li id=&quot;f-disclaimer&quot;&gt;&lt;?php $this-&gt;html('disclaimer') ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	  &lt;?php if($this-&gt;data['tagline']) { ?&gt;&lt;li id=&quot;f-tagline&quot;&gt;&lt;?php echo $this-&gt;data['tagline'] ?&gt;&lt;/li&gt;&lt;?php } ?&gt;
+! 	&lt;/ul&gt;
+!       &lt;/div&gt;
+!     &lt;/div&gt;
+!     &lt;?php $this-&gt;html('reporttime') ?&gt;
+!   &lt;/body&gt;
+! &lt;/html&gt;
+  &lt;?php
+  	wfRestoreWarnings();
+! 	}
+! }
+  ?&gt;
+--- 55,275 ----
+             &quot;&lt;?php $this-&gt;text('dtd'); ?&gt;&quot;&gt;
+  &lt;html xmlns=&quot;<A HREF="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</A>&quot; xml:lang=&quot;&lt;?php $this-&gt;text('lang') ?&gt;&quot; lang=&quot;&lt;?php $this-&gt;text('lang') ?&gt;&quot; dir=&quot;&lt;?php $this-&gt;text('dir') ?&gt;&quot;&gt;
+! 	&lt;head&gt;
+! 		&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;&lt;?php $this-&gt;text('mimetype') ?&gt;; charset=&lt;?php $this-&gt;text('charset') ?&gt;&quot; /&gt;
+! 		&lt;?php $this-&gt;html('headlinks') ?&gt;
+! 		&lt;?php $this-&gt;html('headscripts') ?&gt;
+! 		&lt;title&gt;&lt;?php $this-&gt;text('pagetitle') ?&gt;&lt;/title&gt;
+! 		&lt;style type=&quot;text/css&quot; media=&quot;screen,projection&quot;&gt;/*&lt;![CDATA[*/ @import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/main.css?5&quot;; /*]]&gt;*/&lt;/style&gt;
+! 		&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; &lt;?php if(empty($this-&gt;data['printable']) ) { ?&gt;media=&quot;print&quot;&lt;?php } ?&gt; href=&quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/common/commonPrint.css&quot; /&gt;
+! 		&lt;!--[if lt IE 5.5000]&gt;&lt;style type=&quot;text/css&quot;&gt;@import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/IE50Fixes.css&quot;;&lt;/style&gt;&lt;![endif]--&gt;
+! 		&lt;!--[if IE 5.5000]&gt;&lt;style type=&quot;text/css&quot;&gt;@import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/IE55Fixes.css&quot;;&lt;/style&gt;&lt;![endif]--&gt;
+! 		&lt;!--[if IE 6]&gt;&lt;style type=&quot;text/css&quot;&gt;@import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/IE60Fixes.css&quot;;&lt;/style&gt;&lt;![endif]--&gt;
+! 		&lt;!--[if IE 7]&gt;&lt;style type=&quot;text/css&quot;&gt;@import &quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/&lt;?php $this-&gt;text('stylename') ?&gt;/IE70Fixes.css?1&quot;;&lt;/style&gt;&lt;![endif]--&gt;
+! 		&lt;!--[if lt IE 7]&gt;&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php $this-&gt;text('stylepath') ?&gt;/common/IEFixes.js&quot;&gt;&lt;/script&gt;
+! 		&lt;meta http-equiv=&quot;imagetoolbar&quot; content=&quot;no&quot; /&gt;&lt;![endif]--&gt;
+! 		&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php $this-&gt;text('stylepath' ) ?&gt;/common/wikibits.js&quot;&gt;&lt;!-- wikibits js --&gt;&lt;/script&gt;
+! &lt;?php	if($this-&gt;data['jsvarurl'  ]) { ?&gt;
+! 		&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php $this-&gt;text('jsvarurl'  ) ?&gt;&quot;&gt;&lt;!-- site js --&gt;&lt;/script&gt;
+! &lt;?php	} ?&gt;
+! &lt;?php	if($this-&gt;data['pagecss'   ]) { ?&gt;
+! 		&lt;style type=&quot;text/css&quot;&gt;&lt;?php $this-&gt;html('pagecss'   ) ?&gt;&lt;/style&gt;
+! &lt;?php	}
+! 		if($this-&gt;data['usercss'   ]) { ?&gt;
+! 		&lt;style type=&quot;text/css&quot;&gt;&lt;?php $this-&gt;html('usercss'   ) ?&gt;&lt;/style&gt;
+! &lt;?php	}
+! 		if($this-&gt;data['userjs'    ]) { ?&gt;
+! 		&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot; src=&quot;&lt;?php $this-&gt;text('userjs' ) ?&gt;&quot;&gt;&lt;/script&gt;
+! &lt;?php	}
+! 		if($this-&gt;data['userjsprev']) { ?&gt;
+! 		&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot;&gt;&lt;?php $this-&gt;html('userjsprev') ?&gt;&lt;/script&gt;
+! &lt;?php	}
+! 		if($this-&gt;data['trackbackhtml']) print $this-&gt;data['trackbackhtml']; ?&gt;
+! 	&lt;/head&gt;
+! &lt;body &lt;?php if($this-&gt;data['body_ondblclick']) { ?&gt;ondblclick=&quot;&lt;?php $this-&gt;text('body_ondblclick') ?&gt;&quot;&lt;?php } ?&gt;
+! &lt;?php if($this-&gt;data['body_onload'    ]) { ?&gt;onload=&quot;&lt;?php     $this-&gt;text('body_onload')     ?&gt;&quot;&lt;?php } ?&gt;
+!  class=&quot;&lt;?php $this-&gt;text('nsclass') ?&gt; &lt;?php $this-&gt;text('dir') ?&gt;&quot;&gt;
+! 	&lt;div id=&quot;globalWrapper&quot;&gt;
+! 		&lt;div id=&quot;column-content&quot;&gt;
+  	&lt;div id=&quot;content&quot;&gt;
+! 		&lt;a name=&quot;top&quot; id=&quot;top&quot;&gt;&lt;/a&gt;
+! 		&lt;?php if($this-&gt;data['sitenotice']) { ?&gt;&lt;div id=&quot;siteNotice&quot;&gt;&lt;?php $this-&gt;html('sitenotice') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 		&lt;h1 class=&quot;firstHeading&quot;&gt;&lt;?php $this-&gt;text('title') ?&gt;&lt;/h1&gt;
+! 		&lt;div id=&quot;bodyContent&quot;&gt;
+! 			&lt;h3 id=&quot;siteSub&quot;&gt;&lt;?php $this-&gt;msg('tagline') ?&gt;&lt;/h3&gt;
+! 			&lt;div id=&quot;contentSub&quot;&gt;&lt;?php $this-&gt;html('subtitle') ?&gt;&lt;/div&gt;
+! 			&lt;?php if($this-&gt;data['undelete']) { ?&gt;&lt;div id=&quot;contentSub2&quot;&gt;&lt;?php     $this-&gt;html('undelete') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 			&lt;?php if($this-&gt;data['newtalk'] ) { ?&gt;&lt;div class=&quot;usermessage&quot;&gt;&lt;?php $this-&gt;html('newtalk')  ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 			&lt;?php if($this-&gt;data['showjumplinks']) { ?&gt;&lt;div id=&quot;jump-to-nav&quot;&gt;&lt;?php $this-&gt;msg('jumpto') ?&gt; &lt;a href=&quot;#column-one&quot;&gt;&lt;?php $this-&gt;msg('jumptonavigation') ?&gt;&lt;/a&gt;, &lt;a href=&quot;#searchInput&quot;&gt;&lt;?php $this-&gt;msg('jumptosearch') ?&gt;&lt;/a&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 			&lt;!-- start content --&gt;
+! 			&lt;?php $this-&gt;html('bodytext') ?&gt;
+! 			&lt;?php if($this-&gt;data['catlinks']) { ?&gt;&lt;div id=&quot;catlinks&quot;&gt;&lt;?php       $this-&gt;html('catlinks') ?&gt;&lt;/div&gt;&lt;?php } ?&gt;
+! 			&lt;!-- end content --&gt;
+! 			&lt;div class=&quot;visualClear&quot;&gt;&lt;/div&gt;
+! 		&lt;/div&gt;
+  	&lt;/div&gt;
+! 		&lt;/div&gt;
+! 		&lt;div id=&quot;column-one&quot;&gt;
+  	&lt;div id=&quot;p-cactions&quot; class=&quot;portlet&quot;&gt;
+! 		&lt;h5&gt;&lt;?php $this-&gt;msg('views') ?&gt;&lt;/h5&gt;
+! 		&lt;ul&gt;
+! &lt;?php			foreach($this-&gt;data['content_actions'] as $key =&gt; $tab) { ?&gt;
+! 				 &lt;li id=&quot;ca-&lt;?php echo htmlspecialchars($key) ?&gt;&quot;&lt;?php
+! 				 	if($tab['class']) { ?&gt; class=&quot;&lt;?php echo htmlspecialchars($tab['class']) ?&gt;&quot;&lt;?php }
+! 				 ?&gt;&gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($tab['href']) ?&gt;&quot;&gt;&lt;?php
+! 				 echo htmlspecialchars($tab['text']) ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php			 } ?&gt;
+! 		&lt;/ul&gt;
+  	&lt;/div&gt;
+  	&lt;div class=&quot;portlet&quot; id=&quot;p-personal&quot;&gt;
+! 		&lt;h5&gt;&lt;?php $this-&gt;msg('personaltools') ?&gt;&lt;/h5&gt;
+! 		&lt;div class=&quot;pBody&quot;&gt;
+! 			&lt;ul&gt;
+! &lt;?php 			foreach($this-&gt;data['personal_urls'] as $key =&gt; $item) { ?&gt;
+! 				&lt;li id=&quot;pt-&lt;?php echo htmlspecialchars($key) ?&gt;&quot;&lt;?php
+! 					if ($item['active']) { ?&gt; class=&quot;active&quot;&lt;?php } ?&gt;&gt;&lt;a href=&quot;&lt;?php
+! 				echo htmlspecialchars($item['href']) ?&gt;&quot;&lt;?php
+! 				if(!empty($item['class'])) { ?&gt; class=&quot;&lt;?php
+! 				echo htmlspecialchars($item['class']) ?&gt;&quot;&lt;?php } ?&gt;&gt;&lt;?php
+! 				echo htmlspecialchars($item['text']) ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php			} ?&gt;
+! 			&lt;/ul&gt;
+! 		&lt;/div&gt;
+  	&lt;/div&gt;
+  	&lt;div class=&quot;portlet&quot; id=&quot;p-logo&quot;&gt;
+! 		&lt;a style=&quot;background-image: url(&lt;?php $this-&gt;text('logopath') ?&gt;);&quot; &lt;?php
+! 			?&gt;href=&quot;&lt;?php echo htmlspecialchars($this-&gt;data['nav_urls']['mainpage']['href'])?&gt;&quot; &lt;?php
+! 			?&gt;title=&quot;&lt;?php $this-&gt;msg('mainpage') ?&gt;&quot;&gt;&lt;/a&gt;
+  	&lt;/div&gt;
+  	&lt;script type=&quot;&lt;?php $this-&gt;text('jsmimetype') ?&gt;&quot;&gt; if (window.isMSIE55) fixalpha(); &lt;/script&gt;
+  	&lt;?php foreach ($this-&gt;data['sidebar'] as $bar =&gt; $cont) { ?&gt;
+  	&lt;div class='portlet' id='p-&lt;?php echo htmlspecialchars($bar) ?&gt;'&gt;
+! 		&lt;h5&gt;&lt;?php $out = wfMsg( $bar ); if (wfEmptyMsg($bar, $out)) echo $bar; else echo $out; ?&gt;&lt;/h5&gt;
+! 		&lt;div class='pBody'&gt;
+! 			&lt;ul&gt;
+! &lt;?php 			foreach($cont as $key =&gt; $val) { ?&gt;
+! 				&lt;li id=&quot;&lt;?php echo htmlspecialchars($val['id']) ?&gt;&quot;&lt;?php
+! 					if ( $val['active'] ) { ?&gt; class=&quot;active&quot; &lt;?php }
+! 				?&gt;&gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($val['href']) ?&gt;&quot;&gt;&lt;?php echo htmlspecialchars($val['text']) ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php			} ?&gt;
+! 			&lt;/ul&gt;
+! 		&lt;/div&gt;
+  	&lt;/div&gt;
+  	&lt;?php } ?&gt;
+  	&lt;div id=&quot;p-search&quot; class=&quot;portlet&quot;&gt;
+! 		&lt;h5&gt;&lt;label for=&quot;searchInput&quot;&gt;&lt;?php $this-&gt;msg('search') ?&gt;&lt;/label&gt;&lt;/h5&gt;
+! 		&lt;div id=&quot;searchBody&quot; class=&quot;pBody&quot;&gt;
+! 			&lt;form action=&quot;&lt;?php $this-&gt;text('searchaction') ?&gt;&quot; id=&quot;searchform&quot;&gt;&lt;div&gt;
+! 				&lt;input id=&quot;searchInput&quot; name=&quot;search&quot; type=&quot;text&quot; &lt;?php
+! 					if($this-&gt;haveMsg('accesskey-search')) {
+! 						?&gt;accesskey=&quot;&lt;?php $this-&gt;msg('accesskey-search') ?&gt;&quot;&lt;?php }
+! 					if( isset( $this-&gt;data['search'] ) ) {
+! 						?&gt; value=&quot;&lt;?php $this-&gt;text('search') ?&gt;&quot;&lt;?php } ?&gt; /&gt;
+! 				&lt;input type='submit' name=&quot;go&quot; class=&quot;searchButton&quot; id=&quot;searchGoButton&quot;	value=&quot;&lt;?php $this-&gt;msg('go') ?&gt;&quot; /&gt;&nbsp;
+! 				&lt;input type='submit' name=&quot;fulltext&quot; class=&quot;searchButton&quot; value=&quot;&lt;?php $this-&gt;msg('search') ?&gt;&quot; /&gt;
+! 			&lt;/div&gt;&lt;/form&gt;
+! 		&lt;/div&gt;
+  	&lt;/div&gt;
+  	&lt;div class=&quot;portlet&quot; id=&quot;p-tb&quot;&gt;
+! 		&lt;h5&gt;&lt;?php $this-&gt;msg('toolbox') ?&gt;&lt;/h5&gt;
+! 		&lt;div class=&quot;pBody&quot;&gt;
+! 			&lt;ul&gt;
+! &lt;?php
+! 		if($this-&gt;data['notspecialpage']) { ?&gt;
+! 				&lt;li id=&quot;t-whatlinkshere&quot;&gt;&lt;a href=&quot;&lt;?php
+! 				echo htmlspecialchars($this-&gt;data['nav_urls']['whatlinkshere']['href'])
+! 				?&gt;&quot;&gt;&lt;?php $this-&gt;msg('whatlinkshere') ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php
+! 			if( $this-&gt;data['nav_urls']['recentchangeslinked'] ) { ?&gt;
+! 				&lt;li id=&quot;t-recentchangeslinked&quot;&gt;&lt;a href=&quot;&lt;?php
+! 				echo htmlspecialchars($this-&gt;data['nav_urls']['recentchangeslinked']['href'])
+! 				?&gt;&quot;&gt;&lt;?php $this-&gt;msg('recentchangeslinked') ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php 		}
+! 		}
+! 		if(isset($this-&gt;data['nav_urls']['trackbacklink'])) { ?&gt;
+! 			&lt;li id=&quot;t-trackbacklink&quot;&gt;&lt;a href=&quot;&lt;?php
+! 				echo htmlspecialchars($this-&gt;data['nav_urls']['trackbacklink']['href'])
+! 				?&gt;&quot;&gt;&lt;?php $this-&gt;msg('trackbacklink') ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php 	}
+! 		if($this-&gt;data['feeds']) { ?&gt;
+! 			&lt;li id=&quot;feedlinks&quot;&gt;&lt;?php foreach($this-&gt;data['feeds'] as $key =&gt; $feed) {
+! 					?&gt;&lt;span id=&quot;feed-&lt;?php echo htmlspecialchars($key) ?&gt;&quot;&gt;&lt;a href=&quot;&lt;?php
+! 					echo htmlspecialchars($feed['href']) ?&gt;&quot;&gt;&lt;?php echo htmlspecialchars($feed['text'])?&gt;&lt;/a&gt;&nbsp;&lt;/span&gt;
+! 					&lt;?php } ?&gt;&lt;/li&gt;&lt;?php
+! 		}
+! 
+! 		foreach( array('contributions', 'blockip', 'emailuser', 'upload', 'specialpages') as $special ) {
+! 
+! 			if($this-&gt;data['nav_urls'][$special]) {
+! 				?&gt;&lt;li id=&quot;t-&lt;?php echo $special ?&gt;&quot;&gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($this-&gt;data['nav_urls'][$special]['href'])
+! 				?&gt;&quot;&gt;&lt;?php $this-&gt;msg($special) ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php		}
+! 		}
+! 
+! 		if(!empty($this-&gt;data['nav_urls']['print']['href'])) { ?&gt;
+! 				&lt;li id=&quot;t-print&quot;&gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($this-&gt;data['nav_urls']['print']['href'])
+! 				?&gt;&quot;&gt;&lt;?php $this-&gt;msg('printableversion') ?&gt;&lt;/a&gt;&lt;/li&gt;&lt;?php
+! 		}
+! 
+! 		if(!empty($this-&gt;data['nav_urls']['permalink']['href'])) { ?&gt;
+! 				&lt;li id=&quot;t-permalink&quot;&gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($this-&gt;data['nav_urls']['permalink']['href'])
+! 				?&gt;&quot;&gt;&lt;?php $this-&gt;msg('permalink') ?&gt;&lt;/a&gt;&lt;/li&gt;&lt;?php
+! 		} elseif ($this-&gt;data['nav_urls']['permalink']['href'] === '') { ?&gt;
+! 				&lt;li id=&quot;t-ispermalink&quot;&gt;&lt;?php $this-&gt;msg('permalink') ?&gt;&lt;/li&gt;&lt;?php
+! 		}
+! 
+! 		wfRunHooks( 'MonoBookTemplateToolboxEnd', array( &amp;$this ) );
+! ?&gt;
+! 			&lt;/ul&gt;
+! 		&lt;/div&gt;
+  	&lt;/div&gt;
+! &lt;?php
+! 		if( $this-&gt;data['language_urls'] ) { ?&gt;
+! 	&lt;div id=&quot;p-lang&quot; class=&quot;portlet&quot;&gt;
+! 		&lt;h5&gt;&lt;?php $this-&gt;msg('otherlanguages') ?&gt;&lt;/h5&gt;
+! 		&lt;div class=&quot;pBody&quot;&gt;
+! 			&lt;ul&gt;
+! &lt;?php		foreach($this-&gt;data['language_urls'] as $langlink) { ?&gt;
+! 				&lt;li class=&quot;&lt;?php echo htmlspecialchars($langlink['class'])?&gt;&quot;&gt;&lt;?php
+! 				?&gt;&lt;a href=&quot;&lt;?php echo htmlspecialchars($langlink['href']) ?&gt;&quot;&gt;&lt;?php echo $langlink['text'] ?&gt;&lt;/a&gt;&lt;/li&gt;
+! &lt;?php		} ?&gt;
+! 			&lt;/ul&gt;
+! 		&lt;/div&gt;
+  	&lt;/div&gt;
+! &lt;?php	} ?&gt;
+! 		&lt;/div&gt;&lt;!-- end of the left (by default at least) column --&gt;
+! 			&lt;div class=&quot;visualClear&quot;&gt;&lt;/div&gt;
+! 			&lt;div id=&quot;footer&quot;&gt;
+! &lt;?php
+! 		if($this-&gt;data['poweredbyico']) { ?&gt;
+! 				&lt;div id=&quot;f-poweredbyico&quot;&gt;&lt;?php $this-&gt;html('poweredbyico') ?&gt;&lt;/div&gt;
+! &lt;?php 	}
+! 		if($this-&gt;data['copyrightico']) { ?&gt;
+! 				&lt;div id=&quot;f-copyrightico&quot;&gt;&lt;?php $this-&gt;html('copyrightico') ?&gt;&lt;/div&gt;
+! &lt;?php	}
+! 
+! 		// Generate additional footer links
+! ?&gt;
+! 			&lt;ul id=&quot;f-list&quot;&gt;
+! &lt;?php
+! 		$footerlinks = array(
+! 			'lastmod', 'viewcount', 'numberofwatchingusers', 'credits', 'copyright',
+! 			'privacy', 'about', 'disclaimer', 'tagline',
+! 		);
+! 		foreach( $footerlinks as $aLink ) {
+! 			if( $this-&gt;data[$aLink] ) {
+! ?&gt;				&lt;li id=&quot;&lt;?php echo$aLink?&gt;&quot;&gt;&lt;?php $this-&gt;html($aLink) ?&gt;&lt;/li&gt;
+! &lt;?php 		}
+! 		}
+! ?&gt;
+! 			&lt;/ul&gt;
+! 		&lt;/div&gt;
+! 	&lt;script type=&quot;text/javascript&quot;&gt; if (window.runOnloadHook) runOnloadHook();&lt;/script&gt;
+! &lt;/div&gt;
+! &lt;?php $this-&gt;html('reporttime') ?&gt;
+! 
+! &lt;/body&gt;&lt;/html&gt;
+  &lt;?php
+  	wfRestoreWarnings();
+! 	} // end of execute() method
+! } // end of class
+  ?&gt;
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000013.html">[Blahtex-cvs] blahtex/maintenance/mysql5 tables.sql,1.1.1.1,NONE
+</A></li>
+	<LI>Next message: <A HREF="000009.html">[Blahtex-cvs] blahtex/skins/common/images redirect.png,1.1.1.1,NONE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14">[ date ]</a>
+              <a href="thread.html#14">[ thread ]</a>
+              <a href="subject.html#14">[ subject ]</a>
+              <a href="author.html#14">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

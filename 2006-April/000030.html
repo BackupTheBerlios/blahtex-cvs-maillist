@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/languages Messages.php,1.3,1.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/languages%20Messages.php%2C1.3%2C1.4&In-Reply-To=%3C200604030900.k3390Yt02851%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000031.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/languages Messages.php,1.3,1.4</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/languages%20Messages.php%2C1.3%2C1.4&In-Reply-To=%3C200604030900.k3390Yt02851%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/languages Messages.php,1.3,1.4">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Mon Apr  3 11:00:34 CEST 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000031.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.17,1.18
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/languages
+In directory sheep:/tmp/cvs-serv16163/languages
+
+Modified Files:
+	Messages.php 
+Log Message:
+Sort blahtex messages and add new messages from 0.4.4
+
+
+Index: Messages.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/languages/Messages.php,v
+retrieving revision 1.3
+retrieving revision 1.4
+diff -C2 -d -r1.3 -r1.4
+*** Messages.php	23 Mar 2006 11:58:36 -0000	1.3
+--- Messages.php	3 Apr 2006 09:00:58 -0000	1.4
+***************
+*** 719,730 ****
+  'math_noblahtex'        =&gt; 'Can\'t execute blahtex, which should be at $1',
+  
+! 'math_NonAsciiInMathMode'               =&gt; 'Non-ASCII characters may only be used in text mode ' .
+!                                            '(try enclosing the problem characters in &quot;\\text{...}&quot;)',
+  'math_IllegalCharacter'                 =&gt; 'Illegal character in input',
+- 'math_PngIncompatibleCharacter'         =&gt; 'Unable to correctly generate PNG containing the character $1',
+- 'math_ReservedCommand'                  =&gt; 'The command &quot;$1&quot; is reserved for internal use by blahtex',
+- 'math_TooManyTokens'                    =&gt; 'The input is too long',
+- 'math_IllegalFinalBackslash'            =&gt; 'Illegal backslash &quot;\\&quot; at end of input',
+- 'math_UnrecognisedCommand'              =&gt; 'Unrecognised command &quot;$1&quot;',
+  'math_IllegalCommandInMathMode'         =&gt; 'The command &quot;$1&quot; is illegal in math mode',
+  'math_IllegalCommandInMathModeWithHint' =&gt; 'The command &quot;$1&quot; is illegal in math mode ' .
+--- 719,737 ----
+  'math_noblahtex'        =&gt; 'Can\'t execute blahtex, which should be at $1',
+  
+! # Blahtex messages
+! 'math_AmbiguousInfix'                   =&gt; 'Ambiguous placement of &quot;$1&quot; ' .
+!                                            '(try using additional braces &quot;{ ... }&quot; to disambiguate)',
+! 'math_CannotChangeDirectory'            =&gt; 'Cannot change working directory',
+! 'math_CannotCreateTexFile'              =&gt; 'Cannot create tex file',
+! 'math_CannotRunDvipng'                  =&gt; 'Cannot run dvipng',
+! 'math_CannotRunLatex'                   =&gt; 'Cannot run latex',
+! 'math_CannotWritePngDirectory'          =&gt; ' Cannot write to output PNG directory',
+! 'math_CannotWriteTexFile'               =&gt; 'Cannot write to tex file',
+! 'math_CasesRowTooBig'                   =&gt; 'There can only be two entries in each row of a &quot;cases&quot; block',
+! 'math_DoubleSubscript'                  =&gt; 'Encountered two subscripts attached to the same base ' .
+!                                            '(only one is allowed)',
+! 'math_DoubleSuperscript'                =&gt; 'Encountered two superscripts attached to the same base ' .
+!                                            '(only one is allowed)',
+  'math_IllegalCharacter'                 =&gt; 'Illegal character in input',
+  'math_IllegalCommandInMathMode'         =&gt; 'The command &quot;$1&quot; is illegal in math mode',
+  'math_IllegalCommandInMathModeWithHint' =&gt; 'The command &quot;$1&quot; is illegal in math mode ' .
+***************
+*** 733,781 ****
+  'math_IllegalCommandInTextModeWithHint' =&gt; 'The command &quot;$1&quot; is illegal in text mode ' .
+                                             '(perhaps you intended to use &quot;$2&quot; instead?)',
+! 'math_MissingOpenBraceBefore'           =&gt; 'Missing open brace &quot;{&quot; before &quot;$1&quot;',
+! 'math_MissingOpenBraceAfter'            =&gt; 'Missing open brace &quot;{&quot; after &quot;$1&quot;',
+! 'math_MissingOpenBraceAtEnd'            =&gt; 'Missing open brace &quot;{&quot; at end of input',
+! 'math_NotEnoughArguments'               =&gt; 'Not enough arguments were supplied for &quot;$1&quot;',
+  'math_MissingCommandAfterNewcommand'    =&gt; 'Missing or illegal new command name after &quot;\\newcommand&quot; ' .
+                                             '(there must be precisely one command defined; it must begin ' .
+                                             'with a backslash &quot;\\&quot; and contain only alphabetic characters)',
+! 'math_IllegalRedefinition'              =&gt; 'The command &quot;$1&quot; has already been defined; you cannot redefine it',
+  'math_MissingOrIllegalParameterCount'   =&gt; 'Missing or illegal parameter count in definition of &quot;$1&quot; ' .
+                                             '(must be a single digit between 1 and 9 inclusive)',
+  'math_MissingOrIllegalParameterIndex'   =&gt; 'Missing or illegal parameter index in definition of &quot;$1&quot;',
+! 'math_UnmatchedOpenBracket'             =&gt; 'Encountered open bracket &quot;[&quot; without matching close bracket &quot;]&quot;',
+! 'math_UnmatchedOpenBrace'               =&gt; 'Encountered open brace &quot;{&quot; without matching close brace &quot;}&quot;',
+  'math_UnmatchedCloseBrace'              =&gt; 'Encountered close brace &quot;}&quot; without matching open brace &quot;{&quot;',
+  'math_UnmatchedLeft'                    =&gt; 'Encountered &quot;\\left&quot; without matching &quot;\\right&quot;',
+  'math_UnmatchedRight'                   =&gt; 'Encountered &quot;\\right&quot; without matching &quot;\\left&quot;',
+! 'math_UnmatchedBegin'                   =&gt; 'Encountered &quot;\\begin&quot; without matching &quot;\\end&quot;',
+! 'math_UnmatchedEnd'                     =&gt; 'Encountered &quot;\\end&quot; without matching &quot;\\begin&quot;',
+! 'math_UnexpectedNextCell'               =&gt; 'The command &quot;&amp;&quot; may only appear inside a &quot;\\begin ... \\end&quot; block',
+! 'math_UnexpectedNextRow'                =&gt; 'The command &quot;\\\\&quot; may only appear inside a &quot;\\begin ... \\end&quot; block',
+! 'math_MismatchedBeginAndEnd'            =&gt; 'Commands &quot;$1&quot; and &quot;$2&quot; do not match',
+! 'math_CasesRowTooBig'                   =&gt; 'There can only be two entries in each row of a &quot;cases&quot; block',
+! 'math_MissingDelimiter'                 =&gt; 'Missing delimiter after &quot;$1&quot;',
+! 'math_IllegalDelimiter'                 =&gt; 'Illegal delimiter following &quot;$1&quot;',
+! 'math_MisplacedLimits'                  =&gt; 'The command &quot;$1&quot; can only appear after a math operator ' .
+!                                            '(consider using &quot;\\mathop&quot;)',
+! 'math_DoubleSuperscript'                =&gt; 'Encountered two superscripts attached to the same base ' .
+!                                            '(only one is allowed)',
+! 'math_DoubleSubscript'                  =&gt; 'Encountered two subscripts attached to the same base ' . 
+!                                            '(only one is allowed)',
+! 'math_AmbiguousInfix'                   =&gt; 'Ambiguous placement of &quot;$1&quot; ' . 
+!                                            '(try using additional braces &quot;{ ... }&quot; to disambiguate)',
+! 'math_UnavailableSymbolFontCombination' =&gt; 'The symbol &quot;$1&quot; is not available in the font &quot;$2&quot;',
+! 'math_InvalidNegation'                  =&gt; 'No negative version of the symbol(s) following &quot;\\not&quot; is available',
+! 'math_SubstackRowTooBig'                =&gt; 'There can only be one entry in each row of a &quot;substack&quot; block',
+! 
+! 'math_TooManyMathmlNodes'               =&gt; 'There are too many nodes in the MathML tree',
+! 
+! 'math_InvalidUtf8Input'                 =&gt; 'The input string was not valid UTF-8',
+! 'math_CannotCreateTexFile'              =&gt; 'Cannot create tex file',
+! 'math_CannotWriteTexFile'               =&gt; 'Cannot write to tex file',
+! 'math_CannotRunLatex'                   =&gt; 'Cannot run latex',
+! 'math_CannotRunDvips'                   =&gt; 'Cannot run dvips',
+! 'math_CannotRunConvert'                 =&gt; 'Cannot run convert',
+! 'math_CannotChangeDirectory'            =&gt; 'Cannot change working directory',
+  
+  # User levels special page
+--- 740,785 ----
+  'math_IllegalCommandInTextModeWithHint' =&gt; 'The command &quot;$1&quot; is illegal in text mode ' .
+                                             '(perhaps you intended to use &quot;$2&quot; instead?)',
+! 'math_IllegalDelimiter'                 =&gt; 'Illegal delimiter following &quot;$1&quot;',
+! 'math_IllegalFinalBackslash'            =&gt; 'Illegal backslash &quot;\\&quot; at end of input',
+! 'math_IllegalNestedFontEncodings'       =&gt; 'Font encoding commands may not be nested',
+! 'math_IllegalRedefinition'              =&gt; 'The command &quot;$1&quot; has already been defined; you cannot redefine it',
+! 'math_InvalidColour'                    =&gt; 'The colour &quot;$1&quot; is invalid',
+! 'math_InvalidUtf8Input'                 =&gt; 'The input string was not valid UTF-8',
+! 'math_LatexFontNotSpecified'            =&gt; 'No LaTeX font has been specified for &quot;$1&quot;',
+! 'math_LatexPackageUnavailable'          =&gt; 'Unable to render PNG because the LaTeX package &quot;$1&quot; is unavailable',
+! 'math_MismatchedBeginAndEnd'            =&gt; 'Commands &quot;$1&quot; and &quot;$2&quot; do not match',
+! 'math_MisplacedLimits'                  =&gt; 'The command &quot;$1&quot; can only appear after a math operator ' .
+!                                            '(consider using &quot;\\mathop&quot;)',
+  'math_MissingCommandAfterNewcommand'    =&gt; 'Missing or illegal new command name after &quot;\\newcommand&quot; ' .
+                                             '(there must be precisely one command defined; it must begin ' .
+                                             'with a backslash &quot;\\&quot; and contain only alphabetic characters)',
+! 'math_MissingDelimiter'                 =&gt; 'Missing delimiter after &quot;$1&quot;',
+! 'math_MissingOpenBraceAfter'            =&gt; 'Missing open brace &quot;{&quot; after &quot;$1&quot;',
+! 'math_MissingOpenBraceAtEnd'            =&gt; 'Missing open brace &quot;{&quot; at end of input',
+! 'math_MissingOpenBraceBefore'           =&gt; 'Missing open brace &quot;{&quot; before &quot;$1&quot;',
+  'math_MissingOrIllegalParameterCount'   =&gt; 'Missing or illegal parameter count in definition of &quot;$1&quot; ' .
+                                             '(must be a single digit between 1 and 9 inclusive)',
+  'math_MissingOrIllegalParameterIndex'   =&gt; 'Missing or illegal parameter index in definition of &quot;$1&quot;',
+! 'math_NonAsciiInMathMode'               =&gt; 'Non-ASCII characters may only be used in text mode ' .
+!                                            '(try enclosing the problem characters in &quot;\\text{...}&quot;)',
+! 'math_NotEnoughArguments'               =&gt; 'Not enough arguments were supplied for &quot;$1&quot;',
+! 'math_PngIncompatibleCharacter'         =&gt; 'Unable to correctly generate PNG containing the character $1',
+! 'math_ReservedCommand'                  =&gt; 'The command &quot;$1&quot; is reserved for internal use by blahtex',
+! 'math_SubstackRowTooBig'                =&gt; 'There can only be one entry in each row of a &quot;substack&quot; block',
+! 'math_TooManyMathmlNodes'               =&gt; 'There are too many nodes in the MathML tree',
+! 'math_TooManyTokens'                    =&gt; 'The input is too long',
+! 'math_UnavailableSymbolFontCombination' =&gt; 'The symbol &quot;$1&quot; is not available in the font &quot;$2&quot;',
+! 'math_UnexpectedNextCell'               =&gt; 'The command &quot;&amp;&quot; may only appear inside a &quot;\\begin ... \\end&quot; block',
+! 'math_UnexpectedNextRow'                =&gt; 'The command &quot;\\\\&quot; may only appear inside a &quot;\\begin ... \\end&quot; block',
+! 'math_UnmatchedBegin'                   =&gt; 'Encountered &quot;\\begin&quot; without matching &quot;\\end&quot;',
+  'math_UnmatchedCloseBrace'              =&gt; 'Encountered close brace &quot;}&quot; without matching open brace &quot;{&quot;',
++ 'math_UnmatchedEnd'                     =&gt; 'Encountered &quot;\\end&quot; without matching &quot;\\begin&quot;',
+  'math_UnmatchedLeft'                    =&gt; 'Encountered &quot;\\left&quot; without matching &quot;\\right&quot;',
++ 'math_UnmatchedOpenBrace'               =&gt; 'Encountered open brace &quot;{&quot; without matching close brace &quot;}&quot;',
++ 'math_UnmatchedOpenBracket'             =&gt; 'Encountered open bracket &quot;[&quot; without matching close bracket &quot;]&quot;',
+  'math_UnmatchedRight'                   =&gt; 'Encountered &quot;\\right&quot; without matching &quot;\\left&quot;',
+! 'math_UnrecognisedCommand'              =&gt; 'Unrecognised command &quot;$1&quot;',
+! 'WrongFontEncoding'                     =&gt; 'The symbol &quot;$1&quot; may not appear in font encoding &quot;$2&quot;',
+! 'WrongFontEncodingWithHint'             =&gt; 'The symbol &quot;$1&quot; may not appear in font encoding &quot;$2&quot; (try using the &quot;$3{...}&quot; command)',
+  
+  # User levels special page
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000031.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.17,1.18
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

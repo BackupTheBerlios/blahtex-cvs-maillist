@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/includes Parser.php,1.3,1.4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Parser.php%2C1.3%2C1.4&In-Reply-To=%3C200603241505.k2OF5Bt12076%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000019.html">
+   <LINK REL="Next"  HREF="000021.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/includes Parser.php,1.3,1.4</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Parser.php%2C1.3%2C1.4&In-Reply-To=%3C200603241505.k2OF5Bt12076%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/includes Parser.php,1.3,1.4">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Fri Mar 24 16:05:11 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000019.html">[Blahtex-cvs] blahtex/includes Math.php,1.27,1.28
+</A></li>
+        <LI>Next message: <A HREF="000021.html">[Blahtex-cvs] blahtex/blahtex/source Messages.cpp,1.4,1.5 main.cpp,1.5,1.6 md5.c,1.5,1.6 md5.h,1.5,1.6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/includes
+In directory sheep:/tmp/cvs-serv13039/includes
+
+Modified Files:
+	Parser.php 
+Log Message:
+extractTagsAndParams(): Patch from bugzilla:5344
+
+
+Index: Parser.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/Parser.php,v
+retrieving revision 1.3
+retrieving revision 1.4
+diff -C2 -d -r1.3 -r1.4
+*** Parser.php	23 Mar 2006 10:40:58 -0000	1.3
+--- Parser.php	24 Mar 2006 15:05:35 -0000	1.4
+***************
+*** 304,323 ****
+  
+  		if( $tag == STRIP_COMMENTS ) {
+! 			$start = '/&lt;!--()()/';
+  			$end   = '/--&gt;/';
+  		} else {
+! 			$start = &quot;/&lt;$tag(\\s+[^\\/&gt;]*|\\s*)(\\/?)&gt;/i&quot;;
+  			$end   = &quot;/&lt;\\/$tag\\s*&gt;/i&quot;;
+  		}
+! 
+  		while ( '' != $text ) {
+  			$p = preg_split( $start, $text, 2, PREG_SPLIT_DELIM_CAPTURE );
+  			$stripped .= $p[0];
+! 			if( count( $p ) &lt; 4 ) {
+  				break;
+  			}
+  			$attributes = $p[1];
+! 			$empty      = $p[2];
+! 			$inside     = $p[3];
+  
+  			$marker = $rnd . sprintf('%08X', $n++);
+--- 304,331 ----
+  
+  		if( $tag == STRIP_COMMENTS ) {
+! 			$start = '/&lt;!--()/';
+  			$end   = '/--&gt;/';
+  		} else {
+! 			$start = &quot;/&lt;$tag(\\s+[^&gt;]*|\\s*\/?)&gt;/i&quot;;
+  			$end   = &quot;/&lt;\\/$tag\\s*&gt;/i&quot;;
+  		}
+! 		
+  		while ( '' != $text ) {
+  			$p = preg_split( $start, $text, 2, PREG_SPLIT_DELIM_CAPTURE );
+  			$stripped .= $p[0];
+! 			if( count( $p ) &lt; 3 ) {
+  				break;
+  			}
+  			$attributes = $p[1];
+! 			$inside     = $p[2];
+! 
+! 			// If $attributes ends with '/', we have an empty element tag, &lt;tag /&gt;
+! 			if ( $tag != STRIP_COMMENTS &amp;&amp; substr( $attributes, -1 ) == '/' ) {
+! 				$attributes = substr( $attributes, 0, -1);
+! 				$empty = '/';
+! 			}
+! 			else {
+! 				$empty = '';
+! 			}
+  
+  			$marker = $rnd . sprintf('%08X', $n++);
+***************
+*** 328,332 ****
+  
+  			if ( $empty === '/' ) {
+- 				// Empty element tag, &lt;tag /&gt;
+  				$content[$marker] = null;
+  				$text = $inside;
+--- 336,339 ----
+***************
+*** 595,599 ****
+  		$math_content = array();
+  		$text = Parser::extractTagsAndParams( 'math', $text, $math_content,
+! 														  $math_tags, $math_params, $this-&gt;mUniqPrefix );
+  		$wrappedtext = '&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;'.
+  ' &quot;<A HREF="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</A>&quot;&gt;&lt;html&gt;'.
+--- 602,606 ----
+  		$math_content = array();
+  		$text = Parser::extractTagsAndParams( 'math', $text, $math_content,
+! 						      $math_tags, $math_params, $this-&gt;mUniqPrefix );
+  		$wrappedtext = '&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;'.
+  ' &quot;<A HREF="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</A>&quot;&gt;&lt;html&gt;'.
+***************
+*** 609,614 ****
+  		}
+  		foreach( $math_content as $marker =&gt; $content ) {
+! 		  $full_tag = $math_tags[$marker] . $content . &quot;&lt;/math&gt;&quot;;
+! 		  $correctedtext = str_replace( $marker, $full_tag, $correctedtext );
+  		}
+  		return $correctedtext;
+--- 616,621 ----
+  		}
+  		foreach( $math_content as $marker =&gt; $content ) {
+! 			$full_tag = $math_tags[$marker] . $content . &quot;&lt;/math&gt;&quot;;
+! 			$correctedtext = str_replace( $marker, $full_tag, $correctedtext );
+  		}
+  		return $correctedtext;
+***************
+*** 656,659 ****
+--- 663,667 ----
+  			// Some kind of error happened, so we couldn't get the corrected text.
+  			// Just give up; we'll use the source text and append a warning.
++ 			wfDebug(&quot;tidy invocation: $wgTidyBin -config $wgTidyConf $wgTidyOpts$opts\n&quot;);
+  			return null;
+  		} else {
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000019.html">[Blahtex-cvs] blahtex/includes Math.php,1.27,1.28
+</A></li>
+	<LI>Next message: <A HREF="000021.html">[Blahtex-cvs] blahtex/blahtex/source Messages.cpp,1.4,1.5 main.cpp,1.5,1.6 md5.c,1.5,1.6 md5.h,1.5,1.6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

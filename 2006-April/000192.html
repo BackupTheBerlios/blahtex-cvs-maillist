@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/languages Language.php,1.13,1.14 Messages.php,1.5,1.6
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/languages%20Language.php%2C1.13%2C1.14%20Messages.php%2C1.5%2C1.6&In-Reply-To=%3C200604141222.k3ECMSt13217%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000191.html">
+   <LINK REL="Next"  HREF="000193.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/languages Language.php,1.13,1.14 Messages.php,1.5,1.6</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/languages%20Language.php%2C1.13%2C1.14%20Messages.php%2C1.5%2C1.6&In-Reply-To=%3C200604141222.k3ECMSt13217%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/languages Language.php,1.13,1.14 Messages.php,1.5,1.6">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Fri Apr 14 14:22:28 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000191.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.19,1.20 OutputPage.php,1.13,1.14 Parser.php,1.5,1.6 SkinTemplate.php,1.14,1.15 PersistentObject.php,1.1.1.1,NONE
+</A></li>
+        <LI>Next message: <A HREF="000193.html">[Blahtex-cvs] blahtex/skins MonoBook.php,1.5,1.6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#192">[ date ]</a>
+              <a href="thread.html#192">[ thread ]</a>
+              <a href="subject.html#192">[ subject ]</a>
+              <a href="author.html#192">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/languages
+In directory sheep:/tmp/cvs-serv10854/languages
+
+Modified Files:
+	Language.php Messages.php 
+Log Message:
+Merge changes from MediaWiki SVN
+
+
+Index: Language.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/languages/Language.php,v
+retrieving revision 1.13
+retrieving revision 1.14
+diff -C2 -d -r1.13 -r1.14
+*** Language.php	10 Apr 2006 12:28:14 -0000	1.13
+--- Language.php	14 Apr 2006 12:22:52 -0000	1.14
+***************
+*** 228,235 ****
+  	MAG_NAMESPACE            =&gt; array( 1,    'NAMESPACE'              ),
+  	MAG_NAMESPACEE           =&gt; array( 1,    'NAMESPACEE'             ),
+  	MAG_FULLPAGENAME         =&gt; array( 1,    'FULLPAGENAME'           ),
+  	MAG_FULLPAGENAMEE        =&gt; array( 1,    'FULLPAGENAMEE'          ),
+! 	MAG_SUBPAGENAME	         =&gt; array( 0,	 'SUBPAGENAME'		  	  ),
+! 	MAG_SUBPAGENAMEE		 =&gt; array( 0, 	 'SUBPAGENAMEE'			  ),
+  	MAG_MSG                  =&gt; array( 0,    'MSG:'                   ),
+  	MAG_SUBST                =&gt; array( 0,    'SUBST:'                 ),
+--- 228,243 ----
+  	MAG_NAMESPACE            =&gt; array( 1,    'NAMESPACE'              ),
+  	MAG_NAMESPACEE           =&gt; array( 1,    'NAMESPACEE'             ),
++ 	MAG_TALKSPACE			 =&gt; array( 1, 	 'TALKSPACE'			  ),
++ 	MAG_TALKSPACEE			 =&gt; array( 1,	 'TALKSPACEE'			  ),
++ 	MAG_SUBJECTSPACE		 =&gt; array( 1, 	 'SUBJECTSPACE', 'ARTICLESPACE' ),
++ 	MAG_SUBJECTSPACEE		 =&gt; array( 1,	 'SUBJECTSPACEE', 'ARTICLESPACEE' ),
+  	MAG_FULLPAGENAME         =&gt; array( 1,    'FULLPAGENAME'           ),
+  	MAG_FULLPAGENAMEE        =&gt; array( 1,    'FULLPAGENAMEE'          ),
+! 	MAG_SUBPAGENAME	         =&gt; array( 1,	 'SUBPAGENAME'		  	  ),
+! 	MAG_SUBPAGENAMEE		 =&gt; array( 1, 	 'SUBPAGENAMEE'			  ),
+! 	MAG_TALKPAGENAME		 =&gt; array( 1, 	 'TALKPAGENAME'			  ),
+! 	MAG_TALKPAGENAMEE		 =&gt; array( 1,	 'TALKPAGENAMEE'		  ),
+! 	MAG_SUBJECTPAGENAME		 =&gt; array( 1, 	 'SUBJECTPAGENAME', 'ARTICLEPAGENAME' ),
+! 	MAG_SUBJECTPAGENAMEE	 =&gt; array( 1, 	 'SUBJECTPAGENAMEE', 'ARTICLEPAGENAMEE' ),
+  	MAG_MSG                  =&gt; array( 0,    'MSG:'                   ),
+  	MAG_SUBST                =&gt; array( 0,    'SUBST:'                 ),
+***************
+*** 266,269 ****
+--- 274,278 ----
+  	MAG_UC                   =&gt; array( 0,    'UC:'                    ),
+  	MAG_RAW                  =&gt; array( 0,    'RAW:'                   ),
++ 	MAG_DISPLAYTITLE         =&gt; array( 1,    'DISPLAYTITLE'           ),
+  );
+  
+
+Index: Messages.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/languages/Messages.php,v
+retrieving revision 1.5
+retrieving revision 1.6
+diff -C2 -d -r1.5 -r1.6
+*** Messages.php	10 Apr 2006 12:28:15 -0000	1.5
+--- Messages.php	14 Apr 2006 12:22:52 -0000	1.6
+***************
+*** 392,396 ****
+  'prefs-help-realname' 	=&gt; '* Real name (optional): if you choose to provide it this will be used for giving you attribution for your work.',
+  'loginerror'	=&gt; 'Login error',
+! 'prefs-help-email'      =&gt; '* E-mail (optional): Enables others to contact you through your user or user_talk page without the need of revealing your identity.',
+  'nocookiesnew'	=&gt; 'The user account was created, but you are not logged in. {{SITENAME}} uses cookies to log in users. You have cookies disabled. Please enable them, then log in with your new username and password.',
+  'nocookieslogin'	=&gt; '{{SITENAME}} uses cookies to log in users. You have cookies disabled. Please enable them and try again.',
+--- 392,396 ----
+  'prefs-help-realname' 	=&gt; '* Real name (optional): if you choose to provide it this will be used for giving you attribution for your work.',
+  'loginerror'	=&gt; 'Login error',
+! 'prefs-help-email'      =&gt; '* E-mail (optional): Enables others to contact you through your user or user_talk page without needing to reveal your identity.',
+  'nocookiesnew'	=&gt; 'The user account was created, but you are not logged in. {{SITENAME}} uses cookies to log in users. You have cookies disabled. Please enable them, then log in with your new username and password.',
+  'nocookieslogin'	=&gt; '{{SITENAME}} uses cookies to log in users. You have cookies disabled. Please enable them and try again.',
+***************
+*** 464,468 ****
+  'showlivepreview'	=&gt; 'Live preview',
+  'showdiff'	=&gt; 'Show changes',
+! 'anoneditwarning' =&gt; 'You are not logged in. Your IP address will be recorded in this page\'s edit history.',
+  'missingsummary' =&gt; &quot;'''Reminder:''' You have not provided an edit summary. If you click Save again, your edit will be saved without one.&quot;,
+  'missingcommenttext' =&gt; 'Please enter a comment below.',
+--- 464,468 ----
+  'showlivepreview'	=&gt; 'Live preview',
+  'showdiff'	=&gt; 'Show changes',
+! 'anoneditwarning' =&gt; &quot;'''Warning:''' You are not logged in. Your IP address will be recorded in this page's edit history.&quot;,
+  'missingsummary' =&gt; &quot;'''Reminder:''' You have not provided an edit summary. If you click Save again, your edit will be saved without one.&quot;,
+  'missingcommenttext' =&gt; 'Please enter a comment below.',
+***************
+*** 1012,1016 ****
+  'doubleredirects'	=&gt; 'Double redirects',
+  'doubleredirectstext'	=&gt; &quot;Each row contains links to the first and second redirect, as well as the first line of the second redirect text, usually giving the \&quot;real\&quot; target page, which the first redirect should point to.&quot;,
+- 'doubleredirectsarrow'	=&gt; '&#226;&#134;&#146;',
+  
+  'brokenredirects'	=&gt; 'Broken redirects',
+--- 1012,1015 ----
+***************
+*** 1298,1302 ****
+  'uctop'         =&gt; ' (top)' ,
+  'newbies'       =&gt; 'newbies',
+! 'contribs-showhideminor' =&gt; '$1 minor edits',
+  
+  # What links here
+--- 1297,1307 ----
+  'uctop'         =&gt; ' (top)' ,
+  'newbies'       =&gt; 'newbies',
+! 
+! 'sp-contributions-newest' =&gt; 'Newest',
+! 'sp-contributions-oldest' =&gt; 'Oldest',
+! 'sp-contributions-newer'  =&gt; 'Newer $1',
+! 'sp-contributions-older'  =&gt; 'Older $1',
+! 'sp-contributions-newbies-sub' =&gt; 'For newbies',
+! 
+  
+  # What links here
+***************
+*** 2070,2073 ****
+--- 2075,2081 ----
+  'articletitles' =&gt; &quot;Articles starting with ''$1''&quot;,
+  'hideresults' =&gt; 'Hide results',
++ 
++ # DISPLAYTITLE
++ 'displaytitle' =&gt; '(Link to this page as [[$1]])',
+  
+  );
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000191.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.19,1.20 OutputPage.php,1.13,1.14 Parser.php,1.5,1.6 SkinTemplate.php,1.14,1.15 PersistentObject.php,1.1.1.1,NONE
+</A></li>
+	<LI>Next message: <A HREF="000193.html">[Blahtex-cvs] blahtex/skins MonoBook.php,1.5,1.6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#192">[ date ]</a>
+              <a href="thread.html#192">[ thread ]</a>
+              <a href="subject.html#192">[ subject ]</a>
+              <a href="author.html#192">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/includes Math.php,1.28,1.29
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Math.php%2C1.28%2C1.29&In-Reply-To=%3C200603261100.k2QB0it16619%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000027.html">
+   <LINK REL="Next"  HREF="000029.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/includes Math.php,1.28,1.29</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Math.php%2C1.28%2C1.29&In-Reply-To=%3C200603261100.k2QB0it16619%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/includes Math.php,1.28,1.29">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Sun Mar 26 13:00:44 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000027.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.16,1.17
+</A></li>
+        <LI>Next message: <A HREF="000029.html">[Blahtex-cvs] blahtex/includes Math.php,1.29,1.30
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/includes
+In directory sheep:/tmp/cvs-serv12882
+
+Modified Files:
+	Math.php 
+Log Message:
+* processTexvcOutput: set hash to NULL if run was unsuccessful
+* processBlahtexOutput: do not attempt to move PNG file if it wasn't
+	generated.
+* _recall: reorder code
+
+
+Index: Math.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/Math.php,v
+retrieving revision 1.28
+retrieving revision 1.29
+diff -C2 -d -r1.28 -r1.29
+*** Math.php	24 Mar 2006 11:28:08 -0000	1.28
+--- Math.php	26 Mar 2006 11:01:08 -0000	1.29
+***************
+*** 286,294 ****
+  		}
+  		
+  		$tmp = $this-&gt;moveToMathDir( &quot;{$hash}.png&quot; );
+! 		if ( $tmp !== false ) 
+  			return $tmp;
+  
+- 		$this-&gt;hash = $hash;
+  		return false;
+  	}
+--- 286,296 ----
+  		}
+  		
++ 		$this-&gt;hash = $hash;
+  		$tmp = $this-&gt;moveToMathDir( &quot;{$hash}.png&quot; );
+! 		if ( $tmp !== false ) {
+! 			$this-&gt;hash = NULL;
+  			return $tmp;
++ 		}
+  
+  		return false;
+  	}
+***************
+*** 365,375 ****
+  			if (isset($results[&quot;mathmlMarkup&quot;]))	 
+  				$this-&gt;mathml = $results['mathmlMarkup'];
+! 			if (isset($results[&quot;blahtex:png:md5&quot;])) 
+  				$this-&gt;hash = $results[&quot;blahtex:png:md5&quot;];
+  			if (isset($results[&quot;blahtex:png:vshift&quot;]))
+  				$this-&gt;verticalShift = $results[&quot;blahtex:png:vshift&quot;];
+- 			$tmp = $this-&gt;moveToMathDir( &quot;{$this-&gt;hash}.png&quot; );
+- 			if ( $tmp !== false ) 
+- 				return $tmp;
+  			return false;
+  
+--- 367,378 ----
+  			if (isset($results[&quot;mathmlMarkup&quot;]))	 
+  				$this-&gt;mathml = $results['mathmlMarkup'];
+! 			if (isset($results[&quot;blahtex:png:md5&quot;])) {
+  				$this-&gt;hash = $results[&quot;blahtex:png:md5&quot;];
++ 				$tmp = $this-&gt;moveToMathDir( &quot;{$this-&gt;hash}.png&quot; );
++ 				if ( $tmp !== false ) 
++ 					return $tmp;
++ 			}
+  			if (isset($results[&quot;blahtex:png:vshift&quot;]))
+  				$this-&gt;verticalShift = $results[&quot;blahtex:png:vshift&quot;];
+  			return false;
+  
+***************
+*** 386,389 ****
+--- 389,393 ----
+  	/**
+  	 * Move a file from $wgTmpDirectory to a directory under $wgMathDirectory.
++ 	 * Assumes that $this-&gt;hash is set.
+  	 * Returns false or an error message.
+  	 */
+***************
+*** 428,451 ****
+  		);
+  
+! 		if( $rpage !== false ) {
+! 			if( $rpage-&gt;math_outputhash == '' )
+! 				$this-&gt;hash = NULL;
+! 			else {
+! 				// Tailing 0x20s can get dropped by the database, add them back on if necessary:
+! 				$xhash = unpack( 'H32md5', $rpage-&gt;math_outputhash . &quot;                &quot; );
+! 				$this-&gt;hash = $xhash ['md5'];
+! 			}
+! 			
+! 			$this-&gt;conservativeness = $rpage-&gt;math_html_conservativeness;
+! 			$this-&gt;html = $rpage-&gt;math_html;
+! 			$this-&gt;mathml = $rpage-&gt;math_mathml;
+! 			
+! 			if( file_exists( $this-&gt;_getHashPath() . &quot;/{$this-&gt;hash}.png&quot; ) ) {
+! 				return true;
+! 			}
+  
+! 			if( file_exists( $wgMathDirectory . &quot;/{$this-&gt;hash}.png&quot; ) ) {
+! 				$hashpath = $this-&gt;_getHashPath();
+  
+  				if( !file_exists( $hashpath ) ) {
+  					if( !@wfMkdirParents( $hashpath, 0755 ) ) {
+--- 432,460 ----
+  		);
+  
+! 		if( $rpage === false ) 
+! 			return false; // Missing from the database
+  
+! 		if( $rpage-&gt;math_outputhash == '' )
+! 			$this-&gt;hash = NULL;
+! 		else {
+! 			// Tailing 0x20s can get dropped by the database, add them back on if necessary:
+! 			$xhash = unpack( 'H32md5', $rpage-&gt;math_outputhash . &quot;                &quot; );
+! 			$this-&gt;hash = $xhash ['md5'];
+! 		}
+! 		
+! 		$this-&gt;conservativeness = $rpage-&gt;math_html_conservativeness;
+! 		$this-&gt;html = $rpage-&gt;math_html;
+! 		$this-&gt;mathml = $rpage-&gt;math_mathml;
+! 		
+! 		if( !$this-&gt;html &amp;&amp; !$this-&gt;mathml &amp;&amp; !$this-&gt;hash )
+! 			return false; // Database contains no useful information
+  
++ 		if( $this-&gt;hash) {
++ 			$hashpath = $this-&gt;_getHashPath();
++ 			
++ 			// All files used to be stored directly under $wgMathDirectory
++ 			// Move them to the new layout if necessary
++ 			if( file_exists( $wgMathDirectory . &quot;/{$this-&gt;hash}.png&quot; )
++ 			    &amp;&amp; !file_exists( $hashpath . &quot;/{$this-&gt;hash}.png&quot; ) ) {
+  				if( !file_exists( $hashpath ) ) {
+  					if( !@wfMkdirParents( $hashpath, 0755 ) ) {
+***************
+*** 457,461 ****
+  				if ( function_exists( &quot;link&quot; ) ) {
+  					return link ( $wgMathDirectory . &quot;/{$this-&gt;hash}.png&quot;,
+! 							$hashpath . &quot;/{$this-&gt;hash}.png&quot; );
+  				} else {
+  					return rename ( $wgMathDirectory . &quot;/{$this-&gt;hash}.png&quot;,
+--- 466,470 ----
+  				if ( function_exists( &quot;link&quot; ) ) {
+  					return link ( $wgMathDirectory . &quot;/{$this-&gt;hash}.png&quot;,
+! 						      $hashpath . &quot;/{$this-&gt;hash}.png&quot; );
+  				} else {
+  					return rename ( $wgMathDirectory . &quot;/{$this-&gt;hash}.png&quot;,
+***************
+*** 463,485 ****
+  				}
+  			}
+  
+  			global $wgUseBlahtexVerticalShift;
+! 			if ( $wgUseBlahtexVerticalShift &amp;&amp; $this-&gt;hash )
+! 			{
+  				$verticalShiftFile = @fopen( &quot;$hashpath/{$this-&gt;hash}.vshift&quot;, &quot;rb&quot; );
+! 				if ( !($verticalShiftFile === false) )
+! 				{
+  					$this-&gt;verticalShift = @fgets( $verticalShiftFile );
+  					@fclose( $verticalShiftFile );
+  				}
+  				// Silently ignore vertical shift if the file is missing
+! 			}
+! 
+! 			if( $this-&gt;html || $this-&gt;mathml || $this-&gt;hash )
+! 				return true;
+  		}
+  		
+! 		# Missing from the database and/or the render cache
+! 		return false;
+  	}
+  
+--- 472,493 ----
+  				}
+  			}
++ 			
++ 			if ( !file_exists( $hashpath . &quot;/{$this-&gt;hash}.png&quot; ) ) {
++ 				$this-&gt;hash = NULL; // File disappeared from the render cache
++ 				return false;
++ 			}
+  
+  			global $wgUseBlahtexVerticalShift;
+! 			if ( $wgUseBlahtexVerticalShift &amp;&amp; $this-&gt;hash ) {
+  				$verticalShiftFile = @fopen( &quot;$hashpath/{$this-&gt;hash}.vshift&quot;, &quot;rb&quot; );
+! 				if ( !($verticalShiftFile === false) ) {
+  					$this-&gt;verticalShift = @fgets( $verticalShiftFile );
+  					@fclose( $verticalShiftFile );
+  				}
+  				// Silently ignore vertical shift if the file is missing
+! 			}			
+  		}
+  		
+! 		return true;
+  	}
+  
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000027.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.16,1.17
+</A></li>
+	<LI>Next message: <A HREF="000029.html">[Blahtex-cvs] blahtex/includes Math.php,1.29,1.30
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

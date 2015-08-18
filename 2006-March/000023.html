@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/blahtex/source/BlahtexCore LayoutTree.cpp,1.4,1.5 LayoutTree.h,1.4,1.5 MathmlNode.cpp,1.1,1.2 MathmlNode.h,1.1,1.2 ParseTree1.cpp,1.4,1.5 ParseTree2.cpp,1.4,1.5 ParseTree3.cpp,1.4,1.5 Parser.cpp,1.4,1.5 XmlEncode.cpp,1.1,1.2
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/blahtex/source/BlahtexCore%20LayoutTree.cpp%2C1.4%2C1.5%20LayoutTree.h%2C1.4%2C1.5%20MathmlNode.cpp%2C1.1%2C1.2%20MathmlNode.h%2C1.1%2C1.2%20ParseTree1.cpp%2C1.4%2C1.5%20ParseTree2.cpp%2C1.4%2C1.5%20ParseTree3.cpp%2C1.4%2C1.5%20Parser.cpp%2C1.4%2C1.5%20XmlEncode.cpp%2C1.1%2C1.2&In-Reply-To=%3C200603261009.k2QA9Gt14917%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000022.html">
+   <LINK REL="Next"  HREF="000024.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/blahtex/source/BlahtexCore LayoutTree.cpp,1.4,1.5 LayoutTree.h,1.4,1.5 MathmlNode.cpp,1.1,1.2 MathmlNode.h,1.1,1.2 ParseTree1.cpp,1.4,1.5 ParseTree2.cpp,1.4,1.5 ParseTree3.cpp,1.4,1.5 Parser.cpp,1.4,1.5 XmlEncode.cpp,1.1,1.2</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/blahtex/source/BlahtexCore%20LayoutTree.cpp%2C1.4%2C1.5%20LayoutTree.h%2C1.4%2C1.5%20MathmlNode.cpp%2C1.1%2C1.2%20MathmlNode.h%2C1.1%2C1.2%20ParseTree1.cpp%2C1.4%2C1.5%20ParseTree2.cpp%2C1.4%2C1.5%20ParseTree3.cpp%2C1.4%2C1.5%20Parser.cpp%2C1.4%2C1.5%20XmlEncode.cpp%2C1.1%2C1.2&In-Reply-To=%3C200603261009.k2QA9Gt14917%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/blahtex/source/BlahtexCore LayoutTree.cpp,1.4,1.5 LayoutTree.h,1.4,1.5 MathmlNode.cpp,1.1,1.2 MathmlNode.h,1.1,1.2 ParseTree1.cpp,1.4,1.5 ParseTree2.cpp,1.4,1.5 ParseTree3.cpp,1.4,1.5 Parser.cpp,1.4,1.5 XmlEncode.cpp,1.1,1.2">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Sun Mar 26 12:09:16 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000022.html">[Blahtex-cvs] blahtex/blahtex README,1.4,1.5
+</A></li>
+        <LI>Next message: <A HREF="000024.html">[Blahtex-cvs] blahtex/blahtex GNU-FDL,NONE,1.1 logo.png,NONE,1.1 manual.tex,NONE,1.1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore
+In directory sheep:/tmp/cvs-serv23511/source/BlahtexCore
+
+Modified Files:
+	LayoutTree.cpp LayoutTree.h MathmlNode.cpp MathmlNode.h 
+	ParseTree1.cpp ParseTree2.cpp ParseTree3.cpp Parser.cpp 
+	XmlEncode.cpp 
+Log Message:
+Upgrade to blahtex version 0.4.4
+
+
+Index: LayoutTree.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/LayoutTree.cpp,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** LayoutTree.cpp	14 Mar 2006 11:15:03 -0000	1.4
+--- LayoutTree.cpp	26 Mar 2006 10:09:39 -0000	1.5
+***************
+*** 1110,1114 ****
+--- 1110,1125 ----
+              alignString += (i % 2) ? L&quot; left&quot; : L&quot; right&quot;;
+          node-&gt;mAttributes[MathmlNode::cAttributeColumnalign] = alignString;
++         
++         wstring spacingString = L&quot;0.2em&quot;;
++         for (int i = 2; i &lt; tableWidth; i++)
++             spacingString += (i % 2) ? L&quot; 0.2em&quot; : L&quot; 1em&quot;;
++         node-&gt;mAttributes[MathmlNode::cAttributeColumnspacing] =
++             spacingString;
+      }
++     
++     // FIX: need to test this for Firefox whenever they get that bug fixed
++     // (mozilla bug 330964)
++     if (mRowSpacing == cRowSpacingTight)
++         node-&gt;mAttributes[MathmlNode::cAttributeRowspacing] = L&quot;0.3ex&quot;;
+  
+      for (vector&lt;vector&lt;Node*&gt; &gt;::const_iterator
+***************
+*** 1184,1188 ****
+  
+  
+! // This is a list of all symbols that we know how to negate.
+  pair&lt;wstring, wstring&gt; gNegationArray[] =
+  {
+--- 1195,1199 ----
+  
+  
+! // This is a list of all operators that we know how to negate.
+  pair&lt;wstring, wstring&gt; gNegationArray[] =
+  {
+
+Index: LayoutTree.h
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/LayoutTree.h,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** LayoutTree.h	14 Mar 2006 11:15:03 -0000	1.4
+--- LayoutTree.h	26 Mar 2006 10:09:39 -0000	1.5
+***************
+*** 594,604 ****
+          }
+          mAlign;
+  
+          Table(
+              Style style,
+!             RGBColour colour
+          ) :
+              Node(style, cFlavourOrd, cLimitsDisplayLimits, colour),
+!             mAlign(cAlignCentre)
+          { }
+  
+--- 594,616 ----
+          }
+          mAlign;
++         
++         // How much space to put between rows of the table. Currently
++         // &quot;tight&quot; is used for &quot;\substack&quot; blocks, everything else
++         // gets &quot;normal&quot;.
++         enum RowSpacing
++         {
++             cRowSpacingNormal,
++             cRowSpacingTight
++         }
++         mRowSpacing;
+  
+          Table(
+              Style style,
+!             RGBColour colour,
+!             RowSpacing rowSpacing = cRowSpacingNormal
+          ) :
+              Node(style, cFlavourOrd, cLimitsDisplayLimits, colour),
+!             mAlign(cAlignCentre),
+!             mRowSpacing(rowSpacing)
+          { }
+  
+
+Index: MathmlNode.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/MathmlNode.cpp,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -C2 -d -r1.1 -r1.2
+*** MathmlNode.cpp	14 Mar 2006 11:15:03 -0000	1.1
+--- MathmlNode.cpp	26 Mar 2006 10:09:39 -0000	1.2
+***************
+*** 206,209 ****
+--- 206,211 ----
+          L&quot;linethickness&quot;,
+          L&quot;columnalign&quot;,
++         L&quot;columnspacing&quot;,
++         L&quot;rowspacing&quot;,
+          L&quot;fontfamily&quot;,
+          L&quot;fontstyle&quot;,
+
+Index: MathmlNode.h
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/MathmlNode.h,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -C2 -d -r1.1 -r1.2
+*** MathmlNode.h	14 Mar 2006 11:15:03 -0000	1.1
+--- MathmlNode.h	26 Mar 2006 10:09:39 -0000	1.2
+***************
+*** 104,107 ****
+--- 104,109 ----
+          cAttributeLinethickness,
+          cAttributeColumnalign,
++         cAttributeColumnspacing,
++         cAttributeRowspacing,
+          cAttributeFontfamily,
+          cAttributeFontstyle,
+
+Index: ParseTree1.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/ParseTree1.cpp,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** ParseTree1.cpp	14 Mar 2006 11:15:03 -0000	1.4
+--- ParseTree1.cpp	26 Mar 2006 10:09:39 -0000	1.5
+***************
+*** 922,926 ****
+              newStyle = LayoutTree::Node::cStyleText;
+  
+!         // FIX: TeX allows &quot;\big.&quot;... do we?
+          return auto_ptr&lt;LayoutTree::Node&gt;(
+              new LayoutTree::SymbolOperator(
+--- 922,926 ----
+              newStyle = LayoutTree::Node::cStyleText;
+  
+!         // FIX: TeX allows &quot;\big.&quot;; do we?
+          return auto_ptr&lt;LayoutTree::Node&gt;(
+              new LayoutTree::SymbolOperator(
+***************
+*** 1017,1024 ****
+          make_pair(L&quot;Bmatrix&quot;,      EnvironmentInfo(L&quot;{&quot;,      L&quot;}&quot;)),
+          make_pair(L&quot;vmatrix&quot;,      EnvironmentInfo(L&quot;|&quot;,      L&quot;|&quot;)),
+!         make_pair(L&quot;Vmatrix&quot;,
+!             // DoubleVerticalBar:
+!             EnvironmentInfo(L&quot;\U00002225&quot;, L&quot;\U00002225&quot;)
+!         ),
+          make_pair(L&quot;cases&quot;,        EnvironmentInfo(L&quot;{&quot;,      L&quot;&quot;)),
+          make_pair(L&quot;aligned&quot;,      EnvironmentInfo(L&quot;&quot;,       L&quot;&quot;)),
+--- 1017,1022 ----
+          make_pair(L&quot;Bmatrix&quot;,      EnvironmentInfo(L&quot;{&quot;,      L&quot;}&quot;)),
+          make_pair(L&quot;vmatrix&quot;,      EnvironmentInfo(L&quot;|&quot;,      L&quot;|&quot;)),
+!         // DoubleVerticalBar:
+!         make_pair(L&quot;Vmatrix&quot;,      EnvironmentInfo(L&quot;\U00002225&quot;, L&quot;\U00002225&quot;)),
+          make_pair(L&quot;cases&quot;,        EnvironmentInfo(L&quot;{&quot;,      L&quot;&quot;)),
+          make_pair(L&quot;aligned&quot;,      EnvironmentInfo(L&quot;&quot;,       L&quot;&quot;)),
+***************
+*** 1046,1053 ****
+      newState.mMathFont.mIsBoldsymbol = state.mMathFont.mIsBoldsymbol;
+  
+-     // FIX: I think probably the substack rows need to be closer together,
+-     // but Firefox doesn't respect the &quot;rowspacing&quot; attribute on &lt;mtable&gt;.
+-     // Need to report that and write some code here too.
+- 
+      LayoutTree::Node::Style fencedStyle;
+      if (mName == L&quot;smallmatrix&quot; || mName == L&quot;substack&quot;)
+--- 1044,1047 ----
+***************
+*** 1065,1076 ****
+  
+      auto_ptr&lt;LayoutTree::Node&gt; table = mTable-&gt;BuildLayoutTree(newState);
+  
+!     if (mName == L&quot;aligned&quot;)
+!         dynamic_cast&lt;LayoutTree::Table*&gt;(table.get())-&gt;mAlign
+!             = LayoutTree::Table::cAlignRightLeft;
+  
+      else if (mName == L&quot;cases&quot;)
+!         dynamic_cast&lt;LayoutTree::Table*&gt;(table.get())-&gt;mAlign
+!             = LayoutTree::Table::cAlignLeft;
+  
+      if (environmentLookup-&gt;second.mLeftDelimiter.empty() &amp;&amp;
+--- 1059,1076 ----
+  
+      auto_ptr&lt;LayoutTree::Node&gt; table = mTable-&gt;BuildLayoutTree(newState);
++     LayoutTree::Table* tablePtr =
++         dynamic_cast&lt;LayoutTree::Table*&gt;(table.get());
++     if (!tablePtr)
++         throw logic_error(
++             &quot;Unexpected node type in MathEnvironment::BuildLayoutTree&quot;
++         );
+  
+!     if (mName == L&quot;substack&quot;)
+!         tablePtr-&gt;mRowSpacing = LayoutTree::Table::cRowSpacingTight;
+  
++     if (mName == L&quot;aligned&quot;)
++         tablePtr-&gt;mAlign = LayoutTree::Table::cAlignRightLeft;
+      else if (mName == L&quot;cases&quot;)
+!         tablePtr-&gt;mAlign = LayoutTree::Table::cAlignLeft;
+  
+      if (environmentLookup-&gt;second.mLeftDelimiter.empty() &amp;&amp;
+***************
+*** 1098,1135 ****
+      // about which font they select.
+      static pair&lt;wstring, TexTextFont&gt; textCommandArray[] =
+!     {                         // flags are:     bold?  italic?
+!         make_pair(L&quot;\\mbox&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, false)
+!         ),
+!         make_pair(L&quot;\\hbox&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, false)
+!         ),
+!         make_pair(L&quot;\\text&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, false)
+!         ),
+!         make_pair(L&quot;\\textrm&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, false)
+!         ),
+!         make_pair(L&quot;\\textbf&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, true,  false)
+!         ),
+!         make_pair(L&quot;\\emph&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, true)
+!         ),
+!         make_pair(L&quot;\\textit&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, true)
+!         ),
+!         make_pair(L&quot;\\textsf&quot;,
+!             TexTextFont(TexTextFont::cFamilySf, false, false)
+!         ),
+!         make_pair(L&quot;\\texttt&quot;,
+!             TexTextFont(TexTextFont::cFamilyTt, false, false)
+!         ),
+!         make_pair(L&quot;\\cyr&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, false)
+!         ),
+!         make_pair(L&quot;\\jap&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, false)
+!         )
+      };
+      static wishful_hash_map&lt;wstring, TexTextFont&gt; textCommandTable(
+--- 1098,1113 ----
+      // about which font they select.
+      static pair&lt;wstring, TexTextFont&gt; textCommandArray[] =
+!     {                                             // flags are:     bold?  italic?
+!         make_pair(L&quot;\\mbox&quot;,    TexTextFont(TexTextFont::cFamilyRm, false, false)),
+!         make_pair(L&quot;\\hbox&quot;,    TexTextFont(TexTextFont::cFamilyRm, false, false)),
+!         make_pair(L&quot;\\text&quot;,    TexTextFont(TexTextFont::cFamilyRm, false, false)),
+!         make_pair(L&quot;\\textrm&quot;,  TexTextFont(TexTextFont::cFamilyRm, false, false)),
+!         make_pair(L&quot;\\textbf&quot;,  TexTextFont(TexTextFont::cFamilyRm, true,  false)),
+!         make_pair(L&quot;\\emph&quot;,    TexTextFont(TexTextFont::cFamilyRm, false, true)),
+!         make_pair(L&quot;\\textit&quot;,  TexTextFont(TexTextFont::cFamilyRm, false, true)),
+!         make_pair(L&quot;\\textsf&quot;,  TexTextFont(TexTextFont::cFamilySf, false, false)),
+!         make_pair(L&quot;\\texttt&quot;,  TexTextFont(TexTextFont::cFamilyTt, false, false)),
+!         make_pair(L&quot;\\cyr&quot;,     TexTextFont(TexTextFont::cFamilyRm, false, false)),
+!         make_pair(L&quot;\\jap&quot;,     TexTextFont(TexTextFont::cFamilyRm, false, false))
+      };
+      static wishful_hash_map&lt;wstring, TexTextFont&gt; textCommandTable(
+***************
+*** 1217,1220 ****
+--- 1195,1199 ----
+          make_pair(L&quot;\\&amp;&quot;,                 L&quot;&amp;&quot;),
+          // FIX: why did I put in these next two lines again?
++         // FIX: The character &quot;&lt;&quot; and &quot;&gt;&quot; actually do funny things in TeX...
+          make_pair(L&quot;&lt;&quot;,                   L&quot;&lt;&quot;),
+          make_pair(L&quot;&gt;&quot;,                   L&quot;&gt;&quot;),
+
+Index: ParseTree2.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/ParseTree2.cpp,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** ParseTree2.cpp	14 Mar 2006 11:15:03 -0000	1.4
+--- ParseTree2.cpp	26 Mar 2006 10:09:39 -0000	1.5
+***************
+*** 128,1372 ****
+  pair&lt;wstring, OperatorInfo&gt; operatorArray[] =
+  {
+!     make_pair(L&quot;(&quot;,
+!         OperatorInfo(L&quot;(&quot;, LayoutTree::Node::cFlavourOpen)
+!     ),
+!     make_pair(L&quot;)&quot;,
+!         OperatorInfo(L&quot;)&quot;, LayoutTree::Node::cFlavourClose)
+!     ),
+!     make_pair(L&quot;[&quot;,
+!         OperatorInfo(L&quot;[&quot;, LayoutTree::Node::cFlavourOpen)
+[...1864 lines suppressed...]
+!     make_pair(L&quot;\\Re&quot;,          IdentifierInfo(false, L&quot;\U0000211C&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\Im&quot;,          IdentifierInfo(false, L&quot;\U00002111&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\infty&quot;,       IdentifierInfo(false, L&quot;\U0000221E&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\hbar&quot;,        IdentifierInfo(false, L&quot;\U00000127&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\emptyset&quot;,    IdentifierInfo(false, L&quot;\U00002205&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\varnothing&quot;,  IdentifierInfo(false, L&quot;\U000000D8&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\S&quot;,           IdentifierInfo(false, L&quot;\U000000A7&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\eth&quot;,         IdentifierInfo(false, L&quot;\U000000F0&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\hslash&quot;,      IdentifierInfo(false, L&quot;\U0000210F&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\mho&quot;,         IdentifierInfo(false, L&quot;\U00002127&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\circledR&quot;,    IdentifierInfo(false, L&quot;\U000000AE&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\yen&quot;,         IdentifierInfo(false, L&quot;\U000000A5&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\maltese&quot;,     IdentifierInfo(false, L&quot;\U00002720&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\circledS&quot;,    IdentifierInfo(false, L&quot;\U000024C8&quot;, LayoutTree::Node::cFlavourOrd)),
+      // FIX: these two needs special testing since they're plane-1:
+      // FIX: need to update mediawiki to recognise these entities
+!     make_pair(L&quot;\\Bbbk&quot;,        IdentifierInfo(false, L&quot;\U0001D55C&quot;, LayoutTree::Node::cFlavourOrd)),
+!     make_pair(L&quot;\\jmath&quot;,       IdentifierInfo(true,  L&quot;\U0001D6A5&quot;, LayoutTree::Node::cFlavourOrd))
+  };
+  wishful_hash_map&lt;wstring, IdentifierInfo&gt; identifierTable(
+
+Index: ParseTree3.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/ParseTree3.cpp,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** ParseTree3.cpp	14 Mar 2006 11:15:03 -0000	1.4
+--- ParseTree3.cpp	26 Mar 2006 10:09:39 -0000	1.5
+***************
+*** 228,243 ****
+      static pair&lt;wstring, LayoutTree::Node::Style&gt; styleCommandArray[] =
+      {
+!         make_pair(L&quot;\\displaystyle&quot;,
+!             LayoutTree::Node::cStyleDisplay
+!         ),
+!         make_pair(L&quot;\\textstyle&quot;,
+!             LayoutTree::Node::cStyleText
+!         ),
+!         make_pair(L&quot;\\scriptstyle&quot;,
+!             LayoutTree::Node::cStyleScript
+!         ),
+!         make_pair(L&quot;\\scriptscriptstyle&quot;,
+!             LayoutTree::Node::cStyleScriptScript
+!         )
+      };
+      static wishful_hash_map&lt;wstring, LayoutTree::Node::Style&gt;
+--- 228,235 ----
+      static pair&lt;wstring, LayoutTree::Node::Style&gt; styleCommandArray[] =
+      {
+!         make_pair(L&quot;\\displaystyle&quot;,       LayoutTree::Node::cStyleDisplay),
+!         make_pair(L&quot;\\textstyle&quot;,          LayoutTree::Node::cStyleText),
+!         make_pair(L&quot;\\scriptstyle&quot;,        LayoutTree::Node::cStyleScript),
+!         make_pair(L&quot;\\scriptscriptstyle&quot;,  LayoutTree::Node::cStyleScriptScript)
+      };
+      static wishful_hash_map&lt;wstring, LayoutTree::Node::Style&gt;
+***************
+*** 290,313 ****
+  {
+      static pair&lt;wstring, TexTextFont&gt; textCommandArray[] =
+!     {                                       //  bold?  italic?
+!         make_pair(L&quot;\\rm&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, false)
+!         ),
+! 
+!         make_pair(L&quot;\\it&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, false, true)
+!         ),
+! 
+!         make_pair(L&quot;\\bf&quot;,
+!             TexTextFont(TexTextFont::cFamilyRm, true, false)
+!         ),
+! 
+!         make_pair(L&quot;\\sf&quot;,
+!             TexTextFont(TexTextFont::cFamilySf, false, false)
+!         ),
+! 
+!         make_pair(L&quot;\\tt&quot;,
+!             TexTextFont(TexTextFont::cFamilyTt, false, false)
+!         ),
+      };
+      static wishful_hash_map&lt;wstring, TexTextFont&gt; textCommandTable(
+--- 282,291 ----
+  {
+      static pair&lt;wstring, TexTextFont&gt; textCommandArray[] =
+!     {                                                       //  bold?  italic?
+!         make_pair(L&quot;\\rm&quot;,  TexTextFont(TexTextFont::cFamilyRm, false, false)),
+!         make_pair(L&quot;\\it&quot;,  TexTextFont(TexTextFont::cFamilyRm, false, true)),
+!         make_pair(L&quot;\\bf&quot;,  TexTextFont(TexTextFont::cFamilyRm, true,  false)),
+!         make_pair(L&quot;\\sf&quot;,  TexTextFont(TexTextFont::cFamilySf, false, false)),
+!         make_pair(L&quot;\\tt&quot;,  TexTextFont(TexTextFont::cFamilyTt, false, false)),
+      };
+      static wishful_hash_map&lt;wstring, TexTextFont&gt; textCommandTable(
+***************
+*** 917,921 ****
+      if (mIsShort)
+      {
+!         beginCommand = L&quot;\\&quot; + mName + L&quot;{&quot;;
+          endCommand = L&quot;}&quot;;
+      }
+--- 895,901 ----
+      if (mIsShort)
+      {
+!         beginCommand = L&quot;\\&quot; + mName;
+!         features.Update(beginCommand);
+!         beginCommand += L&quot;{&quot;;
+          endCommand = L&quot;}&quot;;
+      }
+***************
+*** 923,931 ****
+      {
+          beginCommand = L&quot;\\begin{&quot; + mName + L&quot;}&quot;;
+          endCommand = L&quot;\\end{&quot; + mName + L&quot;}&quot;;
+      }
+      
+-     features.Update(beginCommand);
+-     
+      os &lt;&lt; beginCommand;
+      mTable-&gt;GetPurifiedTex(os, features, fontEncoding);
+--- 903,910 ----
+      {
+          beginCommand = L&quot;\\begin{&quot; + mName + L&quot;}&quot;;
++         features.Update(beginCommand);
+          endCommand = L&quot;\\end{&quot; + mName + L&quot;}&quot;;
+      }
+      
+      os &lt;&lt; beginCommand;
+      mTable-&gt;GetPurifiedTex(os, features, fontEncoding);
+***************
+*** 1008,1014 ****
+          END_ARRAY(gSimpleUnicodeArray)
+      );
+- 
+-     // FIX: need command line option to select output DPI
+-     // FIX: the above comment doesn't belong here
+  
+      if (mCommand.size() &gt; 1 || mCommand[0] &lt;= 0x7F)
+--- 987,990 ----
+
+Index: Parser.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/Parser.cpp,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** Parser.cpp	14 Mar 2006 11:15:03 -0000	1.4
+--- Parser.cpp	26 Mar 2006 10:09:39 -0000	1.5
+***************
+*** 453,456 ****
+--- 453,457 ----
+      // changes. TeX only uses TWO sizes for its &quot;large operators&quot;.
+      // textstyle and below should all be the same size.
++     // Although, amsmath does things differently: investigate that.
+  
+      make_pair(L&quot;\\sum&quot;,                    Parser::cSymbolUnsafe),
+
+Index: XmlEncode.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/BlahtexCore/XmlEncode.cpp,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -C2 -d -r1.1 -r1.2
+*** XmlEncode.cpp	14 Mar 2006 11:15:03 -0000	1.1
+--- XmlEncode.cpp	26 Mar 2006 10:09:39 -0000	1.2
+***************
+*** 56,1394 ****
+  pair&lt;wchar_t, UnicodeNameInfo&gt; gUnicodeNameArray[] =
+  {
+!     make_pair(L'\U00000060',
+!         UnicodeNameInfo(L&quot;grave&quot;, L&quot;DiacriticalGrave&quot;)
+!     ),
+!     make_pair(L'\U000000A0',
+!         UnicodeNameInfo(L&quot;nbsp&quot;, L&quot;NonBreakingSpace&quot;)
+!     ),
+!     make_pair(L'\U000000A7',
+!         UnicodeNameInfo(L&quot;sect&quot;)
+[...1854 lines suppressed...]
+!     make_pair(L'\U0001D546', UnicodeNameInfo(L&quot;Oopf&quot;)),
+!     make_pair(L'\U0001D54A', UnicodeNameInfo(L&quot;Sopf&quot;)),
+!     make_pair(L'\U0001D54B', UnicodeNameInfo(L&quot;Topf&quot;)),
+!     make_pair(L'\U0001D54C', UnicodeNameInfo(L&quot;Uopf&quot;)),
+!     make_pair(L'\U0001D54D', UnicodeNameInfo(L&quot;Vopf&quot;)),
+!     make_pair(L'\U0001D54E', UnicodeNameInfo(L&quot;Wopf&quot;)),
+!     make_pair(L'\U0001D54F', UnicodeNameInfo(L&quot;Xopf&quot;)),
+!     make_pair(L'\U0001D550', UnicodeNameInfo(L&quot;Yopf&quot;)),
+!     make_pair(L'\U0001D55C', UnicodeNameInfo(L&quot;kopf&quot;)),
+!     make_pair(L'\U0001D6A5', UnicodeNameInfo())
+  };
+  
+***************
+*** 1403,1406 ****
+--- 600,604 ----
+  // In particular, does the current strategy work for *named* entities
+  // and combining characters? I'm not sure.
++ 
+  
+  // XmlEncode() handles conversion of non-ASCII characters to entities.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000022.html">[Blahtex-cvs] blahtex/blahtex README,1.4,1.5
+</A></li>
+	<LI>Next message: <A HREF="000024.html">[Blahtex-cvs] blahtex/blahtex GNU-FDL,NONE,1.1 logo.png,NONE,1.1 manual.tex,NONE,1.1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

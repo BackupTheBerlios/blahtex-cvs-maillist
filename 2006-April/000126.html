@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/maintenance/archives/.svn/text-base .htaccess.svn-base,1.1.1.1,NONE patch-archive-rev_id.sql.svn-base,1.1.1.1,NONE patch-archive-text_id.sql.svn-base,1.1.1.1,NONE patch-bot.sql.svn-base,1.1.1.1,NONE patch-cache.sql.svn-base,1.1.1.1,NONE patch-categorylinks.sql.svn-base,1.1.1.1,NONE patch-drop-user_newtalk.sql.svn-base,1.1.1.1,NONE patch-drop_img_type.sql.svn-base,1.1.1.1,NONE patch-email-authentication.sql.svn-base,1.1.1.1,NONE patch-email-notification.sql.svn-base,1.1.1.1,NONE patch-externallinks.sql.svn-base,1.1.1.1,NONE patch-hitcounter.sql.svn-base,1.1.1.1,NONE patch-image_name_primary.sql.svn-base,1.1.1.1,NONE patch-image_name_unique.sql.svn-base,1.1.1.1,NONE patch-img_exif.sql.svn-base,1.1.1.1,NONE patch-img_media_type.sql.svn-base,1.1.1.1,NONE patch-img_metadata.sql.svn-base,1.1.1.1,NONE patch-img_width.sql.svn-base,1.1.1.1,NONE patch-indexes.sql.svn-base,1.1.1.1,NONE patch-interwiki-trans.sql.svn-base,1.1.1.1,NONE patch-interwiki.sql.svn-base,1.1.1.1,NONE patch-inverse_timestamp.sql.svn-base,1.1.1.1,NONE patch-ipb_expiry.sql.svn-base,1.1.1.1,NONE patch-ipb_range_start.sql.svn-base,1.1.1.1,NONE patch-ipblocks.sql.svn-base,1.1.1.1,NONE patch-job.sql.svn-base,1.1.1.1,NONE patch-linkscc-1.3.sql.svn-base,1.1.1.1,NONE patch-linkscc.sql.svn-base,1.1.1.1,NONE patch-linktables.sql.svn-base,1.1.1.1,NONE patch-list.txt.svn-base,1.1.1.1,NONE patch-log_params.sql.svn-base,1.1.1.1,NONE patch-logging-times-index.sql.svn-base,1.1.1.1,NONE patch-logging-title.sql.svn-base,1.1.1.1,NONE patch-logging.sql.svn-base,1.1.1.1,NONE patch-math.sql.svn-base,1.1.1.1,NONE patch-mimesearch-indexes.sql.svn-base,1.1.1.1,NONE patch-objectcache.sql.svn-base,1.1.1.1,NONE patch-oldestindex.sql.svn-base,1.1.1.1,NONE patch-page_len.sql.svn-base,1.1.1.1,NONE patch-pagelinks.sql.svn-base,1.1.1.1,NONE patch-parsercache.sql.svn-base,1.1.1.1,NONE patch-profiling.sql.svn-base,1.1.1.1,NONE patch-querycache.sql.svn-base,1.1.1.1,NONE patch-random-dateindex.sql.svn-base,1.1.1.1,NONE patch-rc-newindex.sql.svn-base,1.1.1.1,NONE patch-rc
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/maintenance/archives/.svn/text-base%20.htaccess.svn-base%2C1.1.1.1%2CNONE%20patch-archive-rev_id.sql.svn-base%2C1.1.1.1%2CNONE%20patch-archive-text_id.sql.svn-base%2C1.1.1.1%2CNONE%20patch-bot.sql.svn-base%2C1.1.1.1%2CNONE%20patch-cache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-categorylinks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-drop-user_newtalk.sql.svn-base%2C1.1.1.1%2CNONE%20patch-drop_img_type.sql.svn-base%2C1.1.1.1%2CNONE%20patch-email-authentication.sql.svn-base%2C1.1.1.1%2CNONE%20patch-email-notification.sql.svn-base%2C1.1.1.1%2CNONE%20patch-externallinks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-hitcounter.sql.svn-base%2C1.1.1.1%2CNONE%20patch-image_name_primary.sql.svn-base%2C1.1.1.1%2CNONE%20patch-image_name_unique.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_exif.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_media_type.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_metadata.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_width.sql.svn-base%2C1.1.1.1%2CNONE%20patch-indexes.sql.svn-base%2C1.1.1.1%2CNONE%20patch-interwiki-trans.sql.svn-base%2C1.1.1.1%2CNONE%20patch-interwiki.sql.svn-base%2C1.1.1.1%2CNONE%20patch-inverse_timestamp.sql.svn-base%2C1.1.1.1%2CNONE%20patch-ipb_expiry.sql.svn-base%2C1.1.1.1%2CNONE%20patch-ipb_range_start.sql.svn-base%2C1.1.1.1%2CNONE%20patch-ipblocks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-job.sql.svn-base%2C1.1.1.1%2CNONE%20patch-linkscc-1.3.sql.svn-base%2C1.1.1.1%2CNONE%20patch-linkscc.sql.svn-base%2C1.1.1.1%2CNONE%20patch-linktables.sql.svn-base%2C1.1.1.1%2CNONE%20patch-list.txt.svn-base%2C1.1.1.1%2CNONE%20patch-log_params.sql.svn-base%2C1.1.1.1%2CNONE%20patch-logging-times-index.sql.svn-base%2C1.1.1.1%2CNONE%20patch-logging-title.sql.svn-base%2C1.1.1.1%2CNONE%20patch-logging.sql.svn-base%2C1.1.1.1%2CNONE%20patch-math.sql.svn-base%2C1.1.1.1%2CNONE%20patch-mimesearch-indexes.sql.svn-base%2C1.1.1.1%2CNONE%20patch-objectcache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-oldestindex.sql.svn-base%2C1.1.1.1%2CNONE%20patch-page_len.sql.svn-base%2C1.1.1.1%2CNONE%20patch-pagelinks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-parsercache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-profiling.sql.svn-base%2C1.1.1.1%2CNONE%20patch-querycache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-random-dateindex.sql.svn-base%2C1.1.1.1%2CNONE%20patch-rc-newindex.sql.svn-base%2C1.1.1.1%2CNONE%20patch-rc&In-Reply-To=%3C200604101229.k3ACT5t26671%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000125.html">
+   <LINK REL="Next"  HREF="000140.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/maintenance/archives/.svn/text-base .htaccess.svn-base,1.1.1.1,NONE patch-archive-rev_id.sql.svn-base,1.1.1.1,NONE patch-archive-text_id.sql.svn-base,1.1.1.1,NONE patch-bot.sql.svn-base,1.1.1.1,NONE patch-cache.sql.svn-base,1.1.1.1,NONE patch-categorylinks.sql.svn-base,1.1.1.1,NONE patch-drop-user_newtalk.sql.svn-base,1.1.1.1,NONE patch-drop_img_type.sql.svn-base,1.1.1.1,NONE patch-email-authentication.sql.svn-base,1.1.1.1,NONE patch-email-notification.sql.svn-base,1.1.1.1,NONE patch-externallinks.sql.svn-base,1.1.1.1,NONE patch-hitcounter.sql.svn-base,1.1.1.1,NONE patch-image_name_primary.sql.svn-base,1.1.1.1,NONE patch-image_name_unique.sql.svn-base,1.1.1.1,NONE patch-img_exif.sql.svn-base,1.1.1.1,NONE patch-img_media_type.sql.svn-base,1.1.1.1,NONE patch-img_metadata.sql.svn-base,1.1.1.1,NONE patch-img_width.sql.svn-base,1.1.1.1,NONE patch-indexes.sql.svn-base,1.1.1.1,NONE patch-interwiki-trans.sql.svn-base,1.1.1.1,NONE patch-interwiki.sql.svn-base,1.1.1.1,NONE patch-inverse_timestamp.sql.svn-base,1.1.1.1,NONE patch-ipb_expiry.sql.svn-base,1.1.1.1,NONE patch-ipb_range_start.sql.svn-base,1.1.1.1,NONE patch-ipblocks.sql.svn-base,1.1.1.1,NONE patch-job.sql.svn-base,1.1.1.1,NONE patch-linkscc-1.3.sql.svn-base,1.1.1.1,NONE patch-linkscc.sql.svn-base,1.1.1.1,NONE patch-linktables.sql.svn-base,1.1.1.1,NONE patch-list.txt.svn-base,1.1.1.1,NONE patch-log_params.sql.svn-base,1.1.1.1,NONE patch-logging-times-index.sql.svn-base,1.1.1.1,NONE patch-logging-title.sql.svn-base,1.1.1.1,NONE patch-logging.sql.svn-base,1.1.1.1,NONE patch-math.sql.svn-base,1.1.1.1,NONE patch-mimesearch-indexes.sql.svn-base,1.1.1.1,NONE patch-objectcache.sql.svn-base,1.1.1.1,NONE patch-oldestindex.sql.svn-base,1.1.1.1,NONE patch-page_len.sql.svn-base,1.1.1.1,NONE patch-pagelinks.sql.svn-base,1.1.1.1,NONE patch-parsercache.sql.svn-base,1.1.1.1,NONE patch-profiling.sql.svn-base,1.1.1.1,NONE patch-querycache.sql.svn-base,1.1.1.1,NONE patch-random-dateindex.sql.svn-base,1.1.1.1,NONE patch-rc-newindex.sql.svn-base,1.1.1.1,NONE patch-rc</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/maintenance/archives/.svn/text-base%20.htaccess.svn-base%2C1.1.1.1%2CNONE%20patch-archive-rev_id.sql.svn-base%2C1.1.1.1%2CNONE%20patch-archive-text_id.sql.svn-base%2C1.1.1.1%2CNONE%20patch-bot.sql.svn-base%2C1.1.1.1%2CNONE%20patch-cache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-categorylinks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-drop-user_newtalk.sql.svn-base%2C1.1.1.1%2CNONE%20patch-drop_img_type.sql.svn-base%2C1.1.1.1%2CNONE%20patch-email-authentication.sql.svn-base%2C1.1.1.1%2CNONE%20patch-email-notification.sql.svn-base%2C1.1.1.1%2CNONE%20patch-externallinks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-hitcounter.sql.svn-base%2C1.1.1.1%2CNONE%20patch-image_name_primary.sql.svn-base%2C1.1.1.1%2CNONE%20patch-image_name_unique.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_exif.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_media_type.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_metadata.sql.svn-base%2C1.1.1.1%2CNONE%20patch-img_width.sql.svn-base%2C1.1.1.1%2CNONE%20patch-indexes.sql.svn-base%2C1.1.1.1%2CNONE%20patch-interwiki-trans.sql.svn-base%2C1.1.1.1%2CNONE%20patch-interwiki.sql.svn-base%2C1.1.1.1%2CNONE%20patch-inverse_timestamp.sql.svn-base%2C1.1.1.1%2CNONE%20patch-ipb_expiry.sql.svn-base%2C1.1.1.1%2CNONE%20patch-ipb_range_start.sql.svn-base%2C1.1.1.1%2CNONE%20patch-ipblocks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-job.sql.svn-base%2C1.1.1.1%2CNONE%20patch-linkscc-1.3.sql.svn-base%2C1.1.1.1%2CNONE%20patch-linkscc.sql.svn-base%2C1.1.1.1%2CNONE%20patch-linktables.sql.svn-base%2C1.1.1.1%2CNONE%20patch-list.txt.svn-base%2C1.1.1.1%2CNONE%20patch-log_params.sql.svn-base%2C1.1.1.1%2CNONE%20patch-logging-times-index.sql.svn-base%2C1.1.1.1%2CNONE%20patch-logging-title.sql.svn-base%2C1.1.1.1%2CNONE%20patch-logging.sql.svn-base%2C1.1.1.1%2CNONE%20patch-math.sql.svn-base%2C1.1.1.1%2CNONE%20patch-mimesearch-indexes.sql.svn-base%2C1.1.1.1%2CNONE%20patch-objectcache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-oldestindex.sql.svn-base%2C1.1.1.1%2CNONE%20patch-page_len.sql.svn-base%2C1.1.1.1%2CNONE%20patch-pagelinks.sql.svn-base%2C1.1.1.1%2CNONE%20patch-parsercache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-profiling.sql.svn-base%2C1.1.1.1%2CNONE%20patch-querycache.sql.svn-base%2C1.1.1.1%2CNONE%20patch-random-dateindex.sql.svn-base%2C1.1.1.1%2CNONE%20patch-rc-newindex.sql.svn-base%2C1.1.1.1%2CNONE%20patch-rc&In-Reply-To=%3C200604101229.k3ACT5t26671%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/maintenance/archives/.svn/text-base .htaccess.svn-base,1.1.1.1,NONE patch-archive-rev_id.sql.svn-base,1.1.1.1,NONE patch-archive-text_id.sql.svn-base,1.1.1.1,NONE patch-bot.sql.svn-base,1.1.1.1,NONE patch-cache.sql.svn-base,1.1.1.1,NONE patch-categorylinks.sql.svn-base,1.1.1.1,NONE patch-drop-user_newtalk.sql.svn-base,1.1.1.1,NONE patch-drop_img_type.sql.svn-base,1.1.1.1,NONE patch-email-authentication.sql.svn-base,1.1.1.1,NONE patch-email-notification.sql.svn-base,1.1.1.1,NONE patch-externallinks.sql.svn-base,1.1.1.1,NONE patch-hitcounter.sql.svn-base,1.1.1.1,NONE patch-image_name_primary.sql.svn-base,1.1.1.1,NONE patch-image_name_unique.sql.svn-base,1.1.1.1,NONE patch-img_exif.sql.svn-base,1.1.1.1,NONE patch-img_media_type.sql.svn-base,1.1.1.1,NONE patch-img_metadata.sql.svn-base,1.1.1.1,NONE patch-img_width.sql.svn-base,1.1.1.1,NONE patch-indexes.sql.svn-base,1.1.1.1,NONE patch-interwiki-trans.sql.svn-base,1.1.1.1,NONE patch-interwiki.sql.svn-base,1.1.1.1,NONE patch-inverse_timestamp.sql.svn-base,1.1.1.1,NONE patch-ipb_expiry.sql.svn-base,1.1.1.1,NONE patch-ipb_range_start.sql.svn-base,1.1.1.1,NONE patch-ipblocks.sql.svn-base,1.1.1.1,NONE patch-job.sql.svn-base,1.1.1.1,NONE patch-linkscc-1.3.sql.svn-base,1.1.1.1,NONE patch-linkscc.sql.svn-base,1.1.1.1,NONE patch-linktables.sql.svn-base,1.1.1.1,NONE patch-list.txt.svn-base,1.1.1.1,NONE patch-log_params.sql.svn-base,1.1.1.1,NONE patch-logging-times-index.sql.svn-base,1.1.1.1,NONE patch-logging-title.sql.svn-base,1.1.1.1,NONE patch-logging.sql.svn-base,1.1.1.1,NONE patch-math.sql.svn-base,1.1.1.1,NONE patch-mimesearch-indexes.sql.svn-base,1.1.1.1,NONE patch-objectcache.sql.svn-base,1.1.1.1,NONE patch-oldestindex.sql.svn-base,1.1.1.1,NONE patch-page_len.sql.svn-base,1.1.1.1,NONE patch-pagelinks.sql.svn-base,1.1.1.1,NONE patch-parsercache.sql.svn-base,1.1.1.1,NONE patch-profiling.sql.svn-base,1.1.1.1,NONE patch-querycache.sql.svn-base,1.1.1.1,NONE patch-random-dateindex.sql.svn-base,1.1.1.1,NONE patch-rc-newindex.sql.svn-base,1.1.1.1,NONE patch-rc">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Mon Apr 10 14:29:05 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000125.html">[Blahtex-cvs] blahtex/maintenance/archives/.svn/props .htaccess.svn-work,1.1.1.1,NONE patch-archive-rev_id.sql.svn-work,1.1.1.1,NONE patch-archive-text_id.sql.svn-work,1.1.1.1,NONE patch-bot.sql.svn-work,1.1.1.1,NONE patch-cache.sql.svn-work,1.1.1.1,NONE patch-categorylinks.sql.svn-work,1.1.1.1,NONE patch-drop-user_newtalk.sql.svn-work,1.1.1.1,NONE patch-drop_img_type.sql.svn-work,1.1.1.1,NONE patch-email-authentication.sql.svn-work,1.1.1.1,NONE patch-email-notification.sql.svn-work,1.1.1.1,NONE patch-externallinks.sql.svn-work,1.1.1.1,NONE patch-hitcounter.sql.svn-work,1.1.1.1,NONE patch-image_name_primary.sql.svn-work,1.1.1.1,NONE patch-image_name_unique.sql.svn-work,1.1.1.1,NONE patch-img_exif.sql.svn-work,1.1.1.1,NONE patch-img_media_type.sql.svn-work,1.1.1.1,NONE patch-img_metadata.sql.svn-work,1.1.1.1,NONE patch-img_width.sql.svn-work,1.1.1.1,NONE patch-indexes.sql.svn-work,1.1.1.1,NONE patch-interwiki-trans.sql.svn-work,1.1.1.1,NONE patch-interwiki.sql.svn-work,1.1.1.1,NONE patch-inverse_timestamp.sql.svn-work,1.1.1.1,NONE patch-ipb_expiry.sql.svn-work,1.1.1.1,NONE patch-ipb_range_start.sql.svn-work,1.1.1.1,NONE patch-ipblocks.sql.svn-work,1.1.1.1,NONE patch-job.sql.svn-work,1.1.1.1,NONE patch-linkscc-1.3.sql.svn-work,1.1.1.1,NONE patch-linkscc.sql.svn-work,1.1.1.1,NONE patch-linktables.sql.svn-work,1.1.1.1,NONE patch-list.txt.svn-work,1.1.1.1,NONE patch-log_params.sql.svn-work,1.1.1.1,NONE patch-logging-times-index.sql.svn-work,1.1.1.1,NONE patch-logging-title.sql.svn-work,1.1.1.1,NONE patch-logging.sql.svn-work,1.1.1.1,NONE patch-math.sql.svn-work,1.1.1.1,NONE patch-mimesearch-indexes.sql.svn-work,1.1.1.1,NONE patch-objectcache.sql.svn-work,1.1.1.1,NONE patch-oldestindex.sql.svn-work,1.1.1.1,NONE patch-page_len.sql.svn-work,1.1.1.1,NONE patch-pagelinks.sql.svn-work,1.1.1.1,NONE patch-parsercache.sql.svn-work,1.1.1.1,NONE patch-profiling.sql.svn-work,1.1.1.1,NONE patch-querycache.sql.svn-work,1.1.1.1,NONE patch-random-dateindex.sql.svn-work,1.1.1.1,NONE patch-rc-newindex.sql.svn-work,1.1.1.1,NONE patch-rc-pat
+</A></li>
+        <LI>Next message: <A HREF="000140.html">[Blahtex-cvs] blahtex/maintenance/archives/.svn/wcprops .htaccess.svn-work,1.1.1.1,NONE patch-archive-rev_id.sql.svn-work,1.1.1.1,NONE patch-archive-text_id.sql.svn-work,1.1.1.1,NONE patch-bot.sql.svn-work,1.1.1.1,NONE patch-cache.sql.svn-work,1.1.1.1,NONE patch-categorylinks.sql.svn-work,1.1.1.1,NONE patch-drop-user_newtalk.sql.svn-work,1.1.1.1,NONE patch-drop_img_type.sql.svn-work,1.1.1.1,NONE patch-email-authentication.sql.svn-work,1.1.1.1,NONE patch-email-notification.sql.svn-work,1.1.1.1,NONE patch-externallinks.sql.svn-work,1.1.1.1,NONE patch-hitcounter.sql.svn-work,1.1.1.1,NONE patch-image_name_primary.sql.svn-work,1.1.1.1,NONE patch-image_name_unique.sql.svn-work,1.1.1.1,NONE patch-img_exif.sql.svn-work,1.1.1.1,NONE patch-img_media_type.sql.svn-work,1.1.1.1,NONE patch-img_metadata.sql.svn-work,1.1.1.1,NONE patch-img_width.sql.svn-work,1.1.1.1,NONE patch-indexes.sql.svn-work,1.1.1.1,NONE patch-interwiki-trans.sql.svn-work,1.1.1.1,NONE patch-interwiki.sql.svn-work,1.1.1.1,NONE patch-inverse_timestamp.sql.svn-work,1.1.1.1,NONE patch-ipb_expiry.sql.svn-work,1.1.1.1,NONE patch-ipb_range_start.sql.svn-work,1.1.1.1,NONE patch-ipblocks.sql.svn-work,1.1.1.1,NONE patch-job.sql.svn-work,1.1.1.1,NONE patch-linkscc-1.3.sql.svn-work,1.1.1.1,NONE patch-linkscc.sql.svn-work,1.1.1.1,NONE patch-linktables.sql.svn-work,1.1.1.1,NONE patch-list.txt.svn-work,1.1.1.1,NONE patch-log_params.sql.svn-work,1.1.1.1,NONE patch-logging-times-index.sql.svn-work,1.1.1.1,NONE patch-logging-title.sql.svn-work,1.1.1.1,NONE patch-logging.sql.svn-work,1.1.1.1,NONE patch-math.sql.svn-work,1.1.1.1,NONE patch-mimesearch-indexes.sql.svn-work,1.1.1.1,NONE patch-objectcache.sql.svn-work,1.1.1.1,NONE patch-oldestindex.sql.svn-work,1.1.1.1,NONE patch-page_len.sql.svn-work,1.1.1.1,NONE patch-pagelinks.sql.svn-work,1.1.1.1,NONE patch-parsercache.sql.svn-work,1.1.1.1,NONE patch-profiling.sql.svn-work,1.1.1.1,NONE patch-querycache.sql.svn-work,1.1.1.1,NONE patch-random-dateindex.sql.svn-work,1.1.1.1,NONE patch-rc-newindex.sql.svn-work,1.1.1.1,NONE patch-rc-p
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/maintenance/archives/.svn/text-base
+In directory sheep:/tmp/cvs-serv19821/maintenance/archives/.svn/text-base
+
+Removed Files:
+	.htaccess.svn-base patch-archive-rev_id.sql.svn-base 
+	patch-archive-text_id.sql.svn-base patch-bot.sql.svn-base 
+	patch-cache.sql.svn-base patch-categorylinks.sql.svn-base 
+	patch-drop-user_newtalk.sql.svn-base 
+	patch-drop_img_type.sql.svn-base 
+	patch-email-authentication.sql.svn-base 
+	patch-email-notification.sql.svn-base 
+	patch-externallinks.sql.svn-base patch-hitcounter.sql.svn-base 
+	patch-image_name_primary.sql.svn-base 
+	patch-image_name_unique.sql.svn-base 
+	patch-img_exif.sql.svn-base patch-img_media_type.sql.svn-base 
+	patch-img_metadata.sql.svn-base patch-img_width.sql.svn-base 
+	patch-indexes.sql.svn-base patch-interwiki-trans.sql.svn-base 
+	patch-interwiki.sql.svn-base 
+	patch-inverse_timestamp.sql.svn-base 
+	patch-ipb_expiry.sql.svn-base 
+	patch-ipb_range_start.sql.svn-base patch-ipblocks.sql.svn-base 
+	patch-job.sql.svn-base patch-linkscc-1.3.sql.svn-base 
+	patch-linkscc.sql.svn-base patch-linktables.sql.svn-base 
+	patch-list.txt.svn-base patch-log_params.sql.svn-base 
+	patch-logging-times-index.sql.svn-base 
+	patch-logging-title.sql.svn-base patch-logging.sql.svn-base 
+	patch-math.sql.svn-base patch-mimesearch-indexes.sql.svn-base 
+	patch-objectcache.sql.svn-base patch-oldestindex.sql.svn-base 
+	patch-page_len.sql.svn-base patch-pagelinks.sql.svn-base 
+	patch-parsercache.sql.svn-base patch-profiling.sql.svn-base 
+	patch-querycache.sql.svn-base 
+	patch-random-dateindex.sql.svn-base 
+	patch-rc-newindex.sql.svn-base patch-rc-patrol.sql.svn-base 
+	patch-rc_id.sql.svn-base patch-rc_ip.sql.svn-base 
+	patch-rc_type.sql.svn-base patch-rename-group.sql.svn-base 
+	patch-rename-user_groups-and_rights.sql.svn-base 
+	patch-restructure.sql.svn-base patch-rev_deleted.sql.svn-base 
+	patch-rev_text_id.sql.svn-base patch-searchindex.sql.svn-base 
+	patch-ss_images.sql.svn-base 
+	patch-ss_total_articles.sql.svn-base 
+	patch-templatelinks.sql.svn-base patch-trackbacks.sql.svn-base 
+	patch-transcache.sql.svn-base patch-user-realname.sql.svn-base 
+	patch-user_email_token.sql.svn-base 
+	patch-user_groups.sql.svn-base 
+	patch-user_nameindex.sql.svn-base 
+	patch-user_registration.sql.svn-base 
+	patch-user_rights.sql.svn-base patch-user_token.sql.svn-base 
+	patch-userindex.sql.svn-base 
+	patch-userlevels-defaultgroups.sql.svn-base 
+	patch-userlevels-rights.sql.svn-base 
+	patch-userlevels.sql.svn-base patch-usernewtalk.sql.svn-base 
+	patch-usernewtalk2.sql.svn-base patch-val_ip.sql.svn-base 
+	patch-validate.sql.svn-base patch-watchlist-null.sql.svn-base 
+	patch-watchlist.sql.svn-base rebuildRecentchanges.inc.svn-base 
+	upgradeWatchlist.php.svn-base 
+Log Message:
+* Merge in changes from MediaWiki upgrade
+* Remove accidentally imported subversion files
+
+
+--- .htaccess.svn-base DELETED ---
+
+--- patch-archive-rev_id.sql.svn-base DELETED ---
+
+--- patch-archive-text_id.sql.svn-base DELETED ---
+
+--- patch-bot.sql.svn-base DELETED ---
+
+--- patch-cache.sql.svn-base DELETED ---
+
+--- patch-categorylinks.sql.svn-base DELETED ---
+
+--- patch-drop-user_newtalk.sql.svn-base DELETED ---
+
+--- patch-drop_img_type.sql.svn-base DELETED ---
+
+--- patch-email-authentication.sql.svn-base DELETED ---
+
+--- patch-email-notification.sql.svn-base DELETED ---
+
+--- patch-externallinks.sql.svn-base DELETED ---
+
+--- patch-hitcounter.sql.svn-base DELETED ---
+
+--- patch-image_name_primary.sql.svn-base DELETED ---
+
+--- patch-image_name_unique.sql.svn-base DELETED ---
+
+--- patch-img_exif.sql.svn-base DELETED ---
+
+--- patch-img_media_type.sql.svn-base DELETED ---
+
+--- patch-img_metadata.sql.svn-base DELETED ---
+
+--- patch-img_width.sql.svn-base DELETED ---
+
+--- patch-indexes.sql.svn-base DELETED ---
+
+--- patch-interwiki-trans.sql.svn-base DELETED ---
+
+--- patch-interwiki.sql.svn-base DELETED ---
+
+--- patch-inverse_timestamp.sql.svn-base DELETED ---
+
+--- patch-ipb_expiry.sql.svn-base DELETED ---
+
+--- patch-ipb_range_start.sql.svn-base DELETED ---
+
+--- patch-ipblocks.sql.svn-base DELETED ---
+
+--- patch-job.sql.svn-base DELETED ---
+
+--- patch-linkscc-1.3.sql.svn-base DELETED ---
+
+--- patch-linkscc.sql.svn-base DELETED ---
+
+--- patch-linktables.sql.svn-base DELETED ---
+
+--- patch-list.txt.svn-base DELETED ---
+
+--- patch-log_params.sql.svn-base DELETED ---
+
+--- patch-logging-times-index.sql.svn-base DELETED ---
+
+--- patch-logging-title.sql.svn-base DELETED ---
+
+--- patch-logging.sql.svn-base DELETED ---
+
+--- patch-math.sql.svn-base DELETED ---
+
+--- patch-mimesearch-indexes.sql.svn-base DELETED ---
+
+--- patch-objectcache.sql.svn-base DELETED ---
+
+--- patch-oldestindex.sql.svn-base DELETED ---
+
+--- patch-page_len.sql.svn-base DELETED ---
+
+--- patch-pagelinks.sql.svn-base DELETED ---
+
+--- patch-parsercache.sql.svn-base DELETED ---
+
+--- patch-profiling.sql.svn-base DELETED ---
+
+--- patch-querycache.sql.svn-base DELETED ---
+
+--- patch-random-dateindex.sql.svn-base DELETED ---
+
+--- patch-rc-newindex.sql.svn-base DELETED ---
+
+--- patch-rc-patrol.sql.svn-base DELETED ---
+
+--- patch-rc_id.sql.svn-base DELETED ---
+
+--- patch-rc_ip.sql.svn-base DELETED ---
+
+--- patch-rc_type.sql.svn-base DELETED ---
+
+--- patch-rename-group.sql.svn-base DELETED ---
+
+--- patch-rename-user_groups-and_rights.sql.svn-base DELETED ---
+
+--- patch-restructure.sql.svn-base DELETED ---
+
+--- patch-rev_deleted.sql.svn-base DELETED ---
+
+--- patch-rev_text_id.sql.svn-base DELETED ---
+
+--- patch-searchindex.sql.svn-base DELETED ---
+
+--- patch-ss_images.sql.svn-base DELETED ---
+
+--- patch-ss_total_articles.sql.svn-base DELETED ---
+
+--- patch-templatelinks.sql.svn-base DELETED ---
+
+--- patch-trackbacks.sql.svn-base DELETED ---
+
+--- patch-transcache.sql.svn-base DELETED ---
+
+--- patch-user-realname.sql.svn-base DELETED ---
+
+--- patch-user_email_token.sql.svn-base DELETED ---
+
+--- patch-user_groups.sql.svn-base DELETED ---
+
+--- patch-user_nameindex.sql.svn-base DELETED ---
+
+--- patch-user_registration.sql.svn-base DELETED ---
+
+--- patch-user_rights.sql.svn-base DELETED ---
+
+--- patch-user_token.sql.svn-base DELETED ---
+
+--- patch-userindex.sql.svn-base DELETED ---
+
+--- patch-userlevels-defaultgroups.sql.svn-base DELETED ---
+
+--- patch-userlevels-rights.sql.svn-base DELETED ---
+
+--- patch-userlevels.sql.svn-base DELETED ---
+
+--- patch-usernewtalk.sql.svn-base DELETED ---
+
+--- patch-usernewtalk2.sql.svn-base DELETED ---
+
+--- patch-val_ip.sql.svn-base DELETED ---
+
+--- patch-validate.sql.svn-base DELETED ---
+
+--- patch-watchlist-null.sql.svn-base DELETED ---
+
+--- patch-watchlist.sql.svn-base DELETED ---
+
+--- rebuildRecentchanges.inc.svn-base DELETED ---
+
+--- upgradeWatchlist.php.svn-base DELETED ---
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000125.html">[Blahtex-cvs] blahtex/maintenance/archives/.svn/props .htaccess.svn-work,1.1.1.1,NONE patch-archive-rev_id.sql.svn-work,1.1.1.1,NONE patch-archive-text_id.sql.svn-work,1.1.1.1,NONE patch-bot.sql.svn-work,1.1.1.1,NONE patch-cache.sql.svn-work,1.1.1.1,NONE patch-categorylinks.sql.svn-work,1.1.1.1,NONE patch-drop-user_newtalk.sql.svn-work,1.1.1.1,NONE patch-drop_img_type.sql.svn-work,1.1.1.1,NONE patch-email-authentication.sql.svn-work,1.1.1.1,NONE patch-email-notification.sql.svn-work,1.1.1.1,NONE patch-externallinks.sql.svn-work,1.1.1.1,NONE patch-hitcounter.sql.svn-work,1.1.1.1,NONE patch-image_name_primary.sql.svn-work,1.1.1.1,NONE patch-image_name_unique.sql.svn-work,1.1.1.1,NONE patch-img_exif.sql.svn-work,1.1.1.1,NONE patch-img_media_type.sql.svn-work,1.1.1.1,NONE patch-img_metadata.sql.svn-work,1.1.1.1,NONE patch-img_width.sql.svn-work,1.1.1.1,NONE patch-indexes.sql.svn-work,1.1.1.1,NONE patch-interwiki-trans.sql.svn-work,1.1.1.1,NONE patch-interwiki.sql.svn-work,1.1.1.1,NONE patch-inverse_timestamp.sql.svn-work,1.1.1.1,NONE patch-ipb_expiry.sql.svn-work,1.1.1.1,NONE patch-ipb_range_start.sql.svn-work,1.1.1.1,NONE patch-ipblocks.sql.svn-work,1.1.1.1,NONE patch-job.sql.svn-work,1.1.1.1,NONE patch-linkscc-1.3.sql.svn-work,1.1.1.1,NONE patch-linkscc.sql.svn-work,1.1.1.1,NONE patch-linktables.sql.svn-work,1.1.1.1,NONE patch-list.txt.svn-work,1.1.1.1,NONE patch-log_params.sql.svn-work,1.1.1.1,NONE patch-logging-times-index.sql.svn-work,1.1.1.1,NONE patch-logging-title.sql.svn-work,1.1.1.1,NONE patch-logging.sql.svn-work,1.1.1.1,NONE patch-math.sql.svn-work,1.1.1.1,NONE patch-mimesearch-indexes.sql.svn-work,1.1.1.1,NONE patch-objectcache.sql.svn-work,1.1.1.1,NONE patch-oldestindex.sql.svn-work,1.1.1.1,NONE patch-page_len.sql.svn-work,1.1.1.1,NONE patch-pagelinks.sql.svn-work,1.1.1.1,NONE patch-parsercache.sql.svn-work,1.1.1.1,NONE patch-profiling.sql.svn-work,1.1.1.1,NONE patch-querycache.sql.svn-work,1.1.1.1,NONE patch-random-dateindex.sql.svn-work,1.1.1.1,NONE patch-rc-newindex.sql.svn-work,1.1.1.1,NONE patch-rc-pat
+</A></li>
+	<LI>Next message: <A HREF="000140.html">[Blahtex-cvs] blahtex/maintenance/archives/.svn/wcprops .htaccess.svn-work,1.1.1.1,NONE patch-archive-rev_id.sql.svn-work,1.1.1.1,NONE patch-archive-text_id.sql.svn-work,1.1.1.1,NONE patch-bot.sql.svn-work,1.1.1.1,NONE patch-cache.sql.svn-work,1.1.1.1,NONE patch-categorylinks.sql.svn-work,1.1.1.1,NONE patch-drop-user_newtalk.sql.svn-work,1.1.1.1,NONE patch-drop_img_type.sql.svn-work,1.1.1.1,NONE patch-email-authentication.sql.svn-work,1.1.1.1,NONE patch-email-notification.sql.svn-work,1.1.1.1,NONE patch-externallinks.sql.svn-work,1.1.1.1,NONE patch-hitcounter.sql.svn-work,1.1.1.1,NONE patch-image_name_primary.sql.svn-work,1.1.1.1,NONE patch-image_name_unique.sql.svn-work,1.1.1.1,NONE patch-img_exif.sql.svn-work,1.1.1.1,NONE patch-img_media_type.sql.svn-work,1.1.1.1,NONE patch-img_metadata.sql.svn-work,1.1.1.1,NONE patch-img_width.sql.svn-work,1.1.1.1,NONE patch-indexes.sql.svn-work,1.1.1.1,NONE patch-interwiki-trans.sql.svn-work,1.1.1.1,NONE patch-interwiki.sql.svn-work,1.1.1.1,NONE patch-inverse_timestamp.sql.svn-work,1.1.1.1,NONE patch-ipb_expiry.sql.svn-work,1.1.1.1,NONE patch-ipb_range_start.sql.svn-work,1.1.1.1,NONE patch-ipblocks.sql.svn-work,1.1.1.1,NONE patch-job.sql.svn-work,1.1.1.1,NONE patch-linkscc-1.3.sql.svn-work,1.1.1.1,NONE patch-linkscc.sql.svn-work,1.1.1.1,NONE patch-linktables.sql.svn-work,1.1.1.1,NONE patch-list.txt.svn-work,1.1.1.1,NONE patch-log_params.sql.svn-work,1.1.1.1,NONE patch-logging-times-index.sql.svn-work,1.1.1.1,NONE patch-logging-title.sql.svn-work,1.1.1.1,NONE patch-logging.sql.svn-work,1.1.1.1,NONE patch-math.sql.svn-work,1.1.1.1,NONE patch-mimesearch-indexes.sql.svn-work,1.1.1.1,NONE patch-objectcache.sql.svn-work,1.1.1.1,NONE patch-oldestindex.sql.svn-work,1.1.1.1,NONE patch-page_len.sql.svn-work,1.1.1.1,NONE patch-pagelinks.sql.svn-work,1.1.1.1,NONE patch-parsercache.sql.svn-work,1.1.1.1,NONE patch-profiling.sql.svn-work,1.1.1.1,NONE patch-querycache.sql.svn-work,1.1.1.1,NONE patch-random-dateindex.sql.svn-work,1.1.1.1,NONE patch-rc-newindex.sql.svn-work,1.1.1.1,NONE patch-rc-p
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

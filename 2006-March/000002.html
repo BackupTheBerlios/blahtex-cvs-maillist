@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/blahtex makefile,1.10,1.11
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/blahtex%20makefile%2C1.10%2C1.11&In-Reply-To=%3C200603141213.k2ECDgb06505%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/blahtex makefile,1.10,1.11</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/blahtex%20makefile%2C1.10%2C1.11&In-Reply-To=%3C200603141213.k2ECDgb06505%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/blahtex makefile,1.10,1.11">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Tue Mar 14 13:13:42 CET 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000003.html">[Blahtex-cvs] blahtex/blahtex/source mainPng.h,NONE,1.1 Messages.cpp,1.3,1.4 UnicodeConverter.cpp,1.3,1.4 UnicodeConverter.h,1.3,1.4 main.cpp,1.3,1.4 mainPng.cpp,1.1,1.2 md5.c,1.3,1.4 md5.h,1.3,1.4 md5Wrapper.cpp,1.3,1.4 md5Wrapper.h,1.3,1.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/blahtex
+In directory sheep:/tmp/cvs-serv4996
+
+Modified Files:
+	makefile 
+Log Message:
+New blahtex version: 0.4.4
+
+
+Index: makefile
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/makefile,v
+retrieving revision 1.10
+retrieving revision 1.11
+diff -C2 -d -r1.10 -r1.11
+*** makefile	12 Feb 2006 22:56:33 -0000	1.10
+--- makefile	14 Mar 2006 11:15:02 -0000	1.11
+***************
+*** 2,6 ****
+  # makefile
+  #
+! # blahtex (version 0.4.2)
+  # a TeX to MathML converter designed with MediaWiki in mind
+  # Copyright (C) 2006, David Harvey
+--- 2,6 ----
+  # makefile
+  #
+! # blahtex (version 0.4.4)
+  # a TeX to MathML converter designed with MediaWiki in mind
+  # Copyright (C) 2006, David Harvey
+***************
+*** 22,43 ****
+  
+  
+- # If you are building with imagemagick support (to enable the
+- # &quot;--compute-vertical-shift&quot; option), you will need to set the
+- # following directories to point to where your ImageMagick header/
+- # library files are stored:
+- 
+- MAGICK_INCLUDE_DIR = /usr/include/
+- MAGICK_LIB_DIR = /usr/lib/
+- 
+- # e.g. if you are using fink (Mac OS X), then probably you want
+- 
+- # MAGICK_INCLUDE_DIR = /sw/include/
+- # MAGICK_LIB_DIR = /sw/lib/
+- 
+- # and if you are using DarwinPorts (Mac OS X), then probably you want
+- 
+- # MAGICK_INCLUDE_DIR = /opt/local/include/
+- # MAGICK_LIB_DIR = /opt/local/lib/
+- 
+  SOURCES = \
+  	source/main.cpp \
+--- 22,25 ----
+***************
+*** 55,61 ****
+  	source/BlahtexCore/ParseTree2.cpp \
+  	source/BlahtexCore/ParseTree3.cpp \
+! 	source/BlahtexCore/XmlNode.cpp
+  	
+  HEADERS = \
+  	source/md5.h \
+  	source/md5Wrapper.h \
+--- 37,45 ----
+  	source/BlahtexCore/ParseTree2.cpp \
+  	source/BlahtexCore/ParseTree3.cpp \
+! 	source/BlahtexCore/MathmlNode.cpp \
+! 	source/BlahtexCore/XmlEncode.cpp
+  	
+  HEADERS = \
++ 	source/mainPng.h \
+  	source/md5.h \
+  	source/md5Wrapper.h \
+***************
+*** 68,92 ****
+  	source/BlahtexCore/Parser.h \
+  	source/BlahtexCore/ParseTree.h \
+! 	source/BlahtexCore/XmlNode.h
+  
+  OBJECTS = $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SOURCES)))
+  
+! linux : CFLAGS = -O3 -DBLAHTEX_USING_MAGICK -I$(MAGICK_INCLUDE_DIR)
+! mac : CFLAGS = -O3 -DBLAHTEX_ICONV_CONST -DBLAHTEX_USING_MAGICK -I$(MAGICK_INCLUDE_DIR)
+! linux-without-imagemagick : CFLAGS = -O3
+! mac-without-imagemagick : CFLAGS = -O3 -DBLAHTEX_ICONV_CONST
+  
+  CXXFLAGS = $(CFLAGS)
+  
+  linux:  $(OBJECTS)  $(HEADERS)
+- 	$(CXX) $(CFLAGS) -o blahtex -lMagick++ -L$(MAGICK_LIB_DIR) $(OBJECTS)
+- 
+- mac: $(OBJECTS)  $(HEADERS)
+- 	$(CXX) $(CFLAGS) -o blahtex -liconv -lMagick++ -L$(MAGICK_LIB_DIR) $(OBJECTS)
+- 
+- linux-without-imagemagick:  $(OBJECTS)  $(HEADERS)
+  	$(CXX) $(CFLAGS) -o blahtex $(OBJECTS)
+  
+! mac-without-imagemagick: $(OBJECTS)  $(HEADERS)
+  	$(CXX) $(CFLAGS) -o blahtex -liconv $(OBJECTS)
+  
+--- 52,69 ----
+  	source/BlahtexCore/Parser.h \
+  	source/BlahtexCore/ParseTree.h \
+! 	source/BlahtexCore/MathmlNode.h \
+! 	source/BlahtexCore/XmlEncode.h
+  
+  OBJECTS = $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SOURCES)))
+  
+! linux : CFLAGS = -O3
+! mac : CFLAGS = -O3 -DBLAHTEX_ICONV_CONST
+  
+  CXXFLAGS = $(CFLAGS)
+  
+  linux:  $(OBJECTS)  $(HEADERS)
+  	$(CXX) $(CFLAGS) -o blahtex $(OBJECTS)
+  
+! mac: $(OBJECTS)  $(HEADERS)
+  	$(CXX) $(CFLAGS) -o blahtex -liconv $(OBJECTS)
+  
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000003.html">[Blahtex-cvs] blahtex/blahtex/source mainPng.h,NONE,1.1 Messages.cpp,1.3,1.4 UnicodeConverter.cpp,1.3,1.4 UnicodeConverter.h,1.3,1.4 main.cpp,1.3,1.4 mainPng.cpp,1.1,1.2 md5.c,1.3,1.4 md5.h,1.3,1.4 md5Wrapper.cpp,1.3,1.4 md5Wrapper.h,1.3,1.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

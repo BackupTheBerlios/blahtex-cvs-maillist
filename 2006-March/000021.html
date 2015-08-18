@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/blahtex/source Messages.cpp,1.4,1.5 main.cpp,1.5,1.6 md5.c,1.5,1.6 md5.h,1.5,1.6
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-March/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/blahtex/source%20Messages.cpp%2C1.4%2C1.5%20main.cpp%2C1.5%2C1.6%20md5.c%2C1.5%2C1.6%20md5.h%2C1.5%2C1.6&In-Reply-To=%3C200603261009.k2QA9Ft14912%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000020.html">
+   <LINK REL="Next"  HREF="000022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/blahtex/source Messages.cpp,1.4,1.5 main.cpp,1.5,1.6 md5.c,1.5,1.6 md5.h,1.5,1.6</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/blahtex/source%20Messages.cpp%2C1.4%2C1.5%20main.cpp%2C1.5%2C1.6%20md5.c%2C1.5%2C1.6%20md5.h%2C1.5%2C1.6&In-Reply-To=%3C200603261009.k2QA9Ft14912%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/blahtex/source Messages.cpp,1.4,1.5 main.cpp,1.5,1.6 md5.c,1.5,1.6 md5.h,1.5,1.6">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Sun Mar 26 12:09:15 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000020.html">[Blahtex-cvs] blahtex/includes Parser.php,1.3,1.4
+</A></li>
+        <LI>Next message: <A HREF="000022.html">[Blahtex-cvs] blahtex/blahtex README,1.4,1.5
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/blahtex/source
+In directory sheep:/tmp/cvs-serv23511/source
+
+Modified Files:
+	Messages.cpp main.cpp md5.c md5.h 
+Log Message:
+Upgrade to blahtex version 0.4.4
+
+
+Index: Messages.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/Messages.cpp,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** Messages.cpp	14 Mar 2006 11:15:02 -0000	1.4
+--- Messages.cpp	26 Mar 2006 10:09:39 -0000	1.5
+***************
+*** 321,325 ****
+          ++ptr
+      )
+!         output += ptr-&gt;first + L&quot;\n&quot; + ptr-&gt;second + L&quot;\n&quot;;
+  
+      return output;
+--- 321,325 ----
+          ++ptr
+      )
+!         output += ptr-&gt;first + L&quot; &quot; + ptr-&gt;second + L&quot;\n&quot;;
+  
+      return output;
+
+Index: main.cpp
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/main.cpp,v
+retrieving revision 1.5
+retrieving revision 1.6
+diff -C2 -d -r1.5 -r1.6
+*** main.cpp	19 Mar 2006 05:41:46 -0000	1.5
+--- main.cpp	26 Mar 2006 10:09:39 -0000	1.6
+***************
+*** 103,106 ****
+--- 103,109 ----
+  &quot;More information available at www.blahtex.org\n&quot;
+  &quot;\n&quot;;
++ 
++     // FIX: need command line option to select output DPI
++ 
+      exit(0);
+  }
+
+Index: md5.c
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/md5.c,v
+retrieving revision 1.5
+retrieving revision 1.6
+diff -C2 -d -r1.5 -r1.6
+
+Index: md5.h
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/blahtex/source/md5.h,v
+retrieving revision 1.5
+retrieving revision 1.6
+diff -C2 -d -r1.5 -r1.6
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000020.html">[Blahtex-cvs] blahtex/includes Parser.php,1.3,1.4
+</A></li>
+	<LI>Next message: <A HREF="000022.html">[Blahtex-cvs] blahtex/blahtex README,1.4,1.5
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

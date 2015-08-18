@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/includes Math.php,1.31,1.32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Math.php%2C1.31%2C1.32&In-Reply-To=%3C200605191540.k4JFeGZ28643%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000200.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/includes Math.php,1.31,1.32</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Math.php%2C1.31%2C1.32&In-Reply-To=%3C200605191540.k4JFeGZ28643%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/includes Math.php,1.31,1.32">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Fri May 19 17:40:16 CEST 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000200.html">[Blahtex-cvs] blahtex/includes/templates Confirmemail.php,1.1.1.2,NONE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#196">[ date ]</a>
+              <a href="thread.html#196">[ thread ]</a>
+              <a href="subject.html#196">[ subject ]</a>
+              <a href="author.html#196">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/includes
+In directory sheep:/tmp/cvs-serv117
+
+Modified Files:
+	Math.php 
+Log Message:
+Add many doxygen comments.
+
+
+Index: Math.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/Math.php,v
+retrieving revision 1.31
+retrieving revision 1.32
+diff -C2 -d -r1.31 -r1.32
+*** Math.php	3 Apr 2006 09:23:03 -0000	1.31
+--- Math.php	19 May 2006 15:44:55 -0000	1.32
+***************
+*** 1,12 ****
+  &lt;?php
+  /**
+!  * Contain everything related to &lt;math&gt; &lt;/math&gt; parsing
+!  * @package MediaWiki
+   */
+  
+  class blahtexOutputParser  {
+! 	var $parser;
+! 	var $stack;
+! 	var $results;
+  
+  	function blahtexOutputParser()
+--- 1,16 ----
+  &lt;?php
+  /**
+!  * @file Math.php
+!  * Contains everything related to &lt;math&gt; &lt;/math&gt; parsing.
+!  * \sa math/README
+   */
+  
++ /**
++  * %Parser for the blahtex's output. 
++  */
+  class blahtexOutputParser  {
+!    var $parser;  /**&lt; \private */
+! 	var $stack;   /**&lt; \private */
+! 	var $results; /**&lt; \private */
+  
+  	function blahtexOutputParser()
+***************
+*** 22,26 ****
+  		xml_set_character_data_handler( $this-&gt;parser, &quot;characterData&quot; );
+  	}
+! 	
+  	function parse( $data )
+  	{
+--- 26,44 ----
+  		xml_set_character_data_handler( $this-&gt;parser, &quot;characterData&quot; );
+  	}
+! 
+! 	/**
+! 	 * Main function, which parses blahtex's output.
+! 	 * The format of blahtex's output is based on XML. This function
+! 	 * parses the XML and returns an array representing the tree
+! 	 * structure. For instance, if $retval denotes the return value,
+! 	 * then $retval[&quot;blahtex&quot;][&quot;error&quot;] contains the text within the
+! 	 * &lt;error&gt; tag within the &lt;blahtex&gt; tag. If there is more than one
+! 	 * &lt;error&gt; tag within a &lt;blahtex&gt; tag, then
+! 	 * $retval[&quot;blahtex&quot;][&quot;error&quot;] is an array of strings. As a special
+! 	 * case, $retval[&quot;mathmlMarkup&quot;] contains the segment between
+! 	 * &lt;markup&gt; and &lt;/markup&gt;.
+! 	 * @param $data String with output to be parsed.
+! 	 * @return Array representing XML tree.
+! 	 */
+  	function parse( $data )
+  	{
+***************
+*** 37,41 ****
+  		return $this-&gt;results;
+  	}
+! 	
+  	function startElement( $parser, $name, $attributes )
+  	{
+--- 55,60 ----
+  		return $this-&gt;results;
+  	}
+! 
+! 	/** @privatesection */
+  	function startElement( $parser, $name, $attributes )
+  	{
+***************
+*** 76,104 ****
+  
+  /**
+!  * Takes LaTeX fragments, sends them to a helper program (texvc) for rendering
+!  * to rasterized PNG and HTML and MathML approximations. An appropriate
+!  * rendering form is picked and returned.
+!  * 
+!  * by Tomasz Wegrzanowski, with additions by Brion Vibber (2003, 2004)
+   *
+!  * @package MediaWiki
+   */
+  class MathRenderer {
+! 	var $mode = MW_MATH_MODERN;
+! 	var $tex = '';
+! 	var $inputhash = '';
+! 	var $hash = '';
+! 	var $html = '';
+! 	var $mathml = '';
+! 	var $conservativeness = 0;
+  	
+  	function MathRenderer( $tex ) {
+  		$this-&gt;tex = $tex;
+  	 }
+  	
+  	function setOutputMode( $mode ) {
+  		$this-&gt;mode = $mode;
+  	}
+  
+  	function render() {
+  		global $wgBlahtex;
+--- 95,160 ----
+  
+  /**
+!  * Render formulas to PNG, HTML and MathML.
+!  * Takes LaTeX fragments, sends them to helper program (texvc and
+!  * blahtex) for rendering to rasterized PNG and HTML and MathML
+!  * approximations. An appropriate rendering form is picked, depending
+!  * on the user's preferences, and returned. The rendering is cached in
+!  * the @c math table in the database, and the PNG files are cached in
+!  * @c $wgMathDirectory on the file system.
+   *
+!  * @author Tomasz Wegrzanowski, with additions by Brion Vibber (2003, 2004)
+   */
+  class MathRenderer {
+! 	/** @privatesection */
+!    var $mode = MW_MATH_MODERN; /**&lt; @User preference for maths */
+! 	var $tex = '';              /**&lt; LaTeX fragment */
+! 	var $inputhash = '';        /**&lt; Hash value of $tex */
+! 	var $hash = '';             /**&lt; Name of PNG file */
+! 	var $html = '';             /**&lt; HTML rendering of $tex */
+! 	var $mathml = '';           /**&lt; MathML rendering of $tex */
+! 	var $conservativeness = 0;  /**&lt; How conservative the HTML rendering is */
+  	
++ 	/**
++ 	 * Constructor.
++ 	 * @param $tex String containing LaTeX fragment to be rendered.
++ 	 * @public 
++ 	 */
+  	function MathRenderer( $tex ) {
+  		$this-&gt;tex = $tex;
+  	 }
+  	
++ 	/**
++ 	 * Set the preferred output mode.
++ 	 * The output mode specifies whether render() should output PNG,
++ 	 * HTML or MathML.
++ 	 * @param $mode Output mode, can be @c MW_MATH_PNG, 
++ 	 *    @c MW_MATH_SIMPLE, @c MW_MATH_HTML, @c MW_MATH_SOURCE,
++ 	 *    @c MW_MATH_MODERN, or @c MW_MATH_MATHML.
++ 	 * @public
++ 	 */
+  	function setOutputMode( $mode ) {
+  		$this-&gt;mode = $mode;
+  	}
+  
++ 	/**
++ 	 * Main function, which renders the LaTeX fragment.
++ 	 * This function renders the LaTeX fragment specified in the
++ 	 * constructor. The output depends on the output mode, set with
++ 	 * setOutputMode(), as follows:
++ 	 *  - @c MW_MATH_PNG : Output is in PNG format, fall back to HTML.
++ 	 *  - @c MW_MATH_SIMPLE : Output is in HTML format if the HTML is
++ 	 *       simple and in PNG otherwise.
++ 	 *  - @c MW_MATH_HTML : Output is in HTML format, fall back to PNG.
++ 	 *  - @c MW_MATH_SOURCE : Output the LaTeX fragment verbatim,
++ 	 *       surrounded by a pair of @c $ characters.
++ 	 *  - @c MW_MATH_MODERN : Output is in HTML format unless the HTML
++ 	 *       is complicated, fall back to PNG.
++ 	 *  - @c MW_MATH_MATHML : Output is in MathML format, fall back to
++ 	 *       PNG.
++ 	 *
++     * @return String containing HTML fragment, representing the
++     * formula in the given LaTeX fragment.
++ 	 * @public
++ 	 */
+  	function render() {
+  		global $wgBlahtex;
+***************
+*** 163,168 ****
+  
+  	/**
+! 	 * Test whether the necessary directories and executables exists.
+! 	 * Returns an error message if there is a problem, and false otherwise.
+  	 */
+  	function testEnvironment()
+--- 219,225 ----
+  
+  	/**
+! 	 * Test whether the necessary directories and executables exist.
+! 	 * @return String containing HTML fragment with error message if
+! 	 * there is a problem, @c false otherwise.
+  	 */
+  	function testEnvironment()
+***************
+*** 189,194 ****
+  	/**
+  	 * Invoke the texvc executable.
+! 	 * If there is an error, the return value is (false, error message).
+! 	 * If there is no error, the return value is (true, texvc output).
+  	 */
+  	function invokeTexvc( $tex )
+--- 246,258 ----
+  	/**
+  	 * Invoke the texvc executable.
+! 	 * This function invokes the @c texvc helper program, whose
+! 	 * location is specified in $wgTexvc. 
+! 	 * @param $tex String containing the LaTeX fragment to be rendered.
+! 	 * @return A 2-tuple. 
+! 	 *  - If an error occurred, then the first element is @c false and
+! 	 *    the second element is a string containing an HTML fragment
+! 	 *    with the error message.
+! 	 *  - Otherwise, the first element is @c true and the second
+! 	 *    element s a string containing the output of @c texvc.
+  	 */
+  	function invokeTexvc( $tex )
+***************
+*** 219,225 ****
+  
+  	/**
+! 	 * Process texvc output: fill the mathml, html, hash, and conservativeness fields
+! 	 * in the database and move the PNG image to its final destination.
+! 	 * Returns an error message, or false if no error occurred.
+  	 */
+  	function processTexvcOutput( $contents ) {
+--- 283,293 ----
+  
+  	/**
+! 	 * Process texvc output.
+! 	 * Parse the output, fill the mathml, html, hash, and
+! 	 * conservativeness fields in the database and move the PNG image
+! 	 * to its final destination. 
+! 	 * @param $contents String containing texvc output.
+! 	 * @return String containing HTML fragment with error message if
+! 	 * an error occurred, @c false otherwise.
+  	 */
+  	function processTexvcOutput( $contents ) {
+***************
+*** 289,294 ****
+  	/**
+  	 * Invoke the blahtex executable.
+! 	 * If there is an error, the return value is (false, error message).
+! 	 * If there is no error, the return value is (true, blatex output).
+  	 */
+  	function invokeBlahtex( $tex, $makePNG )
+--- 357,372 ----
+  	/**
+  	 * Invoke the blahtex executable.
+! 	 * This function invokes the @c blahtex helper program. The
+! 	 * location of the program is specified in $wgBlahtex. Extra
+! 	 * options may be specified in $wgBlahtexOptions.
+! 	 * @param $tex String containing the LaTeX fragment to be rendered.
+! 	 * @param $makePNG Boolean specifying whether blahtex should
+! 	 * generate both MathML and PNG (@c true) or only MathML (@c false).
+! 	 * @return A 2-tuple. 
+! 	 *  - If an error occurred, then the first element is @c false and
+! 	 *    the second element is a string containing an HTML fragment
+! 	 *    with the error message.
+! 	 *  - Otherwise, the first element is @c true and the second
+! 	 *    element s a string containing the output of @c blahtex.
+  	 */
+  	function invokeBlahtex( $tex, $makePNG )
+***************
+*** 324,329 ****
+  
+  	/**
+! 	 * Process blahtex output and update the mathml and png fields.
+! 	 * Returns an error message, or false if no error occurred.
+  	 */
+  	function processBlahtexOutput( $results )
+--- 402,412 ----
+  
+  	/**
+! 	 * Process blahtex output.
+! 	 * Parse the output and fill the mathml field in the database. If
+! 	 * blahtex has also generated a PNG image, then update the hash
+! 	 * field as well move the PNG image to its final destination. 
+! 	 * @param $contents String containing blahtex output.
+! 	 * @return String containing HTML fragment with error message if
+! 	 * an error occurred, @c false otherwise.
+  	 */
+  	function processBlahtexOutput( $results )
+***************
+*** 360,365 ****
+  
+  	/**
+! 	 * Returns the error message stored in the $results parse tree
+! 	 * under the node $node.
+  	 */
+  	function blahtexError( $results, $node ) {
+--- 443,453 ----
+  
+  	/**
+! 	 * Build an error message for blahtex.
+! 	 * @param $results Parse tree as returned by
+! 	 * blahtexOutputParser::parse() .
+! 	 * @param $node String representing the node in the tree that the
+! 	 * message is stored under.
+! 	 * @returns String containing HTML fragment with the error
+! 	 * message. 
+  	 */
+  	function blahtexError( $results, $node ) {
+***************
+*** 389,395 ****
+  		
+  	/**
+! 	 * Move a file from $wgTmpDirectory to a directory under $wgMathDirectory.
+! 	 * Assumes that $this-&gt;hash is set.
+! 	 * Returns false or an error message.
+  	 */
+  	function moveToMathDir( $fname ) {
+--- 477,486 ----
+  		
+  	/**
+! 	 * Move a PNG image to its final destination.
+! 	 * The file is moved from $wgTmpDirectory to a directory under
+! 	 * $wgMathDirectory. This function assumes that $hash is set.
+! 	 * @param $fname String containing name of file to be moved.
+! 	 * @return String containing HTML fragment with error message if
+! 	 * an error occurred, @c false otherwise.
+  	 */
+  	function moveToMathDir( $fname ) {
+***************
+*** 411,414 ****
+--- 502,516 ----
+  	}
+  
++ 	/**
++ 	 * Build an error message in HTML.
++ 	 * @param $msg String containing lookup key for the message; will
++ 	 * be passed on to wfMsg() .
++ 	 * @param $arg1 String containing first argument for the message.
++ 	 * @param $arg2 String containing second argument for the message.
++ 	 * @param $arg3 String containing third argument for the message.
++ 	 * @param $fallback String containing a fallback message in case
++ 	 * the lookup key in $msg is not found.
++ 	 * @return String containing HTML fragment with the error message.
++ 	 */
+  	function _error( $msg, $arg1 = '', $arg2 = '', $arg3 = '', $fallback = NULL ) {
+  		$mf = htmlspecialchars( wfMsg( 'math_failure' ) );
+***************
+*** 425,429 ****
+  		return &quot;&lt;strong class='error'&gt;$mf ($errmsg): $source&lt;/strong&gt;\n&quot;;
+  	}
+! 	
+  	function _recall() {
+  		global $wgMathDirectory;
+--- 527,541 ----
+  		return &quot;&lt;strong class='error'&gt;$mf ($errmsg): $source&lt;/strong&gt;\n&quot;;
+  	}
+! 
+! 	/**
+! 	 * Recall cached information from the database.
+! 	 * This function computes the hash value for the formula specified
+! 	 * in $tex and looks whether any information is stored in the @c
+! 	 * math table in the database. In that case, the $hash,
+! 	 * $conservativeness, $html and $mathml member variables are
+! 	 * updated. 
+! 	 * @return @c true if information was found in the database, @c
+! 	 * false if not.
+! 	 */
+  	function _recall() {
+  		global $wgMathDirectory;
+***************
+*** 490,494 ****
+  
+  	/**
+! 	 * Select among PNG, HTML, or MathML output depending on the user's preference
+  	 */
+  	function _doRender() {
+--- 602,611 ----
+  
+  	/**
+! 	 * Do the actual rendering.
+! 	 * After all preliminaries are completed, this function chooses
+! 	 * between PNG, HTML, or MathML output depending on the output mode
+! 	 * stored in $mode and the available options and returns a
+! 	 * rendering of the specified formula.
+! 	 * @return String containing HTML fragment representing the formula.
+  	 */
+  	function _doRender() {
+***************
+*** 551,554 ****
+--- 668,676 ----
+  	}
+  
++ 	/**
++ 	 * Construct a link to PNG file 
++ 	 * @return String containing HTML fragment with the PNG file
++ 	 * representing the formula. 
++ 	 */
+  	function _linkToMathImage() {
+  		global $wgMathPath;
+***************
+*** 560,563 ****
+--- 682,692 ----
+  	}
+  
++ 	/**
++ 	 * Get directory to store PNG image in.
++ 	 * The PNG images are stored in a tiered directory tree under
++ 	 * $wgMathDirectory. This function compute the directory that the
++ 	 * PNG image for the specified formula should go in.
++ 	 * @return String with directory path.
++ 	 */
+  	function _getHashPath() {
+  		global $wgMathDirectory;
+***************
+*** 571,574 ****
+--- 700,709 ----
+  }
+  
++ /**
++  * Render a LaTeX fragment.
++  * @param $tex String containing the LaTeX fragment.
++  * @return String containing an HTML fragment representing the formula
++  * specified in $tex.
++  */
+  function renderMath( $tex ) {
+  	global $wgUser;
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000200.html">[Blahtex-cvs] blahtex/includes/templates Confirmemail.php,1.1.1.2,NONE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#196">[ date ]</a>
+              <a href="thread.html#196">[ thread ]</a>
+              <a href="subject.html#196">[ subject ]</a>
+              <a href="author.html#196">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

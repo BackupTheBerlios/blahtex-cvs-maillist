@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/includes Math.php,1.23,1.24
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-February/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Math.php%2C1.23%2C1.24&In-Reply-To=%3C200602142354.k1ENs7E00587%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000000.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/includes Math.php,1.23,1.24</H1>
+    <B>dmharvey</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes%20Math.php%2C1.23%2C1.24&In-Reply-To=%3C200602142354.k1ENs7E00587%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/includes Math.php,1.23,1.24">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Wed Feb 15 00:54:07 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000000.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.12,1.13
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/includes
+In directory sheep:/tmp/cvs-serv10214/blahtex/includes
+
+Modified Files:
+	Math.php 
+Log Message:
+adds support for vertical shifting of PNG (shift data stored in filesytem)
+
+
+Index: Math.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/includes/Math.php,v
+retrieving revision 1.23
+retrieving revision 1.24
+diff -C2 -d -r1.23 -r1.24
+*** Math.php	13 Feb 2006 23:43:15 -0000	1.23
+--- Math.php	14 Feb 2006 23:54:03 -0000	1.24
+***************
+*** 80,83 ****
+--- 80,84 ----
+  	var $mathml = '';
+  	var $conservativeness = 0;
++ 	var $verticalShift = &quot;unknown&quot;;
+  	
+  	function MathRenderer( $tex ) {
+***************
+*** 143,146 ****
+--- 144,168 ----
+  				  ), $fname, array( 'IGNORE' ) 
+  				);
++ 				
++ 				// Write the vertical shift value to the filesystem.
++ 				// FIXME: this data should really live in the &quot;math&quot; table.
++ 				// The filesystem approach is is just a temporary measure
++ 				// until we decide whether we really want to modify the
++ 				// database schema.
++ 				global $wgUseBlahtexVerticalShift;
++ 				if ( $wgUseBlahtexVerticalShift )
++ 				{
++ 					if ( $this-&gt;verticalShift != &quot;unknown&quot; )
++ 					{
++ 						global $wgMathDirectory;
++ 						$verticalShiftFile = @fopen( &quot;$wgMathDirectory/{$this-&gt;hash}.vshift&quot;, &quot;wb&quot; );
++ 						if ( !($verticalShiftFile === false) )
++ 						{
++ 							@fwrite( $verticalShiftFile, $this-&gt;verticalShift );
++ 							@fclose( $verticalShiftFile );
++ 						}
++ 					}
++ 				}
++ 				
+  			}
+  		}
+***************
+*** 289,292 ****
+--- 311,317 ----
+  		if ($makePNG)
+  			$options = &quot;$options --png --temp-directory $wgTmpDirectory --png-directory $wgMathDirectory&quot;;
++ 			global $wgUseBlahtexVerticalShift;
++ 			if ( $wgUseBlahtexVerticalShift )
++ 				$options .= &quot; --compute-vertical-shift&quot;;
+                  $process = proc_open($wgBlahtex.' '.$options, $descriptorspec, $pipes);
+                  if (!$process) {
+***************
+*** 342,345 ****
+--- 367,372 ----
+  			if (isset($results[&quot;blahtex:png:md5&quot;])) 
+  				$this-&gt;hash = $results[&quot;blahtex:png:md5&quot;];
++ 			if (isset($results[&quot;blahtex:png:vshift&quot;]))
++ 				$this-&gt;verticalShift = $results[&quot;blahtex:png:vshift&quot;];
+  			return false;
+  
+***************
+*** 393,396 ****
+--- 420,435 ----
+  				$this-&gt;hash = NULL;
+  
++ 			global $wgUseBlahtexVerticalShift;
++ 			if ( $wgUseBlahtexVerticalShift &amp;&amp; $this-&gt;hash )
++ 			{
++ 				$verticalShiftFile = @fopen( &quot;$wgMathDirectory/{$this-&gt;hash}.vshift&quot;, &quot;rb&quot; );
++ 				if ( !($verticalShiftFile === false) )
++ 				{
++ 					$this-&gt;verticalShift = @fgets( $verticalShiftFile );
++ 					@fclose( $verticalShiftFile );
++ 				}
++ 				// Silently ignore vertical shift if the file is missing
++ 			}
++ 
+  			if( $this-&gt;html || $this-&gt;mathml || $this-&gt;hash )
+  				return true;
+***************
+*** 467,471 ****
+  		$url = htmlspecialchars( &quot;$wgMathPath/{$this-&gt;hash}.png&quot; );
+  		$alt = trim(str_replace(&quot;\n&quot;, ' ', htmlspecialchars( $this-&gt;tex )));
+! 		return &quot;&lt;img class='tex' src=\&quot;$url\&quot; alt=\&quot;$alt\&quot; /&gt;&quot;;
+  	}
+  
+--- 506,514 ----
+  		$url = htmlspecialchars( &quot;$wgMathPath/{$this-&gt;hash}.png&quot; );
+  		$alt = trim(str_replace(&quot;\n&quot;, ' ', htmlspecialchars( $this-&gt;tex )));
+! 		global $wgUseBlahtexVerticalShift;
+! 		if ( $wgUseBlahtexVerticalShift &amp;&amp; $this-&gt;verticalShift != &quot;unknown&quot; )
+! 			return &quot;&lt;img class='tex' src=\&quot;$url\&quot; alt=\&quot;$alt\&quot; style=\&quot;vertical-align: {$this-&gt;verticalShift}px\&quot; /&gt;&quot;;
+! 		else
+! 			return &quot;&lt;img class='tex' src=\&quot;$url\&quot; alt=\&quot;$alt\&quot; /&gt;&quot;;
+  	}
+  
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000000.html">[Blahtex-cvs] blahtex/includes DefaultSettings.php,1.12,1.13
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

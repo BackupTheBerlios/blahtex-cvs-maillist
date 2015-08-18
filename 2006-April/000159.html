@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/languages Language.php,1.12,1.13 Messages.php,1.4,1.5
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/languages%20Language.php%2C1.12%2C1.13%20Messages.php%2C1.4%2C1.5&In-Reply-To=%3C200604101230.k3ACUPt27017%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000158.html">
+   <LINK REL="Next"  HREF="000187.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/languages Language.php,1.12,1.13 Messages.php,1.4,1.5</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/languages%20Language.php%2C1.12%2C1.13%20Messages.php%2C1.4%2C1.5&In-Reply-To=%3C200604101230.k3ACUPt27017%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/languages Language.php,1.12,1.13 Messages.php,1.4,1.5">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Mon Apr 10 14:30:25 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000158.html">[Blahtex-cvs] blahtex/skins MonoBook.php,1.4,1.5
+</A></li>
+        <LI>Next message: <A HREF="000187.html">[Blahtex-cvs] blahtex/images/math/9/a/4 9a49a073115267770d7c2461c24864f8.png,1.1.1.1,NONE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/languages
+In directory sheep:/tmp/cvs-serv19821/languages
+
+Modified Files:
+	Language.php Messages.php 
+Log Message:
+* Merge in changes from MediaWiki upgrade
+* Remove accidentally imported subversion files
+
+
+Index: Language.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/languages/Language.php,v
+retrieving revision 1.12
+retrieving revision 1.13
+diff -C2 -d -r1.12 -r1.13
+*** Language.php	23 Mar 2006 10:40:58 -0000	1.12
+--- Language.php	10 Apr 2006 12:28:14 -0000	1.13
+***************
+*** 161,164 ****
+--- 161,165 ----
+  	'uselivepreview',
+  	'autopatrol',
++ 	'forceeditsummary',
+  );
+  
+***************
+*** 229,233 ****
+  	MAG_FULLPAGENAME         =&gt; array( 1,    'FULLPAGENAME'           ),
+  	MAG_FULLPAGENAMEE        =&gt; array( 1,    'FULLPAGENAMEE'          ),
+! 	MAG_SUBPAGENAME	         =&gt; array( 0,	 'SUBPAGENAME'		  ),
+  	MAG_MSG                  =&gt; array( 0,    'MSG:'                   ),
+  	MAG_SUBST                =&gt; array( 0,    'SUBST:'                 ),
+--- 230,235 ----
+  	MAG_FULLPAGENAME         =&gt; array( 1,    'FULLPAGENAME'           ),
+  	MAG_FULLPAGENAMEE        =&gt; array( 1,    'FULLPAGENAMEE'          ),
+! 	MAG_SUBPAGENAME	         =&gt; array( 0,	 'SUBPAGENAME'		  	  ),
+! 	MAG_SUBPAGENAMEE		 =&gt; array( 0, 	 'SUBPAGENAMEE'			  ),
+  	MAG_MSG                  =&gt; array( 0,    'MSG:'                   ),
+  	MAG_SUBST                =&gt; array( 0,    'SUBST:'                 ),
+
+Index: Messages.php
+===================================================================
+RCS file: /cvsroot/blahtex/blahtex/languages/Messages.php,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -C2 -d -r1.4 -r1.5
+*** Messages.php	3 Apr 2006 09:00:58 -0000	1.4
+--- Messages.php	10 Apr 2006 12:28:15 -0000	1.5
+***************
+*** 46,51 ****
+  'tog-rememberpassword' =&gt; 'Remember across sessions',
+  'tog-editwidth' =&gt; 'Edit box has full width',
+! 'tog-watchcreations' =&gt; 'Add pages you create to your watchlist',
+! 'tog-watchdefault' =&gt; 'Add pages you edit to your watchlist',
+  'tog-minordefault' =&gt; 'Mark all edits minor by default',
+  'tog-previewontop' =&gt; 'Show preview before edit box',
+--- 46,51 ----
+  'tog-rememberpassword' =&gt; 'Remember across sessions',
+  'tog-editwidth' =&gt; 'Edit box has full width',
+! 'tog-watchcreations' =&gt; 'Add pages I create to my watchlist',
+! 'tog-watchdefault' =&gt; 'Add pages I edit to my watchlist',
+  'tog-minordefault' =&gt; 'Mark all edits minor by default',
+  'tog-previewontop' =&gt; 'Show preview before edit box',
+***************
+*** 62,66 ****
+  'tog-showjumplinks' =&gt; 'Enable &quot;jump to&quot; accessibility links',
+  'tog-uselivepreview' =&gt; 'Use live preview (JavaScript) (Experimental)',
+! 'tog-autopatrol' =&gt; 'Mark edits you make as patrolled',
+  
+  'underline-always' =&gt; 'Always',
+--- 62,67 ----
+  'tog-showjumplinks' =&gt; 'Enable &quot;jump to&quot; accessibility links',
+  'tog-uselivepreview' =&gt; 'Use live preview (JavaScript) (Experimental)',
+! 'tog-autopatrol' =&gt; 'Mark edits I make as patrolled',
+! 'tog-forceeditsummary' =&gt; 'Prompt me when entering a blank edit summary',
+  
+  'underline-always' =&gt; 'Always',
+***************
+*** 114,119 ****
+  'linkprefix'		=&gt; '/^(.*?)([a-zA-Z\x80-\xff]+)$/sD',
+  'mainpage'		=&gt; 'Main Page',
+! 'mainpagetext'	=&gt; &quot;'''MediaWiki has been successfully installed.'''&quot;,
+! 'mainpagedocfooter' =&gt; &quot;Consult the [<A HREF="http://www.mediawiki.org/wiki/Help:Configuration_settings">http://www.mediawiki.org/wiki/Help:Configuration_settings</A> configuration settings list] and the [<A HREF="http://meta.wikipedia.org/wiki/MediaWiki_User%27s_Guide">http://meta.wikipedia.org/wiki/MediaWiki_User%27s_Guide</A> User's Guide] for information on customising and using the wiki software.&quot;,
+  
+  'portal'		=&gt; 'Community portal',
+--- 115,126 ----
+  'linkprefix'		=&gt; '/^(.*?)([a-zA-Z\x80-\xff]+)$/sD',
+  'mainpage'		=&gt; 'Main Page',
+! 'mainpagetext'	=&gt; &quot;&lt;big&gt;'''MediaWiki has been successfully installed.'''&lt;/big&gt;&quot;,
+! 'mainpagedocfooter' =&gt; &quot;Consult the [<A HREF="http://meta.wikipedia.org/wiki/MediaWiki_User%27s_Guide">http://meta.wikipedia.org/wiki/MediaWiki_User%27s_Guide</A> User's Guide] for information on using the wiki software.
+! 
+! == Getting started ==
+! 
+! * [<A HREF="http://www.mediawiki.org/wiki/Help:Configuration_settings">http://www.mediawiki.org/wiki/Help:Configuration_settings</A> Configuration settings list]
+! * [<A HREF="http://www.mediawiki.org/wiki/Help:FAQ">http://www.mediawiki.org/wiki/Help:FAQ</A> MediaWiki FAQ]
+! * [<A HREF="http://mail.wikipedia.org/mailman/listinfo/mediawiki-announce">http://mail.wikipedia.org/mailman/listinfo/mediawiki-announce</A> MediaWiki release mailing list]&quot;,
+  
+  'portal'		=&gt; 'Community portal',
+***************
+*** 326,329 ****
+--- 333,337 ----
+  Query: $2',
+  'viewsource' =&gt; 'View source',
++ 'viewsourcefor' =&gt; 'for $1',
+  'protectedtext' =&gt; 'This page has been locked to prevent editing; there are
+  a number of reasons why this may be so, please see
+***************
+*** 457,460 ****
+--- 465,469 ----
+  'showdiff'	=&gt; 'Show changes',
+  'anoneditwarning' =&gt; 'You are not logged in. Your IP address will be recorded in this page\'s edit history.',
++ 'missingsummary' =&gt; &quot;'''Reminder:''' You have not provided an edit summary. If you click Save again, your edit will be saved without one.&quot;,
+  'missingcommenttext' =&gt; 'Please enter a comment below.',
+  'blockedtitle'	=&gt; 'User is blocked',
+***************
+*** 847,851 ****
+  'rcnotefrom'	=&gt; &quot;Below are the changes since &lt;b&gt;$2&lt;/b&gt; (up to &lt;b&gt;$1&lt;/b&gt; shown).&quot;,
+  'rclistfrom'	=&gt; &quot;Show new changes starting from $1&quot;,
+! 'showhideminor' =&gt; &quot;$1 minor edits | $2 bots | $3 logged in users | $4 patrolled edits&quot;,
+  'rclinks'		=&gt; &quot;Show last $1 changes in last $2 days&lt;br /&gt;$3&quot;,
+  'rchide'		=&gt; &quot;in $4 form; $1 minor edits; $2 secondary namespaces; $3 multiple edits.&quot;,
+--- 856,865 ----
+  'rcnotefrom'	=&gt; &quot;Below are the changes since &lt;b&gt;$2&lt;/b&gt; (up to &lt;b&gt;$1&lt;/b&gt; shown).&quot;,
+  'rclistfrom'	=&gt; &quot;Show new changes starting from $1&quot;,
+! 'rcshowhideminor' =&gt; '$1 minor edits',
+! 'rcshowhidebots' =&gt; '$1 bots',
+! 'rcshowhideliu' =&gt; '$1 logged-in users',
+! 'rcshowhideanons' =&gt; '$1 anonymous users',
+! 'rcshowhidepatr' =&gt; '$1 patrolled edits',
+! 'rcshowhidemine' =&gt; '$1 my edits',
+  'rclinks'		=&gt; &quot;Show last $1 changes in last $2 days&lt;br /&gt;$3&quot;,
+  'rchide'		=&gt; &quot;in $4 form; $1 minor edits; $2 secondary namespaces; $3 multiple edits.&quot;,
+***************
+*** 980,984 ****
+  pages, redirects, and others that probably don't qualify as content pages.
+  Excluding those, there are '''$2''' pages that are probably legitimate
+! content pages.
+  
+  There have been a total of '''$3''' page views, and '''$4''' page edits
+--- 994,1000 ----
+  pages, redirects, and others that probably don't qualify as content pages.
+  Excluding those, there are '''$2''' pages that are probably legitimate
+! content pages. 
+! 
+! '''$8''' files have been uploaded.
+  
+  There have been a total of '''$3''' page views, and '''$4''' page edits
+***************
+*** 990,1014 ****
+  '''$2''' (or '''$4%''') are administrators (see $3).&quot;,
+  
+- # Maintenance Page
+- #
+- 'maintenance'		=&gt; 'Maintenance page',
+- 'maintnancepagetext'	=&gt; 'This page includes several handy tools for everyday maintenance. Some of these functions tend to stress the database, so please do not hit reload after every item you fixed ;-)',
+- 'maintenancebacklink'	=&gt; 'Back to Maintenance Page',
+  'disambiguations'	=&gt; 'Disambiguation pages',
+  'disambiguationspage'	=&gt; 'Template:disambig',
+  'disambiguationstext'	=&gt; &quot;The following pages link to a &lt;i&gt;disambiguation page&lt;/i&gt;. They should link to the appropriate topic instead.&lt;br /&gt;A page is treated as disambiguation if it is linked from $1.&lt;br /&gt;Links from other namespaces are &lt;i&gt;not&lt;/i&gt; listed here.&quot;,
+  'doubleredirects'	=&gt; 'Double redirects',
+  'doubleredirectstext'	=&gt; &quot;Each row contains links to the first and second redirect, as well as the first line of the second redirect text, usually giving the \&quot;real\&quot; target page, which the first redirect should point to.&quot;,
+  'doubleredirectsarrow'	=&gt; '&#226;&#134;&#146;',
+  'brokenredirects'	=&gt; 'Broken redirects',
+  'brokenredirectstext'	=&gt; 'The following redirects link to non-existent pages:',
+- 'selflinks'		=&gt; 'Self-linking pages',
+- 'selflinkstext'		    =&gt; 'The following pages link to themselves:',
+- 'mispeelings'           =&gt; 'Pages with misspellings',
+- 'mispeelingstext'               =&gt; &quot;The following pages contain a common misspelling, which are listed on $1. The correct spelling might be given (like this).&quot;,
+- 'mispeelingspage'       =&gt; 'List of common misspellings',
+- 'missinglanguagelinks'  =&gt; 'Missing Language Links',
+- 'missinglanguagelinksbutton'    =&gt; 'Find missing language links for',
+- 'missinglanguagelinkstext'      =&gt; &quot;These pages do &lt;i&gt;not&lt;/i&gt; link to their counterpart in $1. Redirects and subpages are &lt;i&gt;not&lt;/i&gt; shown.&quot;,
+  
+  
+--- 1006,1019 ----
+  '''$2''' (or '''$4%''') are administrators (see $3).&quot;,
+  
+  'disambiguations'	=&gt; 'Disambiguation pages',
+  'disambiguationspage'	=&gt; 'Template:disambig',
+  'disambiguationstext'	=&gt; &quot;The following pages link to a &lt;i&gt;disambiguation page&lt;/i&gt;. They should link to the appropriate topic instead.&lt;br /&gt;A page is treated as disambiguation if it is linked from $1.&lt;br /&gt;Links from other namespaces are &lt;i&gt;not&lt;/i&gt; listed here.&quot;,
++ 
+  'doubleredirects'	=&gt; 'Double redirects',
+  'doubleredirectstext'	=&gt; &quot;Each row contains links to the first and second redirect, as well as the first line of the second redirect text, usually giving the \&quot;real\&quot; target page, which the first redirect should point to.&quot;,
+  'doubleredirectsarrow'	=&gt; '&#226;&#134;&#146;',
++ 
+  'brokenredirects'	=&gt; 'Broken redirects',
+  'brokenredirectstext'	=&gt; 'The following redirects link to non-existent pages:',
+  
+  
+***************
+*** 1122,1126 ****
+  'watchnologintext'	=&gt; 'You must be [[Special:Userlogin|logged in]] to modify your watchlist.',
+  'addedwatch'		=&gt; 'Added to watchlist',
+! 'addedwatchtext'	=&gt; &quot;The page \&quot;$1\&quot; has been added to your [[Special:Watchlist|watchlist]].
+  Future changes to this page and its associated Talk page will be listed there,
+  and the page will appear '''bolded''' in the [[Special:Recentchanges|list of recent changes]] to
+--- 1127,1131 ----
+  'watchnologintext'	=&gt; 'You must be [[Special:Userlogin|logged in]] to modify your watchlist.',
+  'addedwatch'		=&gt; 'Added to watchlist',
+! 'addedwatchtext'	=&gt; &quot;The page \&quot;[[:$1]]\&quot; has been added to your [[Special:Watchlist|watchlist]].
+  Future changes to this page and its associated Talk page will be listed there,
+  and the page will appear '''bolded''' in the [[Special:Recentchanges|list of recent changes]] to
+***************
+*** 1129,1133 ****
+  &lt;p&gt;If you want to remove the page from your watchlist later, click \&quot;Unwatch\&quot; in the sidebar.&quot;,
+  'removedwatch'		=&gt; 'Removed from watchlist',
+! 'removedwatchtext' 	=&gt; &quot;The page \&quot;$1\&quot; has been removed from your watchlist.&quot;,
+  'watch' =&gt; 'Watch',
+  'watchthispage'		=&gt; 'Watch this page',
+--- 1134,1138 ----
+  &lt;p&gt;If you want to remove the page from your watchlist later, click \&quot;Unwatch\&quot; in the sidebar.&quot;,
+  'removedwatch'		=&gt; 'Removed from watchlist',
+! 'removedwatchtext' 	=&gt; &quot;The page \&quot;[[:$1]]\&quot; has been removed from your watchlist.&quot;,
+  'watch' =&gt; 'Watch',
+  'watchthispage'		=&gt; 'Watch this page',
+***************
+*** 1468,1474 ****
+  'export'		=&gt; 'Export pages',
+  'exporttext'	=&gt; 'You can export the text and editing history of a particular page or
+! set of pages wrapped in some XML. In the future, this may then be imported into another
+! wiki running MediaWiki software, although there is no support for this feature in the
+! current version.
+  
+  To export pages, enter the titles in the text box below, one title per line, and
+--- 1473,1478 ----
+  'export'		=&gt; 'Export pages',
+  'exporttext'	=&gt; 'You can export the text and editing history of a particular page or
+! set of pages wrapped in some XML. This can be imported into another wiki using MediaWiki
+! via the Special:Import page.
+  
+  To export pages, enter the titles in the text box below, one title per line, and
+***************
+*** 1488,1493 ****
+  'allmessagescurrent' =&gt; 'Current text',
+  'allmessagestext'	=&gt; 'This is a list of system messages available in the MediaWiki: namespace.',
+! 'allmessagesnotsupportedUI' =&gt; 'Your current interface language &lt;b&gt;$1&lt;/b&gt; is not supported by Special:AllMessages at this site.',
+! 'allmessagesnotsupportedDB' =&gt; 'Special:AllMessages not supported because wgUseDatabaseMessages is off.',
+  'allmessagesfilter' =&gt; 'Message name filter:',
+  'allmessagesmodified' =&gt; 'Show only modified',
+--- 1492,1497 ----
+  'allmessagescurrent' =&gt; 'Current text',
+  'allmessagestext'	=&gt; 'This is a list of system messages available in the MediaWiki: namespace.',
+! 'allmessagesnotsupportedUI' =&gt; 'Your current interface language &lt;b&gt;$1&lt;/b&gt; is not supported by Special:Allmessages at this site.',
+! 'allmessagesnotsupportedDB' =&gt; 'Special:Allmessages cannot be used because wgUseDatabaseMessages is off.',
+  'allmessagesfilter' =&gt; 'Message name filter:',
+  'allmessagesmodified' =&gt; 'Show only modified',
+***************
+*** 1520,1523 ****
+--- 1524,1528 ----
+  'accesskey-diff' =&gt; 'v',
+  'accesskey-compareselectedversions' =&gt; 'v',
++ 'accesskey-watch' =&gt; 'w',
+  
+  # tooltip help for some actions, most are in Monobook.js
+***************
+*** 2061,2064 ****
+--- 2066,2073 ----
+  'youhavenewmessagesmulti' =&gt; &quot;You have new messages on $1&quot;,
+  'newtalkseperator' =&gt; ',_',
++ 'searchcontaining' =&gt; &quot;Search for articles containing ''$1''.&quot;,
++ 'searchnamed' =&gt; &quot;Search for articles named ''$1''.&quot;,
++ 'articletitles' =&gt; &quot;Articles starting with ''$1''&quot;,
++ 'hideresults' =&gt; 'Hide results',
+  
+  );
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000158.html">[Blahtex-cvs] blahtex/skins MonoBook.php,1.4,1.5
+</A></li>
+	<LI>Next message: <A HREF="000187.html">[Blahtex-cvs] blahtex/images/math/9/a/4 9a49a073115267770d7c2461c24864f8.png,1.1.1.1,NONE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

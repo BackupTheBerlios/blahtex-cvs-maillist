@@ -1,0 +1,475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/includes/.svn/prop-base .htaccess.svn-base,1.1.1.1,NONE AjaxDispatcher.php.svn-base,1.1.1.1,NONE AjaxFunctions.php.svn-base,1.1.1.1,NONE Article.php.svn-base,1.1.1.1,NONE AuthPlugin.php.svn-base,1.1.1.1,NONE BagOStuff.php.svn-base,1.1.1.1,NONE Block.php.svn-base,1.1.1.1,NONE CacheManager.php.svn-base,1.1.1.1,NONE CategoryPage.php.svn-base,1.1.1.1,NONE Categoryfinder.php.svn-base,1.1.1.1,NONE ChangesList.php.svn-base,1.1.1.1,NONE Credits.php.svn-base,1.1.1.1,NONE Database.php.svn-base,1.1.1.1,NONE DatabaseFunctions.php.svn-base,1.1.1.1,NONE DatabaseMysql.php.svn-base,1.1.1.1,NONE DatabaseOracle.php.svn-base,1.1.1.1,NONE DatabasePostgreSQL.php.svn-base,1.1.1.1,NONE DateFormatter.php.svn-base,1.1.1.1,NONE DefaultSettings.php.svn-base,1.1.1.1,NONE Defines.php.svn-base,1.1.1.1,NONE DifferenceEngine.php.svn-base,1.1.1.1,NONE EditPage.php.svn-base,1.1.1.1,NONE Exif.php.svn-base,1.1.1.1,NONE Export.php.svn-base,1.1.1.1,NONE ExternalEdit.php.svn-base,1.1.1.1,NONE ExternalStore.php.svn-base,1.1.1.1,NONE ExternalStoreDB.php.svn-base,1.1.1.1,NONE ExternalStoreHttp.php.svn-base,1.1.1.1,NONE FakeTitle.php.svn-base,1.1.1.1,NONE Feed.php.svn-base,1.1.1.1,NONE GlobalFunctions.php.svn-base,1.1.1.1,NONE Group.php.svn-base,1.1.1.1,NONE HTMLForm.php.svn-base,1.1.1.1,NONE HistoryBlob.php.svn-base,1.1.1.1,NONE Hooks.php.svn-base,1.1.1.1,NONE HttpFunctions.php.svn-base,1.1.1.1,NONE Image.php.svn-base,1.1.1.1,NONE ImageGallery.php.svn-base,1.1.1.1,NONE ImagePage.php.svn-base,1.1.1.1,NONE JobQueue.php.svn-base,1.1.1.1,NONE Licenses.php.svn-base,1.1.1.1,NONE LinkBatch.php.svn-base,1.1.1.1,NONE LinkCache.php.svn-base,1.1.1.1,NONE LinkFilter.php.svn-base,1.1.1.1,NONE Linker.php.svn-base,1.1.1.1,NONE LinksUpdate.php.svn-base,1.1.1.1,NONE LoadBalancer.php.svn-base,1.1.1.1,NONE LogPage.php.svn-base,1.1.1.1,NONE MacBinary.php.svn-base,1.1.1.1,NONE MagicWord.php.svn-base,1.1.1.1,NONE Math.php.svn-base,1.1.1.1,NONE MemcachedSessions.php.svn-base,1.1.1.1,NONE MessageCache.php.svn-base,1.1.1.1,NONE Metadata.php.svn-base,1.1.1.1,NON
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes/.svn/prop-base%20.htaccess.svn-base%2C1.1.1.1%2CNONE%20AjaxDispatcher.php.svn-base%2C1.1.1.1%2CNONE%20AjaxFunctions.php.svn-base%2C1.1.1.1%2CNONE%20Article.php.svn-base%2C1.1.1.1%2CNONE%20AuthPlugin.php.svn-base%2C1.1.1.1%2CNONE%20BagOStuff.php.svn-base%2C1.1.1.1%2CNONE%20Block.php.svn-base%2C1.1.1.1%2CNONE%20CacheManager.php.svn-base%2C1.1.1.1%2CNONE%20CategoryPage.php.svn-base%2C1.1.1.1%2CNONE%20Categoryfinder.php.svn-base%2C1.1.1.1%2CNONE%20ChangesList.php.svn-base%2C1.1.1.1%2CNONE%20Credits.php.svn-base%2C1.1.1.1%2CNONE%20Database.php.svn-base%2C1.1.1.1%2CNONE%20DatabaseFunctions.php.svn-base%2C1.1.1.1%2CNONE%20DatabaseMysql.php.svn-base%2C1.1.1.1%2CNONE%20DatabaseOracle.php.svn-base%2C1.1.1.1%2CNONE%20DatabasePostgreSQL.php.svn-base%2C1.1.1.1%2CNONE%20DateFormatter.php.svn-base%2C1.1.1.1%2CNONE%20DefaultSettings.php.svn-base%2C1.1.1.1%2CNONE%20Defines.php.svn-base%2C1.1.1.1%2CNONE%20DifferenceEngine.php.svn-base%2C1.1.1.1%2CNONE%20EditPage.php.svn-base%2C1.1.1.1%2CNONE%20Exif.php.svn-base%2C1.1.1.1%2CNONE%20Export.php.svn-base%2C1.1.1.1%2CNONE%20ExternalEdit.php.svn-base%2C1.1.1.1%2CNONE%20ExternalStore.php.svn-base%2C1.1.1.1%2CNONE%20ExternalStoreDB.php.svn-base%2C1.1.1.1%2CNONE%20ExternalStoreHttp.php.svn-base%2C1.1.1.1%2CNONE%20FakeTitle.php.svn-base%2C1.1.1.1%2CNONE%20Feed.php.svn-base%2C1.1.1.1%2CNONE%20GlobalFunctions.php.svn-base%2C1.1.1.1%2CNONE%20Group.php.svn-base%2C1.1.1.1%2CNONE%20HTMLForm.php.svn-base%2C1.1.1.1%2CNONE%20HistoryBlob.php.svn-base%2C1.1.1.1%2CNONE%20Hooks.php.svn-base%2C1.1.1.1%2CNONE%20HttpFunctions.php.svn-base%2C1.1.1.1%2CNONE%20Image.php.svn-base%2C1.1.1.1%2CNONE%20ImageGallery.php.svn-base%2C1.1.1.1%2CNONE%20ImagePage.php.svn-base%2C1.1.1.1%2CNONE%20JobQueue.php.svn-base%2C1.1.1.1%2CNONE%20Licenses.php.svn-base%2C1.1.1.1%2CNONE%20LinkBatch.php.svn-base%2C1.1.1.1%2CNONE%20LinkCache.php.svn-base%2C1.1.1.1%2CNONE%20LinkFilter.php.svn-base%2C1.1.1.1%2CNONE%20Linker.php.svn-base%2C1.1.1.1%2CNONE%20LinksUpdate.php.svn-base%2C1.1.1.1%2CNONE%20LoadBalancer.php.svn-base%2C1.1.1.1%2CNONE%20LogPage.php.svn-base%2C1.1.1.1%2CNONE%20MacBinary.php.svn-base%2C1.1.1.1%2CNONE%20MagicWord.php.svn-base%2C1.1.1.1%2CNONE%20Math.php.svn-base%2C1.1.1.1%2CNONE%20MemcachedSessions.php.svn-base%2C1.1.1.1%2CNONE%20MessageCache.php.svn-base%2C1.1.1.1%2CNONE%20Metadata.php.svn-base%2C1.1.1.1%2CNON&In-Reply-To=%3C200604101227.k3ACRDt26023%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000083.html">
+   <LINK REL="Next"  HREF="000085.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/includes/.svn/prop-base .htaccess.svn-base,1.1.1.1,NONE AjaxDispatcher.php.svn-base,1.1.1.1,NONE AjaxFunctions.php.svn-base,1.1.1.1,NONE Article.php.svn-base,1.1.1.1,NONE AuthPlugin.php.svn-base,1.1.1.1,NONE BagOStuff.php.svn-base,1.1.1.1,NONE Block.php.svn-base,1.1.1.1,NONE CacheManager.php.svn-base,1.1.1.1,NONE CategoryPage.php.svn-base,1.1.1.1,NONE Categoryfinder.php.svn-base,1.1.1.1,NONE ChangesList.php.svn-base,1.1.1.1,NONE Credits.php.svn-base,1.1.1.1,NONE Database.php.svn-base,1.1.1.1,NONE DatabaseFunctions.php.svn-base,1.1.1.1,NONE DatabaseMysql.php.svn-base,1.1.1.1,NONE DatabaseOracle.php.svn-base,1.1.1.1,NONE DatabasePostgreSQL.php.svn-base,1.1.1.1,NONE DateFormatter.php.svn-base,1.1.1.1,NONE DefaultSettings.php.svn-base,1.1.1.1,NONE Defines.php.svn-base,1.1.1.1,NONE DifferenceEngine.php.svn-base,1.1.1.1,NONE EditPage.php.svn-base,1.1.1.1,NONE Exif.php.svn-base,1.1.1.1,NONE Export.php.svn-base,1.1.1.1,NONE ExternalEdit.php.svn-base,1.1.1.1,NONE ExternalStore.php.svn-base,1.1.1.1,NONE ExternalStoreDB.php.svn-base,1.1.1.1,NONE ExternalStoreHttp.php.svn-base,1.1.1.1,NONE FakeTitle.php.svn-base,1.1.1.1,NONE Feed.php.svn-base,1.1.1.1,NONE GlobalFunctions.php.svn-base,1.1.1.1,NONE Group.php.svn-base,1.1.1.1,NONE HTMLForm.php.svn-base,1.1.1.1,NONE HistoryBlob.php.svn-base,1.1.1.1,NONE Hooks.php.svn-base,1.1.1.1,NONE HttpFunctions.php.svn-base,1.1.1.1,NONE Image.php.svn-base,1.1.1.1,NONE ImageGallery.php.svn-base,1.1.1.1,NONE ImagePage.php.svn-base,1.1.1.1,NONE JobQueue.php.svn-base,1.1.1.1,NONE Licenses.php.svn-base,1.1.1.1,NONE LinkBatch.php.svn-base,1.1.1.1,NONE LinkCache.php.svn-base,1.1.1.1,NONE LinkFilter.php.svn-base,1.1.1.1,NONE Linker.php.svn-base,1.1.1.1,NONE LinksUpdate.php.svn-base,1.1.1.1,NONE LoadBalancer.php.svn-base,1.1.1.1,NONE LogPage.php.svn-base,1.1.1.1,NONE MacBinary.php.svn-base,1.1.1.1,NONE MagicWord.php.svn-base,1.1.1.1,NONE Math.php.svn-base,1.1.1.1,NONE MemcachedSessions.php.svn-base,1.1.1.1,NONE MessageCache.php.svn-base,1.1.1.1,NONE Metadata.php.svn-base,1.1.1.1,NON</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/includes/.svn/prop-base%20.htaccess.svn-base%2C1.1.1.1%2CNONE%20AjaxDispatcher.php.svn-base%2C1.1.1.1%2CNONE%20AjaxFunctions.php.svn-base%2C1.1.1.1%2CNONE%20Article.php.svn-base%2C1.1.1.1%2CNONE%20AuthPlugin.php.svn-base%2C1.1.1.1%2CNONE%20BagOStuff.php.svn-base%2C1.1.1.1%2CNONE%20Block.php.svn-base%2C1.1.1.1%2CNONE%20CacheManager.php.svn-base%2C1.1.1.1%2CNONE%20CategoryPage.php.svn-base%2C1.1.1.1%2CNONE%20Categoryfinder.php.svn-base%2C1.1.1.1%2CNONE%20ChangesList.php.svn-base%2C1.1.1.1%2CNONE%20Credits.php.svn-base%2C1.1.1.1%2CNONE%20Database.php.svn-base%2C1.1.1.1%2CNONE%20DatabaseFunctions.php.svn-base%2C1.1.1.1%2CNONE%20DatabaseMysql.php.svn-base%2C1.1.1.1%2CNONE%20DatabaseOracle.php.svn-base%2C1.1.1.1%2CNONE%20DatabasePostgreSQL.php.svn-base%2C1.1.1.1%2CNONE%20DateFormatter.php.svn-base%2C1.1.1.1%2CNONE%20DefaultSettings.php.svn-base%2C1.1.1.1%2CNONE%20Defines.php.svn-base%2C1.1.1.1%2CNONE%20DifferenceEngine.php.svn-base%2C1.1.1.1%2CNONE%20EditPage.php.svn-base%2C1.1.1.1%2CNONE%20Exif.php.svn-base%2C1.1.1.1%2CNONE%20Export.php.svn-base%2C1.1.1.1%2CNONE%20ExternalEdit.php.svn-base%2C1.1.1.1%2CNONE%20ExternalStore.php.svn-base%2C1.1.1.1%2CNONE%20ExternalStoreDB.php.svn-base%2C1.1.1.1%2CNONE%20ExternalStoreHttp.php.svn-base%2C1.1.1.1%2CNONE%20FakeTitle.php.svn-base%2C1.1.1.1%2CNONE%20Feed.php.svn-base%2C1.1.1.1%2CNONE%20GlobalFunctions.php.svn-base%2C1.1.1.1%2CNONE%20Group.php.svn-base%2C1.1.1.1%2CNONE%20HTMLForm.php.svn-base%2C1.1.1.1%2CNONE%20HistoryBlob.php.svn-base%2C1.1.1.1%2CNONE%20Hooks.php.svn-base%2C1.1.1.1%2CNONE%20HttpFunctions.php.svn-base%2C1.1.1.1%2CNONE%20Image.php.svn-base%2C1.1.1.1%2CNONE%20ImageGallery.php.svn-base%2C1.1.1.1%2CNONE%20ImagePage.php.svn-base%2C1.1.1.1%2CNONE%20JobQueue.php.svn-base%2C1.1.1.1%2CNONE%20Licenses.php.svn-base%2C1.1.1.1%2CNONE%20LinkBatch.php.svn-base%2C1.1.1.1%2CNONE%20LinkCache.php.svn-base%2C1.1.1.1%2CNONE%20LinkFilter.php.svn-base%2C1.1.1.1%2CNONE%20Linker.php.svn-base%2C1.1.1.1%2CNONE%20LinksUpdate.php.svn-base%2C1.1.1.1%2CNONE%20LoadBalancer.php.svn-base%2C1.1.1.1%2CNONE%20LogPage.php.svn-base%2C1.1.1.1%2CNONE%20MacBinary.php.svn-base%2C1.1.1.1%2CNONE%20MagicWord.php.svn-base%2C1.1.1.1%2CNONE%20Math.php.svn-base%2C1.1.1.1%2CNONE%20MemcachedSessions.php.svn-base%2C1.1.1.1%2CNONE%20MessageCache.php.svn-base%2C1.1.1.1%2CNONE%20Metadata.php.svn-base%2C1.1.1.1%2CNON&In-Reply-To=%3C200604101227.k3ACRDt26023%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/includes/.svn/prop-base .htaccess.svn-base,1.1.1.1,NONE AjaxDispatcher.php.svn-base,1.1.1.1,NONE AjaxFunctions.php.svn-base,1.1.1.1,NONE Article.php.svn-base,1.1.1.1,NONE AuthPlugin.php.svn-base,1.1.1.1,NONE BagOStuff.php.svn-base,1.1.1.1,NONE Block.php.svn-base,1.1.1.1,NONE CacheManager.php.svn-base,1.1.1.1,NONE CategoryPage.php.svn-base,1.1.1.1,NONE Categoryfinder.php.svn-base,1.1.1.1,NONE ChangesList.php.svn-base,1.1.1.1,NONE Credits.php.svn-base,1.1.1.1,NONE Database.php.svn-base,1.1.1.1,NONE DatabaseFunctions.php.svn-base,1.1.1.1,NONE DatabaseMysql.php.svn-base,1.1.1.1,NONE DatabaseOracle.php.svn-base,1.1.1.1,NONE DatabasePostgreSQL.php.svn-base,1.1.1.1,NONE DateFormatter.php.svn-base,1.1.1.1,NONE DefaultSettings.php.svn-base,1.1.1.1,NONE Defines.php.svn-base,1.1.1.1,NONE DifferenceEngine.php.svn-base,1.1.1.1,NONE EditPage.php.svn-base,1.1.1.1,NONE Exif.php.svn-base,1.1.1.1,NONE Export.php.svn-base,1.1.1.1,NONE ExternalEdit.php.svn-base,1.1.1.1,NONE ExternalStore.php.svn-base,1.1.1.1,NONE ExternalStoreDB.php.svn-base,1.1.1.1,NONE ExternalStoreHttp.php.svn-base,1.1.1.1,NONE FakeTitle.php.svn-base,1.1.1.1,NONE Feed.php.svn-base,1.1.1.1,NONE GlobalFunctions.php.svn-base,1.1.1.1,NONE Group.php.svn-base,1.1.1.1,NONE HTMLForm.php.svn-base,1.1.1.1,NONE HistoryBlob.php.svn-base,1.1.1.1,NONE Hooks.php.svn-base,1.1.1.1,NONE HttpFunctions.php.svn-base,1.1.1.1,NONE Image.php.svn-base,1.1.1.1,NONE ImageGallery.php.svn-base,1.1.1.1,NONE ImagePage.php.svn-base,1.1.1.1,NONE JobQueue.php.svn-base,1.1.1.1,NONE Licenses.php.svn-base,1.1.1.1,NONE LinkBatch.php.svn-base,1.1.1.1,NONE LinkCache.php.svn-base,1.1.1.1,NONE LinkFilter.php.svn-base,1.1.1.1,NONE Linker.php.svn-base,1.1.1.1,NONE LinksUpdate.php.svn-base,1.1.1.1,NONE LoadBalancer.php.svn-base,1.1.1.1,NONE LogPage.php.svn-base,1.1.1.1,NONE MacBinary.php.svn-base,1.1.1.1,NONE MagicWord.php.svn-base,1.1.1.1,NONE Math.php.svn-base,1.1.1.1,NONE MemcachedSessions.php.svn-base,1.1.1.1,NONE MessageCache.php.svn-base,1.1.1.1,NONE Metadata.php.svn-base,1.1.1.1,NON">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Mon Apr 10 14:27:13 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000083.html">[Blahtex-cvs] blahtex/includes/.svn README.txt,1.1.1.1,NONE dir-wcprops,1.1.1.1,NONE empty-file,1.1.1.1,NONE entries,1.1.1.1,NONE format,1.1.1.1,NONE
+</A></li>
+        <LI>Next message: <A HREF="000085.html">[Blahtex-cvs] blahtex/includes/.svn/props .htaccess.svn-work,1.1.1.1,NONE AjaxDispatcher.php.svn-work,1.1.1.1,NONE AjaxFunctions.php.svn-work,1.1.1.1,NONE Article.php.svn-work,1.1.1.1,NONE AuthPlugin.php.svn-work,1.1.1.1,NONE BagOStuff.php.svn-work,1.1.1.1,NONE Block.php.svn-work,1.1.1.1,NONE CacheManager.php.svn-work,1.1.1.1,NONE CategoryPage.php.svn-work,1.1.1.1,NONE Categoryfinder.php.svn-work,1.1.1.1,NONE ChangesList.php.svn-work,1.1.1.1,NONE Credits.php.svn-work,1.1.1.1,NONE Database.php.svn-work,1.1.1.1,NONE DatabaseFunctions.php.svn-work,1.1.1.1,NONE DatabaseMysql.php.svn-work,1.1.1.1,NONE DatabaseOracle.php.svn-work,1.1.1.1,NONE DatabasePostgreSQL.php.svn-work,1.1.1.1,NONE DateFormatter.php.svn-work,1.1.1.1,NONE DefaultSettings.php.svn-work,1.1.1.1,NONE Defines.php.svn-work,1.1.1.1,NONE DifferenceEngine.php.svn-work,1.1.1.1,NONE EditPage.php.svn-work,1.1.1.1,NONE Exif.php.svn-work,1.1.1.1,NONE Export.php.svn-work,1.1.1.1,NONE ExternalEdit.php.svn-work,1.1.1.1,NONE ExternalStore.php.svn-work,1.1.1.1,NONE ExternalStoreDB.php.svn-work,1.1.1.1,NONE ExternalStoreHttp.php.svn-work,1.1.1.1,NONE FakeTitle.php.svn-work,1.1.1.1,NONE Feed.php.svn-work,1.1.1.1,NONE GlobalFunctions.php.svn-work,1.1.1.1,NONE Group.php.svn-work,1.1.1.1,NONE HTMLForm.php.svn-work,1.1.1.1,NONE HistoryBlob.php.svn-work,1.1.1.1,NONE Hooks.php.svn-work,1.1.1.1,NONE HttpFunctions.php.svn-work,1.1.1.1,NONE Image.php.svn-work,1.1.1.1,NONE ImageGallery.php.svn-work,1.1.1.1,NONE ImagePage.php.svn-work,1.1.1.1,NONE JobQueue.php.svn-work,1.1.1.1,NONE Licenses.php.svn-work,1.1.1.1,NONE LinkBatch.php.svn-work,1.1.1.1,NONE LinkCache.php.svn-work,1.1.1.1,NONE LinkFilter.php.svn-work,1.1.1.1,NONE Linker.php.svn-work,1.1.1.1,NONE LinksUpdate.php.svn-work,1.1.1.1,NONE LoadBalancer.php.svn-work,1.1.1.1,NONE LogPage.php.svn-work,1.1.1.1,NONE MacBinary.php.svn-work,1.1.1.1,NONE MagicWord.php.svn-work,1.1.1.1,NONE Math.php.svn-work,1.1.1.1,NONE MemcachedSessions.php.svn-work,1.1.1.1,NONE MessageCache.php.svn-work,1.1.1.1,NONE Metadata.php.svn-work,1.1.1.1,NONE Mi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/includes/.svn/prop-base
+In directory sheep:/tmp/cvs-serv19821/includes/.svn/prop-base
+
+Removed Files:
+	.htaccess.svn-base AjaxDispatcher.php.svn-base 
+	AjaxFunctions.php.svn-base Article.php.svn-base 
+	AuthPlugin.php.svn-base BagOStuff.php.svn-base 
+	Block.php.svn-base CacheManager.php.svn-base 
+	CategoryPage.php.svn-base Categoryfinder.php.svn-base 
+	ChangesList.php.svn-base Credits.php.svn-base 
+	Database.php.svn-base DatabaseFunctions.php.svn-base 
+	DatabaseMysql.php.svn-base DatabaseOracle.php.svn-base 
+	DatabasePostgreSQL.php.svn-base DateFormatter.php.svn-base 
+	DefaultSettings.php.svn-base Defines.php.svn-base 
+	DifferenceEngine.php.svn-base EditPage.php.svn-base 
+	Exif.php.svn-base Export.php.svn-base 
+	ExternalEdit.php.svn-base ExternalStore.php.svn-base 
+	ExternalStoreDB.php.svn-base ExternalStoreHttp.php.svn-base 
+	FakeTitle.php.svn-base Feed.php.svn-base 
+	GlobalFunctions.php.svn-base Group.php.svn-base 
+	HTMLForm.php.svn-base HistoryBlob.php.svn-base 
+	Hooks.php.svn-base HttpFunctions.php.svn-base 
+	Image.php.svn-base ImageGallery.php.svn-base 
+	ImagePage.php.svn-base JobQueue.php.svn-base 
+	Licenses.php.svn-base LinkBatch.php.svn-base 
+	LinkCache.php.svn-base LinkFilter.php.svn-base 
+	Linker.php.svn-base LinksUpdate.php.svn-base 
+	LoadBalancer.php.svn-base LogPage.php.svn-base 
+	MacBinary.php.svn-base MagicWord.php.svn-base 
+	Math.php.svn-base MemcachedSessions.php.svn-base 
+	MessageCache.php.svn-base Metadata.php.svn-base 
+	MimeMagic.php.svn-base Namespace.php.svn-base 
+	ObjectCache.php.svn-base OutputPage.php.svn-base 
+	PageHistory.php.svn-base Parser.php.svn-base 
+	ParserCache.php.svn-base ParserXML.php.svn-base 
+	PersistentObject.php.svn-base ProfilerSimple.php.svn-base 
+	ProfilerSimpleUDP.php.svn-base ProfilerStub.php.svn-base 
+	Profiling.php.svn-base ProtectionForm.php.svn-base 
+	ProxyTools.php.svn-base QueryPage.php.svn-base 
+	RawPage.php.svn-base RecentChange.php.svn-base 
+	Revision.php.svn-base Sanitizer.php.svn-base 
+	SearchEngine.php.svn-base SearchMySQL.php.svn-base 
+	SearchMySQL4.php.svn-base SearchTsearch2.php.svn-base 
+	SearchUpdate.php.svn-base Setup.php.svn-base 
+	SiteConfiguration.php.svn-base SiteStatsUpdate.php.svn-base 
+	Skin.php.svn-base SkinTemplate.php.svn-base 
+	SpecialAllmessages.php.svn-base SpecialAllpages.php.svn-base 
+	SpecialAncientpages.php.svn-base SpecialBlockip.php.svn-base 
+	SpecialBlockme.php.svn-base SpecialBooksources.php.svn-base 
+	SpecialBrokenRedirects.php.svn-base 
+	SpecialCategories.php.svn-base 
+	SpecialConfirmemail.php.svn-base 
+	SpecialContributions.php.svn-base 
+	SpecialDeadendpages.php.svn-base 
+	SpecialDisambiguations.php.svn-base 
+	SpecialDoubleRedirects.php.svn-base 
+	SpecialEmailuser.php.svn-base SpecialExport.php.svn-base 
+	SpecialGroups.php.svn-base SpecialImagelist.php.svn-base 
+	SpecialImport.php.svn-base SpecialIpblocklist.php.svn-base 
+	SpecialListredirects.php.svn-base 
+	SpecialListusers.php.svn-base SpecialLockdb.php.svn-base 
+	SpecialLog.php.svn-base SpecialLonelypages.php.svn-base 
+	SpecialLongpages.php.svn-base SpecialMIMEsearch.php.svn-base 
+	SpecialMostcategories.php.svn-base 
+	SpecialMostimages.php.svn-base SpecialMostlinked.php.svn-base 
+	SpecialMostlinkedcategories.php.svn-base 
+	SpecialMostrevisions.php.svn-base SpecialMovepage.php.svn-base 
+	SpecialNewimages.php.svn-base SpecialNewpages.php.svn-base 
+	SpecialPage.php.svn-base SpecialPopularpages.php.svn-base 
+	SpecialPreferences.php.svn-base 
+	SpecialPrefixindex.php.svn-base SpecialRandompage.php.svn-base 
+	SpecialRecentchanges.php.svn-base 
+	SpecialRecentchangeslinked.php.svn-base 
+	SpecialRevisiondelete.php.svn-base SpecialSearch.php.svn-base 
+	SpecialShortpages.php.svn-base 
+	SpecialSpecialpages.php.svn-base 
+	SpecialStatistics.php.svn-base 
+	SpecialUncategorizedcategories.php.svn-base 
+	SpecialUncategorizedpages.php.svn-base 
+	SpecialUndelete.php.svn-base SpecialUnlockdb.php.svn-base 
+	SpecialUnusedcategories.php.svn-base 
+	SpecialUnusedimages.php.svn-base 
+	SpecialUnwatchedpages.php.svn-base SpecialUpload.php.svn-base 
+	SpecialUploadMogile.php.svn-
+--- .htaccess.svn-base DELETED ---
+
+--- AjaxDispatcher.php.svn-base DELETED ---
+
+--- AjaxFunctions.php.svn-base DELETED ---
+
+--- Article.php.svn-base DELETED ---
+
+--- AuthPlugin.php.svn-base DELETED ---
+
+--- BagOStuff.php.svn-base DELETED ---
+
+--- Block.php.svn-base DELETED ---
+
+--- CacheManager.php.svn-base DELETED ---
+
+--- CategoryPage.php.svn-base DELETED ---
+
+--- Categoryfinder.php.svn-base DELETED ---
+
+--- ChangesList.php.svn-base DELETED ---
+
+--- Credits.php.svn-base DELETED ---
+
+--- Database.php.svn-base DELETED ---
+
+--- DatabaseFunctions.php.svn-base DELETED ---
+
+--- DatabaseMysql.php.svn-base DELETED ---
+
+--- DatabaseOracle.php.svn-base DELETED ---
+
+--- DatabasePostgreSQL.php.svn-base DELETED ---
+
+--- DateFormatter.php.svn-base DELETED ---
+
+--- DefaultSettings.php.svn-base DELETED ---
+
+--- Defines.php.svn-base DELETED ---
+
+--- DifferenceEngine.php.svn-base DELETED ---
+
+--- EditPage.php.svn-base DELETED ---
+
+--- Exif.php.svn-base DELETED ---
+
+--- Export.php.svn-base DELETED ---
+
+--- ExternalEdit.php.svn-base DELETED ---
+
+--- ExternalStore.php.svn-base DELETED ---
+
+--- ExternalStoreDB.php.svn-base DELETED ---
+
+--- ExternalStoreHttp.php.svn-base DELETED ---
+
+--- FakeTitle.php.svn-base DELETED ---
+
+--- Feed.php.svn-base DELETED ---
+
+--- GlobalFunctions.php.svn-base DELETED ---
+
+--- Group.php.svn-base DELETED ---
+
+--- HTMLForm.php.svn-base DELETED ---
+
+--- HistoryBlob.php.svn-base DELETED ---
+
+--- Hooks.php.svn-base DELETED ---
+
+--- HttpFunctions.php.svn-base DELETED ---
+
+--- Image.php.svn-base DELETED ---
+
+--- ImageGallery.php.svn-base DELETED ---
+
+--- ImagePage.php.svn-base DELETED ---
+
+--- JobQueue.php.svn-base DELETED ---
+
+--- Licenses.php.svn-base DELETED ---
+
+--- LinkBatch.php.svn-base DELETED ---
+
+--- LinkCache.php.svn-base DELETED ---
+
+--- LinkFilter.php.svn-base DELETED ---
+
+--- Linker.php.svn-base DELETED ---
+
+--- LinksUpdate.php.svn-base DELETED ---
+
+--- LoadBalancer.php.svn-base DELETED ---
+
+--- LogPage.php.svn-base DELETED ---
+
+--- MacBinary.php.svn-base DELETED ---
+
+--- MagicWord.php.svn-base DELETED ---
+
+--- Math.php.svn-base DELETED ---
+
+--- MemcachedSessions.php.svn-base DELETED ---
+
+--- MessageCache.php.svn-base DELETED ---
+
+--- Metadata.php.svn-base DELETED ---
+
+--- MimeMagic.php.svn-base DELETED ---
+
+--- Namespace.php.svn-base DELETED ---
+
+--- ObjectCache.php.svn-base DELETED ---
+
+--- OutputPage.php.svn-base DELETED ---
+
+--- PageHistory.php.svn-base DELETED ---
+
+--- Parser.php.svn-base DELETED ---
+
+--- ParserCache.php.svn-base DELETED ---
+
+--- ParserXML.php.svn-base DELETED ---
+
+--- PersistentObject.php.svn-base DELETED ---
+
+--- ProfilerSimple.php.svn-base DELETED ---
+
+--- ProfilerSimpleUDP.php.svn-base DELETED ---
+
+--- ProfilerStub.php.svn-base DELETED ---
+
+--- Profiling.php.svn-base DELETED ---
+
+--- ProtectionForm.php.svn-base DELETED ---
+
+--- ProxyTools.php.svn-base DELETED ---
+
+--- QueryPage.php.svn-base DELETED ---
+
+--- RawPage.php.svn-base DELETED ---
+
+--- RecentChange.php.svn-base DELETED ---
+
+--- Revision.php.svn-base DELETED ---
+
+--- Sanitizer.php.svn-base DELETED ---
+
+--- SearchEngine.php.svn-base DELETED ---
+
+--- SearchMySQL.php.svn-base DELETED ---
+
+--- SearchMySQL4.php.svn-base DELETED ---
+
+--- SearchTsearch2.php.svn-base DELETED ---
+
+--- SearchUpdate.php.svn-base DELETED ---
+
+--- Setup.php.svn-base DELETED ---
+
+--- SiteConfiguration.php.svn-base DELETED ---
+
+--- SiteStatsUpdate.php.svn-base DELETED ---
+
+--- Skin.php.svn-base DELETED ---
+
+--- SkinTemplate.php.svn-base DELETED ---
+
+--- SpecialAllmessages.php.svn-base DELETED ---
+
+--- SpecialAllpages.php.svn-base DELETED ---
+
+--- SpecialAncientpages.php.svn-base DELETED ---
+
+--- SpecialBlockip.php.svn-base DELETED ---
+
+--- SpecialBlockme.php.svn-base DELETED ---
+
+--- SpecialBooksources.php.svn-base DELETED ---
+
+--- SpecialBrokenRedirects.php.svn-base DELETED ---
+
+--- SpecialCategories.php.svn-base DELETED ---
+
+--- SpecialConfirmemail.php.svn-base DELETED ---
+
+--- SpecialContributions.php.svn-base DELETED ---
+
+--- SpecialDeadendpages.php.svn-base DELETED ---
+
+--- SpecialDisambiguations.php.svn-base DELETED ---
+
+--- SpecialDoubleRedirects.php.svn-base DELETED ---
+
+--- SpecialEmailuser.php.svn-base DELETED ---
+
+--- SpecialExport.php.svn-base DELETED ---
+
+--- SpecialGroups.php.svn-base DELETED ---
+
+--- SpecialImagelist.php.svn-base DELETED ---
+
+--- SpecialImport.php.svn-base DELETED ---
+
+--- SpecialIpblocklist.php.svn-base DELETED ---
+
+--- SpecialListredirects.php.svn-base DELETED ---
+
+--- SpecialListusers.php.svn-base DELETED ---
+
+--- SpecialLockdb.php.svn-base DELETED ---
+
+--- SpecialLog.php.svn-base DELETED ---
+
+--- SpecialLonelypages.php.svn-base DELETED ---
+
+--- SpecialLongpages.php.svn-base DELETED ---
+
+--- SpecialMIMEsearch.php.svn-base DELETED ---
+
+--- SpecialMostcategories.php.svn-base DELETED ---
+
+--- SpecialMostimages.php.svn-base DELETED ---
+
+--- SpecialMostlinked.php.svn-base DELETED ---
+
+--- SpecialMostlinkedcategories.php.svn-base DELETED ---
+
+--- SpecialMostrevisions.php.svn-base DELETED ---
+
+--- SpecialMovepage.php.svn-base DELETED ---
+
+--- SpecialNewimages.php.svn-base DELETED ---
+
+--- SpecialNewpages.php.svn-base DELETED ---
+
+--- SpecialPage.php.svn-base DELETED ---
+
+--- SpecialPopularpages.php.svn-base DELETED ---
+
+--- SpecialPreferences.php.svn-base DELETED ---
+
+--- SpecialPrefixindex.php.svn-base DELETED ---
+
+--- SpecialRandompage.php.svn-base DELETED ---
+
+--- SpecialRecentchanges.php.svn-base DELETED ---
+
+--- SpecialRecentchangeslinked.php.svn-base DELETED ---
+
+--- SpecialRevisiondelete.php.svn-base DELETED ---
+
+--- SpecialSearch.php.svn-base DELETED ---
+
+--- SpecialShortpages.php.svn-base DELETED ---
+
+--- SpecialSpecialpages.php.svn-base DELETED ---
+
+--- SpecialStatistics.php.svn-base DELETED ---
+
+--- SpecialUncategorizedcategories.php.svn-base DELETED ---
+
+--- SpecialUncategorizedpages.php.svn-base DELETED ---
+
+--- SpecialUndelete.php.svn-base DELETED ---
+
+--- SpecialUnlockdb.php.svn-base DELETED ---
+
+--- SpecialUnusedcategories.php.svn-base DELETED ---
+
+--- SpecialUnusedimages.php.svn-base DELETED ---
+
+--- SpecialUnwatchedpages.php.svn-base DELETED ---
+
+--- SpecialUpload.php.svn-base DELETED ---
+
+--- SpecialUploadMogile.php.svn-base DELETED ---
+
+--- SpecialUserlogin.php.svn-base DELETED ---
+
+--- SpecialUserlogout.php.svn-base DELETED ---
+
+--- SpecialUserrights.php.svn-base DELETED ---
+
+--- SpecialVersion.php.svn-base DELETED ---
+
+--- SpecialWantedcategories.php.svn-base DELETED ---
+
+--- SpecialWantedpages.php.svn-base DELETED ---
+
+--- SpecialWatchlist.php.svn-base DELETED ---
+
+--- SpecialWhatlinkshere.php.svn-base DELETED ---
+
+--- SquidUpdate.php.svn-base DELETED ---
+
+--- StreamFile.php.svn-base DELETED ---
+
+--- Title.php.svn-base DELETED ---
+
+--- UpdateClasses.php.svn-base DELETED ---
+
+--- User.php.svn-base DELETED ---
+
+--- UserMailer.php.svn-base DELETED ---
+
+--- Utf8Case.php.svn-base DELETED ---
+
+--- WatchedItem.php.svn-base DELETED ---
+
+--- WebRequest.php.svn-base DELETED ---
+
+--- Wiki.php.svn-base DELETED ---
+
+--- WikiError.php.svn-base DELETED ---
+
+--- XmlFunctions.php.svn-base DELETED ---
+
+--- ZhClient.php.svn-base DELETED ---
+
+--- ZhConversion.php.svn-base DELETED ---
+
+--- memcached-client.php.svn-base DELETED ---
+
+--- mime.info.svn-base DELETED ---
+
+--- mime.types.svn-base DELETED ---
+
+--- proxy_check.php.svn-base DELETED ---
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000083.html">[Blahtex-cvs] blahtex/includes/.svn README.txt,1.1.1.1,NONE dir-wcprops,1.1.1.1,NONE empty-file,1.1.1.1,NONE entries,1.1.1.1,NONE format,1.1.1.1,NONE
+</A></li>
+	<LI>Next message: <A HREF="000085.html">[Blahtex-cvs] blahtex/includes/.svn/props .htaccess.svn-work,1.1.1.1,NONE AjaxDispatcher.php.svn-work,1.1.1.1,NONE AjaxFunctions.php.svn-work,1.1.1.1,NONE Article.php.svn-work,1.1.1.1,NONE AuthPlugin.php.svn-work,1.1.1.1,NONE BagOStuff.php.svn-work,1.1.1.1,NONE Block.php.svn-work,1.1.1.1,NONE CacheManager.php.svn-work,1.1.1.1,NONE CategoryPage.php.svn-work,1.1.1.1,NONE Categoryfinder.php.svn-work,1.1.1.1,NONE ChangesList.php.svn-work,1.1.1.1,NONE Credits.php.svn-work,1.1.1.1,NONE Database.php.svn-work,1.1.1.1,NONE DatabaseFunctions.php.svn-work,1.1.1.1,NONE DatabaseMysql.php.svn-work,1.1.1.1,NONE DatabaseOracle.php.svn-work,1.1.1.1,NONE DatabasePostgreSQL.php.svn-work,1.1.1.1,NONE DateFormatter.php.svn-work,1.1.1.1,NONE DefaultSettings.php.svn-work,1.1.1.1,NONE Defines.php.svn-work,1.1.1.1,NONE DifferenceEngine.php.svn-work,1.1.1.1,NONE EditPage.php.svn-work,1.1.1.1,NONE Exif.php.svn-work,1.1.1.1,NONE Export.php.svn-work,1.1.1.1,NONE ExternalEdit.php.svn-work,1.1.1.1,NONE ExternalStore.php.svn-work,1.1.1.1,NONE ExternalStoreDB.php.svn-work,1.1.1.1,NONE ExternalStoreHttp.php.svn-work,1.1.1.1,NONE FakeTitle.php.svn-work,1.1.1.1,NONE Feed.php.svn-work,1.1.1.1,NONE GlobalFunctions.php.svn-work,1.1.1.1,NONE Group.php.svn-work,1.1.1.1,NONE HTMLForm.php.svn-work,1.1.1.1,NONE HistoryBlob.php.svn-work,1.1.1.1,NONE Hooks.php.svn-work,1.1.1.1,NONE HttpFunctions.php.svn-work,1.1.1.1,NONE Image.php.svn-work,1.1.1.1,NONE ImageGallery.php.svn-work,1.1.1.1,NONE ImagePage.php.svn-work,1.1.1.1,NONE JobQueue.php.svn-work,1.1.1.1,NONE Licenses.php.svn-work,1.1.1.1,NONE LinkBatch.php.svn-work,1.1.1.1,NONE LinkCache.php.svn-work,1.1.1.1,NONE LinkFilter.php.svn-work,1.1.1.1,NONE Linker.php.svn-work,1.1.1.1,NONE LinksUpdate.php.svn-work,1.1.1.1,NONE LoadBalancer.php.svn-work,1.1.1.1,NONE LogPage.php.svn-work,1.1.1.1,NONE MacBinary.php.svn-work,1.1.1.1,NONE MagicWord.php.svn-work,1.1.1.1,NONE Math.php.svn-work,1.1.1.1,NONE MemcachedSessions.php.svn-work,1.1.1.1,NONE MessageCache.php.svn-work,1.1.1.1,NONE Metadata.php.svn-work,1.1.1.1,NONE Mi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#84">[ date ]</a>
+              <a href="thread.html#84">[ thread ]</a>
+              <a href="subject.html#84">[ subject ]</a>
+              <a href="author.html#84">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>

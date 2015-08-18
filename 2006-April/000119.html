@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Blahtex-cvs] blahtex/maintenance/.svn/prop-base .htaccess.svn-base,1.1.1.1,NONE FiveUpgrade.inc.svn-base,1.1.1.1,NONE InitialiseMessages.inc.svn-base,1.1.1.1,NONE Makefile.svn-base,1.1.1.1,NONE README.svn-base,1.1.1.1,NONE addwiki.php.svn-base,1.1.1.1,NONE alltrans.php.svn-base,1.1.1.1,NONE apache-ampersand.diff.svn-base,1.1.1.1,NONE attachLatest.php.svn-base,1.1.1.1,NONE attribute.php.svn-base,1.1.1.1,NONE backup.inc.svn-base,1.1.1.1,NONE backupPrefetch.inc.svn-base,1.1.1.1,NONE benchmarkPurge.php.svn-base,1.1.1.1,NONE build-intl-wiki.sql.svn-base,1.1.1.1,NONE changePassword.php.svn-base,1.1.1.1,NONE changeuser.sql.svn-base,1.1.1.1,NONE checkUsernames.php.svn-base,1.1.1.1,NONE checktrans.php.svn-base,1.1.1.1,NONE cleanupCaps.php.svn-base,1.1.1.1,NONE cleanupDupes.inc.svn-base,1.1.1.1,NONE cleanupDupes.php.svn-base,1.1.1.1,NONE cleanupSpam.php.svn-base,1.1.1.1,NONE cleanupTitles.php.svn-base,1.1.1.1,NONE cleanupWatchlist.php.svn-base,1.1.1.1,NONE clear_interwiki_cache.php.svn-base,1.1.1.1,NONE clear_stats.php.svn-base,1.1.1.1,NONE commandLine.inc.svn-base,1.1.1.1,NONE convertLinks.inc.svn-base,1.1.1.1,NONE convertLinks.php.svn-base,1.1.1.1,NONE counter.php.svn-base,1.1.1.1,NONE database.sql.svn-base,1.1.1.1,NONE delete-idle-wiki-users.pl.svn-base,1.1.1.1,NONE deleteImageMemcached.php.svn-base,1.1.1.1,NONE deleteOldRevisions.inc.svn-base,1.1.1.1,NONE deleteOldRevisions.php.svn-base,1.1.1.1,NONE diffLanguage.php.svn-base,1.1.1.1,NONE dumpBackup.php.svn-base,1.1.1.1,NONE dumpHTML.inc.svn-base,1.1.1.1,NONE dumpHTML.php.svn-base,1.1.1.1,NONE dumpInterwiki.inc.svn-base,1.1.1.1,NONE dumpInterwiki.php.svn-base,1.1.1.1,NONE dumpLinks.php.svn-base,1.1.1.1,NONE dumpMessages.php.svn-base,1.1.1.1,NONE dumpReplayLog.php.svn-base,1.1.1.1,NONE dumpTextPass.php.svn-base,1.1.1.1,NONE duplicatetrans.php.svn-base,1.1.1.1,NONE entities2literals.pl.svn-base,1.1.1.1,NONE eval.php.svn-base,1.1.1.1,NONE fetchInterwiki.pl.svn-base,1.1.1.1,NONE fixSlaveDesync.php.svn-base,1.1.1.1,NONE fixTimestamps.php.svn-base,1.1.1.1,NONE generateSitemap.ph
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/blahtex-cvs/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/maintenance/.svn/prop-base%20.htaccess.svn-base%2C1.1.1.1%2CNONE%20FiveUpgrade.inc.svn-base%2C1.1.1.1%2CNONE%20InitialiseMessages.inc.svn-base%2C1.1.1.1%2CNONE%20Makefile.svn-base%2C1.1.1.1%2CNONE%20README.svn-base%2C1.1.1.1%2CNONE%20addwiki.php.svn-base%2C1.1.1.1%2CNONE%20alltrans.php.svn-base%2C1.1.1.1%2CNONE%20apache-ampersand.diff.svn-base%2C1.1.1.1%2CNONE%20attachLatest.php.svn-base%2C1.1.1.1%2CNONE%20attribute.php.svn-base%2C1.1.1.1%2CNONE%20backup.inc.svn-base%2C1.1.1.1%2CNONE%20backupPrefetch.inc.svn-base%2C1.1.1.1%2CNONE%20benchmarkPurge.php.svn-base%2C1.1.1.1%2CNONE%20build-intl-wiki.sql.svn-base%2C1.1.1.1%2CNONE%20changePassword.php.svn-base%2C1.1.1.1%2CNONE%20changeuser.sql.svn-base%2C1.1.1.1%2CNONE%20checkUsernames.php.svn-base%2C1.1.1.1%2CNONE%20checktrans.php.svn-base%2C1.1.1.1%2CNONE%20cleanupCaps.php.svn-base%2C1.1.1.1%2CNONE%20cleanupDupes.inc.svn-base%2C1.1.1.1%2CNONE%20cleanupDupes.php.svn-base%2C1.1.1.1%2CNONE%20cleanupSpam.php.svn-base%2C1.1.1.1%2CNONE%20cleanupTitles.php.svn-base%2C1.1.1.1%2CNONE%20cleanupWatchlist.php.svn-base%2C1.1.1.1%2CNONE%20clear_interwiki_cache.php.svn-base%2C1.1.1.1%2CNONE%20clear_stats.php.svn-base%2C1.1.1.1%2CNONE%20commandLine.inc.svn-base%2C1.1.1.1%2CNONE%20convertLinks.inc.svn-base%2C1.1.1.1%2CNONE%20convertLinks.php.svn-base%2C1.1.1.1%2CNONE%20counter.php.svn-base%2C1.1.1.1%2CNONE%20database.sql.svn-base%2C1.1.1.1%2CNONE%20delete-idle-wiki-users.pl.svn-base%2C1.1.1.1%2CNONE%20deleteImageMemcached.php.svn-base%2C1.1.1.1%2CNONE%20deleteOldRevisions.inc.svn-base%2C1.1.1.1%2CNONE%20deleteOldRevisions.php.svn-base%2C1.1.1.1%2CNONE%20diffLanguage.php.svn-base%2C1.1.1.1%2CNONE%20dumpBackup.php.svn-base%2C1.1.1.1%2CNONE%20dumpHTML.inc.svn-base%2C1.1.1.1%2CNONE%20dumpHTML.php.svn-base%2C1.1.1.1%2CNONE%20dumpInterwiki.inc.svn-base%2C1.1.1.1%2CNONE%20dumpInterwiki.php.svn-base%2C1.1.1.1%2CNONE%20dumpLinks.php.svn-base%2C1.1.1.1%2CNONE%20dumpMessages.php.svn-base%2C1.1.1.1%2CNONE%20dumpReplayLog.php.svn-base%2C1.1.1.1%2CNONE%20dumpTextPass.php.svn-base%2C1.1.1.1%2CNONE%20duplicatetrans.php.svn-base%2C1.1.1.1%2CNONE%20entities2literals.pl.svn-base%2C1.1.1.1%2CNONE%20eval.php.svn-base%2C1.1.1.1%2CNONE%20fetchInterwiki.pl.svn-base%2C1.1.1.1%2CNONE%20fixSlaveDesync.php.svn-base%2C1.1.1.1%2CNONE%20fixTimestamps.php.svn-base%2C1.1.1.1%2CNONE%20generateSitemap.ph&In-Reply-To=%3C200604101228.k3ACSct26497%40bat.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000118.html">
+   <LINK REL="Next"  HREF="000120.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Blahtex-cvs] blahtex/maintenance/.svn/prop-base .htaccess.svn-base,1.1.1.1,NONE FiveUpgrade.inc.svn-base,1.1.1.1,NONE InitialiseMessages.inc.svn-base,1.1.1.1,NONE Makefile.svn-base,1.1.1.1,NONE README.svn-base,1.1.1.1,NONE addwiki.php.svn-base,1.1.1.1,NONE alltrans.php.svn-base,1.1.1.1,NONE apache-ampersand.diff.svn-base,1.1.1.1,NONE attachLatest.php.svn-base,1.1.1.1,NONE attribute.php.svn-base,1.1.1.1,NONE backup.inc.svn-base,1.1.1.1,NONE backupPrefetch.inc.svn-base,1.1.1.1,NONE benchmarkPurge.php.svn-base,1.1.1.1,NONE build-intl-wiki.sql.svn-base,1.1.1.1,NONE changePassword.php.svn-base,1.1.1.1,NONE changeuser.sql.svn-base,1.1.1.1,NONE checkUsernames.php.svn-base,1.1.1.1,NONE checktrans.php.svn-base,1.1.1.1,NONE cleanupCaps.php.svn-base,1.1.1.1,NONE cleanupDupes.inc.svn-base,1.1.1.1,NONE cleanupDupes.php.svn-base,1.1.1.1,NONE cleanupSpam.php.svn-base,1.1.1.1,NONE cleanupTitles.php.svn-base,1.1.1.1,NONE cleanupWatchlist.php.svn-base,1.1.1.1,NONE clear_interwiki_cache.php.svn-base,1.1.1.1,NONE clear_stats.php.svn-base,1.1.1.1,NONE commandLine.inc.svn-base,1.1.1.1,NONE convertLinks.inc.svn-base,1.1.1.1,NONE convertLinks.php.svn-base,1.1.1.1,NONE counter.php.svn-base,1.1.1.1,NONE database.sql.svn-base,1.1.1.1,NONE delete-idle-wiki-users.pl.svn-base,1.1.1.1,NONE deleteImageMemcached.php.svn-base,1.1.1.1,NONE deleteOldRevisions.inc.svn-base,1.1.1.1,NONE deleteOldRevisions.php.svn-base,1.1.1.1,NONE diffLanguage.php.svn-base,1.1.1.1,NONE dumpBackup.php.svn-base,1.1.1.1,NONE dumpHTML.inc.svn-base,1.1.1.1,NONE dumpHTML.php.svn-base,1.1.1.1,NONE dumpInterwiki.inc.svn-base,1.1.1.1,NONE dumpInterwiki.php.svn-base,1.1.1.1,NONE dumpLinks.php.svn-base,1.1.1.1,NONE dumpMessages.php.svn-base,1.1.1.1,NONE dumpReplayLog.php.svn-base,1.1.1.1,NONE dumpTextPass.php.svn-base,1.1.1.1,NONE duplicatetrans.php.svn-base,1.1.1.1,NONE entities2literals.pl.svn-base,1.1.1.1,NONE eval.php.svn-base,1.1.1.1,NONE fetchInterwiki.pl.svn-base,1.1.1.1,NONE fixSlaveDesync.php.svn-base,1.1.1.1,NONE fixTimestamps.php.svn-base,1.1.1.1,NONE generateSitemap.ph</H1>
+    <B>jitseniesen</B> 
+    <A HREF="mailto:blahtex-cvs%40lists.berlios.de?Subject=Re%3A%20%5BBlahtex-cvs%5D%20blahtex/maintenance/.svn/prop-base%20.htaccess.svn-base%2C1.1.1.1%2CNONE%20FiveUpgrade.inc.svn-base%2C1.1.1.1%2CNONE%20InitialiseMessages.inc.svn-base%2C1.1.1.1%2CNONE%20Makefile.svn-base%2C1.1.1.1%2CNONE%20README.svn-base%2C1.1.1.1%2CNONE%20addwiki.php.svn-base%2C1.1.1.1%2CNONE%20alltrans.php.svn-base%2C1.1.1.1%2CNONE%20apache-ampersand.diff.svn-base%2C1.1.1.1%2CNONE%20attachLatest.php.svn-base%2C1.1.1.1%2CNONE%20attribute.php.svn-base%2C1.1.1.1%2CNONE%20backup.inc.svn-base%2C1.1.1.1%2CNONE%20backupPrefetch.inc.svn-base%2C1.1.1.1%2CNONE%20benchmarkPurge.php.svn-base%2C1.1.1.1%2CNONE%20build-intl-wiki.sql.svn-base%2C1.1.1.1%2CNONE%20changePassword.php.svn-base%2C1.1.1.1%2CNONE%20changeuser.sql.svn-base%2C1.1.1.1%2CNONE%20checkUsernames.php.svn-base%2C1.1.1.1%2CNONE%20checktrans.php.svn-base%2C1.1.1.1%2CNONE%20cleanupCaps.php.svn-base%2C1.1.1.1%2CNONE%20cleanupDupes.inc.svn-base%2C1.1.1.1%2CNONE%20cleanupDupes.php.svn-base%2C1.1.1.1%2CNONE%20cleanupSpam.php.svn-base%2C1.1.1.1%2CNONE%20cleanupTitles.php.svn-base%2C1.1.1.1%2CNONE%20cleanupWatchlist.php.svn-base%2C1.1.1.1%2CNONE%20clear_interwiki_cache.php.svn-base%2C1.1.1.1%2CNONE%20clear_stats.php.svn-base%2C1.1.1.1%2CNONE%20commandLine.inc.svn-base%2C1.1.1.1%2CNONE%20convertLinks.inc.svn-base%2C1.1.1.1%2CNONE%20convertLinks.php.svn-base%2C1.1.1.1%2CNONE%20counter.php.svn-base%2C1.1.1.1%2CNONE%20database.sql.svn-base%2C1.1.1.1%2CNONE%20delete-idle-wiki-users.pl.svn-base%2C1.1.1.1%2CNONE%20deleteImageMemcached.php.svn-base%2C1.1.1.1%2CNONE%20deleteOldRevisions.inc.svn-base%2C1.1.1.1%2CNONE%20deleteOldRevisions.php.svn-base%2C1.1.1.1%2CNONE%20diffLanguage.php.svn-base%2C1.1.1.1%2CNONE%20dumpBackup.php.svn-base%2C1.1.1.1%2CNONE%20dumpHTML.inc.svn-base%2C1.1.1.1%2CNONE%20dumpHTML.php.svn-base%2C1.1.1.1%2CNONE%20dumpInterwiki.inc.svn-base%2C1.1.1.1%2CNONE%20dumpInterwiki.php.svn-base%2C1.1.1.1%2CNONE%20dumpLinks.php.svn-base%2C1.1.1.1%2CNONE%20dumpMessages.php.svn-base%2C1.1.1.1%2CNONE%20dumpReplayLog.php.svn-base%2C1.1.1.1%2CNONE%20dumpTextPass.php.svn-base%2C1.1.1.1%2CNONE%20duplicatetrans.php.svn-base%2C1.1.1.1%2CNONE%20entities2literals.pl.svn-base%2C1.1.1.1%2CNONE%20eval.php.svn-base%2C1.1.1.1%2CNONE%20fetchInterwiki.pl.svn-base%2C1.1.1.1%2CNONE%20fixSlaveDesync.php.svn-base%2C1.1.1.1%2CNONE%20fixTimestamps.php.svn-base%2C1.1.1.1%2CNONE%20generateSitemap.ph&In-Reply-To=%3C200604101228.k3ACSct26497%40bat.berlios.de%3E"
+       TITLE="[Blahtex-cvs] blahtex/maintenance/.svn/prop-base .htaccess.svn-base,1.1.1.1,NONE FiveUpgrade.inc.svn-base,1.1.1.1,NONE InitialiseMessages.inc.svn-base,1.1.1.1,NONE Makefile.svn-base,1.1.1.1,NONE README.svn-base,1.1.1.1,NONE addwiki.php.svn-base,1.1.1.1,NONE alltrans.php.svn-base,1.1.1.1,NONE apache-ampersand.diff.svn-base,1.1.1.1,NONE attachLatest.php.svn-base,1.1.1.1,NONE attribute.php.svn-base,1.1.1.1,NONE backup.inc.svn-base,1.1.1.1,NONE backupPrefetch.inc.svn-base,1.1.1.1,NONE benchmarkPurge.php.svn-base,1.1.1.1,NONE build-intl-wiki.sql.svn-base,1.1.1.1,NONE changePassword.php.svn-base,1.1.1.1,NONE changeuser.sql.svn-base,1.1.1.1,NONE checkUsernames.php.svn-base,1.1.1.1,NONE checktrans.php.svn-base,1.1.1.1,NONE cleanupCaps.php.svn-base,1.1.1.1,NONE cleanupDupes.inc.svn-base,1.1.1.1,NONE cleanupDupes.php.svn-base,1.1.1.1,NONE cleanupSpam.php.svn-base,1.1.1.1,NONE cleanupTitles.php.svn-base,1.1.1.1,NONE cleanupWatchlist.php.svn-base,1.1.1.1,NONE clear_interwiki_cache.php.svn-base,1.1.1.1,NONE clear_stats.php.svn-base,1.1.1.1,NONE commandLine.inc.svn-base,1.1.1.1,NONE convertLinks.inc.svn-base,1.1.1.1,NONE convertLinks.php.svn-base,1.1.1.1,NONE counter.php.svn-base,1.1.1.1,NONE database.sql.svn-base,1.1.1.1,NONE delete-idle-wiki-users.pl.svn-base,1.1.1.1,NONE deleteImageMemcached.php.svn-base,1.1.1.1,NONE deleteOldRevisions.inc.svn-base,1.1.1.1,NONE deleteOldRevisions.php.svn-base,1.1.1.1,NONE diffLanguage.php.svn-base,1.1.1.1,NONE dumpBackup.php.svn-base,1.1.1.1,NONE dumpHTML.inc.svn-base,1.1.1.1,NONE dumpHTML.php.svn-base,1.1.1.1,NONE dumpInterwiki.inc.svn-base,1.1.1.1,NONE dumpInterwiki.php.svn-base,1.1.1.1,NONE dumpLinks.php.svn-base,1.1.1.1,NONE dumpMessages.php.svn-base,1.1.1.1,NONE dumpReplayLog.php.svn-base,1.1.1.1,NONE dumpTextPass.php.svn-base,1.1.1.1,NONE duplicatetrans.php.svn-base,1.1.1.1,NONE entities2literals.pl.svn-base,1.1.1.1,NONE eval.php.svn-base,1.1.1.1,NONE fetchInterwiki.pl.svn-base,1.1.1.1,NONE fixSlaveDesync.php.svn-base,1.1.1.1,NONE fixTimestamps.php.svn-base,1.1.1.1,NONE generateSitemap.ph">nobody at sheep.berlios.de
+       </A><BR>
+    <I>Mon Apr 10 14:28:38 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000118.html">[Blahtex-cvs] blahtex/maintenance liveCmdLine.inc,1.1.1.2,NONE
+</A></li>
+        <LI>Next message: <A HREF="000120.html">[Blahtex-cvs] blahtex/maintenance/.svn/props .htaccess.svn-work,1.1.1.1,NONE FiveUpgrade.inc.svn-work,1.1.1.1,NONE InitialiseMessages.inc.svn-work,1.1.1.1,NONE Makefile.svn-work,1.1.1.1,NONE README.svn-work,1.1.1.1,NONE addwiki.php.svn-work,1.1.1.1,NONE alltrans.php.svn-work,1.1.1.1,NONE apache-ampersand.diff.svn-work,1.1.1.1,NONE attachLatest.php.svn-work,1.1.1.1,NONE attribute.php.svn-work,1.1.1.1,NONE backup.inc.svn-work,1.1.1.1,NONE backupPrefetch.inc.svn-work,1.1.1.1,NONE benchmarkPurge.php.svn-work,1.1.1.1,NONE build-intl-wiki.sql.svn-work,1.1.1.1,NONE changePassword.php.svn-work,1.1.1.1,NONE changeuser.sql.svn-work,1.1.1.1,NONE checkUsernames.php.svn-work,1.1.1.1,NONE checktrans.php.svn-work,1.1.1.1,NONE cleanupCaps.php.svn-work,1.1.1.1,NONE cleanupDupes.inc.svn-work,1.1.1.1,NONE cleanupDupes.php.svn-work,1.1.1.1,NONE cleanupSpam.php.svn-work,1.1.1.1,NONE cleanupTitles.php.svn-work,1.1.1.1,NONE cleanupWatchlist.php.svn-work,1.1.1.1,NONE clear_interwiki_cache.php.svn-work,1.1.1.1,NONE clear_stats.php.svn-work,1.1.1.1,NONE commandLine.inc.svn-work,1.1.1.1,NONE convertLinks.inc.svn-work,1.1.1.1,NONE convertLinks.php.svn-work,1.1.1.1,NONE counter.php.svn-work,1.1.1.1,NONE database.sql.svn-work,1.1.1.1,NONE delete-idle-wiki-users.pl.svn-work,1.1.1.1,NONE deleteImageMemcached.php.svn-work,1.1.1.1,NONE deleteOldRevisions.inc.svn-work,1.1.1.1,NONE deleteOldRevisions.php.svn-work,1.1.1.1,NONE diffLanguage.php.svn-work,1.1.1.1,NONE dumpBackup.php.svn-work,1.1.1.1,NONE dumpHTML.inc.svn-work,1.1.1.1,NONE dumpHTML.php.svn-work,1.1.1.1,NONE dumpInterwiki.inc.svn-work,1.1.1.1,NONE dumpInterwiki.php.svn-work,1.1.1.1,NONE dumpLinks.php.svn-work,1.1.1.1,NONE dumpMessages.php.svn-work,1.1.1.1,NONE dumpReplayLog.php.svn-work,1.1.1.1,NONE dumpTextPass.php.svn-work,1.1.1.1,NONE duplicatetrans.php.svn-work,1.1.1.1,NONE entities2literals.pl.svn-work,1.1.1.1,NONE eval.php.svn-work,1.1.1.1,NONE fetchInterwiki.pl.svn-work,1.1.1.1,NONE fixSlaveDesync.php.svn-work,1.1.1.1,NONE fixTimestamps.php.svn-work,1.1.1.1,NONE generateSitemap.php.sv
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#119">[ date ]</a>
+              <a href="thread.html#119">[ thread ]</a>
+              <a href="subject.html#119">[ subject ]</a>
+              <a href="author.html#119">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Update of /cvsroot/blahtex/blahtex/maintenance/.svn/prop-base
+In directory sheep:/tmp/cvs-serv19821/maintenance/.svn/prop-base
+
+Removed Files:
+	.htaccess.svn-base FiveUpgrade.inc.svn-base 
+	InitialiseMessages.inc.svn-base Makefile.svn-base 
+	README.svn-base addwiki.php.svn-base alltrans.php.svn-base 
+	apache-ampersand.diff.svn-base attachLatest.php.svn-base 
+	attribute.php.svn-base backup.inc.svn-base 
+	backupPrefetch.inc.svn-base benchmarkPurge.php.svn-base 
+	build-intl-wiki.sql.svn-base changePassword.php.svn-base 
+	changeuser.sql.svn-base checkUsernames.php.svn-base 
+	checktrans.php.svn-base cleanupCaps.php.svn-base 
+	cleanupDupes.inc.svn-base cleanupDupes.php.svn-base 
+	cleanupSpam.php.svn-base cleanupTitles.php.svn-base 
+	cleanupWatchlist.php.svn-base 
+	clear_interwiki_cache.php.svn-base clear_stats.php.svn-base 
+	commandLine.inc.svn-base convertLinks.inc.svn-base 
+	convertLinks.php.svn-base counter.php.svn-base 
+	database.sql.svn-base delete-idle-wiki-users.pl.svn-base 
+	deleteImageMemcached.php.svn-base 
+	deleteOldRevisions.inc.svn-base 
+	deleteOldRevisions.php.svn-base diffLanguage.php.svn-base 
+	dumpBackup.php.svn-base dumpHTML.inc.svn-base 
+	dumpHTML.php.svn-base dumpInterwiki.inc.svn-base 
+	dumpInterwiki.php.svn-base dumpLinks.php.svn-base 
+	dumpMessages.php.svn-base dumpReplayLog.php.svn-base 
+	dumpTextPass.php.svn-base duplicatetrans.php.svn-base 
+	entities2literals.pl.svn-base eval.php.svn-base 
+	fetchInterwiki.pl.svn-base fixSlaveDesync.php.svn-base 
+	fixTimestamps.php.svn-base generateSitemap.php.svn-base 
+	importDump.php.svn-base importLogs.inc.svn-base 
+	importLogs.php.svn-base importPhase2.php.svn-base 
+	importUseModWiki.php.svn-base initStats.php.svn-base 
+	interwiki.sql.svn-base lang2po.php.svn-base 
+	langmemusage.php.svn-base languages.inc.svn-base 
+	mcc.php.svn-base mctest.php.svn-base moveBatch.php.svn-base 
+	mwdocgen.php.svn-base mwdoxygen.cfg.svn-base 
+	namespace2sql.php.svn-base namespaceDupes.php.svn-base 
+	nukePage.inc.svn-base nukePage.php.svn-base 
+	orphans.php.svn-base ourusers.php.svn-base 
+	parserTests.inc.svn-base parserTests.php.svn-base 
+	parserTests.txt.svn-base parserTestsParserHook.php.svn-base 
+	parserTestsParserTime.php.svn-base 
+	parserTestsStaticParserHook.php.svn-base portal.php.svn-base 
+	purgeOldText.inc.svn-base purgeOldText.php.svn-base 
+	reassignEdits.inc.svn-base reassignEdits.php.svn-base 
+	rebuildImages.php.svn-base rebuildInterwiki.inc.svn-base 
+	rebuildInterwiki.php.svn-base rebuildMessages.php.svn-base 
+	rebuildall.php.svn-base rebuildrecentchanges.inc.svn-base 
+	rebuildrecentchanges.php.svn-base 
+	rebuildtextindex.inc.svn-base rebuildtextindex.php.svn-base 
+	recount.sql.svn-base redundanttrans.php.svn-base 
+	refreshImageCount.php.svn-base refreshLinks.inc.svn-base 
+	refreshLinks.php.svn-base removeUnusedAccounts.php.svn-base 
+	runJobs.php.svn-base splitLanguageFiles.inc.svn-base 
+	splitLanguageFiles.php.svn-base stats.php.svn-base 
+	tables.sql.svn-base transstat.php.svn-base 
+	trivialCmdLine.php.svn-base update.php.svn-base 
+	updateSearchIndex.inc.svn-base updateSearchIndex.php.svn-base 
+	updateSpecialPages.php.svn-base updaters.inc.svn-base 
+	upgrade1_5.php.svn-base userDupes.inc.svn-base 
+	userDupes.php.svn-base userFunctions.inc.svn-base 
+	users.sql.svn-base wikipedia-interwiki.sql.svn-base 
+	wiktionary-interwiki.sql.svn-base 
+Log Message:
+* Merge in changes from MediaWiki upgrade
+* Remove accidentally imported subversion files
+
+
+--- .htaccess.svn-base DELETED ---
+
+--- FiveUpgrade.inc.svn-base DELETED ---
+
+--- InitialiseMessages.inc.svn-base DELETED ---
+
+--- Makefile.svn-base DELETED ---
+
+--- README.svn-base DELETED ---
+
+--- addwiki.php.svn-base DELETED ---
+
+--- alltrans.php.svn-base DELETED ---
+
+--- apache-ampersand.diff.svn-base DELETED ---
+
+--- attachLatest.php.svn-base DELETED ---
+
+--- attribute.php.svn-base DELETED ---
+
+--- backup.inc.svn-base DELETED ---
+
+--- backupPrefetch.inc.svn-base DELETED ---
+
+--- benchmarkPurge.php.svn-base DELETED ---
+
+--- build-intl-wiki.sql.svn-base DELETED ---
+
+--- changePassword.php.svn-base DELETED ---
+
+--- changeuser.sql.svn-base DELETED ---
+
+--- checkUsernames.php.svn-base DELETED ---
+
+--- checktrans.php.svn-base DELETED ---
+
+--- cleanupCaps.php.svn-base DELETED ---
+
+--- cleanupDupes.inc.svn-base DELETED ---
+
+--- cleanupDupes.php.svn-base DELETED ---
+
+--- cleanupSpam.php.svn-base DELETED ---
+
+--- cleanupTitles.php.svn-base DELETED ---
+
+--- cleanupWatchlist.php.svn-base DELETED ---
+
+--- clear_interwiki_cache.php.svn-base DELETED ---
+
+--- clear_stats.php.svn-base DELETED ---
+
+--- commandLine.inc.svn-base DELETED ---
+
+--- convertLinks.inc.svn-base DELETED ---
+
+--- convertLinks.php.svn-base DELETED ---
+
+--- counter.php.svn-base DELETED ---
+
+--- database.sql.svn-base DELETED ---
+
+--- delete-idle-wiki-users.pl.svn-base DELETED ---
+
+--- deleteImageMemcached.php.svn-base DELETED ---
+
+--- deleteOldRevisions.inc.svn-base DELETED ---
+
+--- deleteOldRevisions.php.svn-base DELETED ---
+
+--- diffLanguage.php.svn-base DELETED ---
+
+--- dumpBackup.php.svn-base DELETED ---
+
+--- dumpHTML.inc.svn-base DELETED ---
+
+--- dumpHTML.php.svn-base DELETED ---
+
+--- dumpInterwiki.inc.svn-base DELETED ---
+
+--- dumpInterwiki.php.svn-base DELETED ---
+
+--- dumpLinks.php.svn-base DELETED ---
+
+--- dumpMessages.php.svn-base DELETED ---
+
+--- dumpReplayLog.php.svn-base DELETED ---
+
+--- dumpTextPass.php.svn-base DELETED ---
+
+--- duplicatetrans.php.svn-base DELETED ---
+
+--- entities2literals.pl.svn-base DELETED ---
+
+--- eval.php.svn-base DELETED ---
+
+--- fetchInterwiki.pl.svn-base DELETED ---
+
+--- fixSlaveDesync.php.svn-base DELETED ---
+
+--- fixTimestamps.php.svn-base DELETED ---
+
+--- generateSitemap.php.svn-base DELETED ---
+
+--- importDump.php.svn-base DELETED ---
+
+--- importLogs.inc.svn-base DELETED ---
+
+--- importLogs.php.svn-base DELETED ---
+
+--- importPhase2.php.svn-base DELETED ---
+
+--- importUseModWiki.php.svn-base DELETED ---
+
+--- initStats.php.svn-base DELETED ---
+
+--- interwiki.sql.svn-base DELETED ---
+
+--- lang2po.php.svn-base DELETED ---
+
+--- langmemusage.php.svn-base DELETED ---
+
+--- languages.inc.svn-base DELETED ---
+
+--- mcc.php.svn-base DELETED ---
+
+--- mctest.php.svn-base DELETED ---
+
+--- moveBatch.php.svn-base DELETED ---
+
+--- mwdocgen.php.svn-base DELETED ---
+
+--- mwdoxygen.cfg.svn-base DELETED ---
+
+--- namespace2sql.php.svn-base DELETED ---
+
+--- namespaceDupes.php.svn-base DELETED ---
+
+--- nukePage.inc.svn-base DELETED ---
+
+--- nukePage.php.svn-base DELETED ---
+
+--- orphans.php.svn-base DELETED ---
+
+--- ourusers.php.svn-base DELETED ---
+
+--- parserTests.inc.svn-base DELETED ---
+
+--- parserTests.php.svn-base DELETED ---
+
+--- parserTests.txt.svn-base DELETED ---
+
+--- parserTestsParserHook.php.svn-base DELETED ---
+
+--- parserTestsParserTime.php.svn-base DELETED ---
+
+--- parserTestsStaticParserHook.php.svn-base DELETED ---
+
+--- portal.php.svn-base DELETED ---
+
+--- purgeOldText.inc.svn-base DELETED ---
+
+--- purgeOldText.php.svn-base DELETED ---
+
+--- reassignEdits.inc.svn-base DELETED ---
+
+--- reassignEdits.php.svn-base DELETED ---
+
+--- rebuildImages.php.svn-base DELETED ---
+
+--- rebuildInterwiki.inc.svn-base DELETED ---
+
+--- rebuildInterwiki.php.svn-base DELETED ---
+
+--- rebuildMessages.php.svn-base DELETED ---
+
+--- rebuildall.php.svn-base DELETED ---
+
+--- rebuildrecentchanges.inc.svn-base DELETED ---
+
+--- rebuildrecentchanges.php.svn-base DELETED ---
+
+--- rebuildtextindex.inc.svn-base DELETED ---
+
+--- rebuildtextindex.php.svn-base DELETED ---
+
+--- recount.sql.svn-base DELETED ---
+
+--- redundanttrans.php.svn-base DELETED ---
+
+--- refreshImageCount.php.svn-base DELETED ---
+
+--- refreshLinks.inc.svn-base DELETED ---
+
+--- refreshLinks.php.svn-base DELETED ---
+
+--- removeUnusedAccounts.php.svn-base DELETED ---
+
+--- runJobs.php.svn-base DELETED ---
+
+--- splitLanguageFiles.inc.svn-base DELETED ---
+
+--- splitLanguageFiles.php.svn-base DELETED ---
+
+--- stats.php.svn-base DELETED ---
+
+--- tables.sql.svn-base DELETED ---
+
+--- transstat.php.svn-base DELETED ---
+
+--- trivialCmdLine.php.svn-base DELETED ---
+
+--- update.php.svn-base DELETED ---
+
+--- updateSearchIndex.inc.svn-base DELETED ---
+
+--- updateSearchIndex.php.svn-base DELETED ---
+
+--- updateSpecialPages.php.svn-base DELETED ---
+
+--- updaters.inc.svn-base DELETED ---
+
+--- upgrade1_5.php.svn-base DELETED ---
+
+--- userDupes.inc.svn-base DELETED ---
+
+--- userDupes.php.svn-base DELETED ---
+
+--- userFunctions.inc.svn-base DELETED ---
+
+--- users.sql.svn-base DELETED ---
+
+--- wikipedia-interwiki.sql.svn-base DELETED ---
+
+--- wiktionary-interwiki.sql.svn-base DELETED ---
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000118.html">[Blahtex-cvs] blahtex/maintenance liveCmdLine.inc,1.1.1.2,NONE
+</A></li>
+	<LI>Next message: <A HREF="000120.html">[Blahtex-cvs] blahtex/maintenance/.svn/props .htaccess.svn-work,1.1.1.1,NONE FiveUpgrade.inc.svn-work,1.1.1.1,NONE InitialiseMessages.inc.svn-work,1.1.1.1,NONE Makefile.svn-work,1.1.1.1,NONE README.svn-work,1.1.1.1,NONE addwiki.php.svn-work,1.1.1.1,NONE alltrans.php.svn-work,1.1.1.1,NONE apache-ampersand.diff.svn-work,1.1.1.1,NONE attachLatest.php.svn-work,1.1.1.1,NONE attribute.php.svn-work,1.1.1.1,NONE backup.inc.svn-work,1.1.1.1,NONE backupPrefetch.inc.svn-work,1.1.1.1,NONE benchmarkPurge.php.svn-work,1.1.1.1,NONE build-intl-wiki.sql.svn-work,1.1.1.1,NONE changePassword.php.svn-work,1.1.1.1,NONE changeuser.sql.svn-work,1.1.1.1,NONE checkUsernames.php.svn-work,1.1.1.1,NONE checktrans.php.svn-work,1.1.1.1,NONE cleanupCaps.php.svn-work,1.1.1.1,NONE cleanupDupes.inc.svn-work,1.1.1.1,NONE cleanupDupes.php.svn-work,1.1.1.1,NONE cleanupSpam.php.svn-work,1.1.1.1,NONE cleanupTitles.php.svn-work,1.1.1.1,NONE cleanupWatchlist.php.svn-work,1.1.1.1,NONE clear_interwiki_cache.php.svn-work,1.1.1.1,NONE clear_stats.php.svn-work,1.1.1.1,NONE commandLine.inc.svn-work,1.1.1.1,NONE convertLinks.inc.svn-work,1.1.1.1,NONE convertLinks.php.svn-work,1.1.1.1,NONE counter.php.svn-work,1.1.1.1,NONE database.sql.svn-work,1.1.1.1,NONE delete-idle-wiki-users.pl.svn-work,1.1.1.1,NONE deleteImageMemcached.php.svn-work,1.1.1.1,NONE deleteOldRevisions.inc.svn-work,1.1.1.1,NONE deleteOldRevisions.php.svn-work,1.1.1.1,NONE diffLanguage.php.svn-work,1.1.1.1,NONE dumpBackup.php.svn-work,1.1.1.1,NONE dumpHTML.inc.svn-work,1.1.1.1,NONE dumpHTML.php.svn-work,1.1.1.1,NONE dumpInterwiki.inc.svn-work,1.1.1.1,NONE dumpInterwiki.php.svn-work,1.1.1.1,NONE dumpLinks.php.svn-work,1.1.1.1,NONE dumpMessages.php.svn-work,1.1.1.1,NONE dumpReplayLog.php.svn-work,1.1.1.1,NONE dumpTextPass.php.svn-work,1.1.1.1,NONE duplicatetrans.php.svn-work,1.1.1.1,NONE entities2literals.pl.svn-work,1.1.1.1,NONE eval.php.svn-work,1.1.1.1,NONE fetchInterwiki.pl.svn-work,1.1.1.1,NONE fixSlaveDesync.php.svn-work,1.1.1.1,NONE fixTimestamps.php.svn-work,1.1.1.1,NONE generateSitemap.php.sv
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#119">[ date ]</a>
+              <a href="thread.html#119">[ thread ]</a>
+              <a href="subject.html#119">[ subject ]</a>
+              <a href="author.html#119">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/blahtex-cvs">More information about the Blahtex-cvs
+mailing list</a><br>
+</body></html>
